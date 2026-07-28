@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AST Club — программа лояльности сети AST Hotels</title>
+<meta name="description" content="AST Club: три уровня для гостей сети AST Hotels в Астане. Скидка на проживание, ранний заезд и поздний выезд за ночи, забронированные напрямую.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skip">К содержимому</a>
+<header class="header header--static">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+    <nav class="nav">
+      <a href="hotels.html" data-i18n="nav.hotels">Отели</a>
+      <a href="offers.html" data-i18n="nav.offers">Предложения</a>
+      <a href="club.html" data-i18n="nav.club">AST Club</a>
+      <a href="contacts.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang">
+        <button type="button" data-lang="ru" class="is-active">RU</button>
+        <button type="button" data-lang="kk">KZ</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Бронировать</a>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero hero--compact">
+  <div class="hero__media">
+    <img src="https://images.unsplash.com/photo-1770461129148-0ccbd2d9ffdb?auto=format&fit=crop&w=1600&q=80" alt="Освещённый фасад отеля в сумерках">
+  </div>
+  <div class="hero__inner">
+    <div class="container">
+      <p class="eyebrow" data-i18n="club.eyebrow">Программа лояльности</p>
+      <h1 data-i18n="club.title">AST Club</h1>
+      <p class="lead" data-i18n="club.lead">Ночи во всех трёх отелях сети считаются вместе. Чем чаще вы останавливаетесь у нас напрямую, тем выше уровень и больше привилегий при заселении.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="club.how.eyebrow">Как это работает</p>
+      <h2 data-i18n="club.how.title">Три шага до уровня</h2>
+      <p class="lead" data-i18n="club.how.lead">Ни карты, ни личного кабинета: уровень закрепляется за вашим номером телефона, а история ночей ведётся на стойке.</p>
+    </div>
+    <ol class="steps reveal">
+      <li class="step">
+        <h3 data-i18n="club.step1.title">Бронируете напрямую</h3>
+        <p data-i18n="club.step1.text">Оставляете заявку на сайте, звоните на стойку или пишете в WhatsApp отеля. Брони через агрегаторы в программе не участвуют.</p>
+      </li>
+      <li class="step">
+        <h3 data-i18n="club.step2.title">Копите ночи</h3>
+        <p data-i18n="club.step2.text">Каждая проведённая ночь идёт в общий счёт — неважно, остановились вы в AMINA, City Line или Botanic Garden.</p>
+      </li>
+      <li class="step">
+        <h3 data-i18n="club.step3.title">Получаете уровень</h3>
+        <p data-i18n="club.step3.text">Уровень открывается автоматически и сохраняется до конца следующего расчётного года. Администратор сообщает о переходе при следующем заселении.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="club.tiers.eyebrow">Уровни</p>
+      <h2 data-i18n="club.tiers.title">Silver, Gold, Platinum</h2>
+      <p class="lead" data-i18n="club.tiers.lead">Скидка уровня применяется к стоимости проживания и не суммируется с сезонными акциями: к брони применяется то, что выгоднее гостю.</p>
+    </div>
+    <div class="grid grid--3">
+      <article class="tier reveal">
+        <span class="tier__name" data-i18n="club.silver.name">Silver</span>
+        <p data-i18n="club.silver.cond">С первой брони напрямую</p>
+        <ul class="tier__list">
+          <li data-i18n="club.silver.b1">−5% на проживание</li>
+          <li data-i18n="club.silver.b2">Поздний выезд до 14:00 без доплаты, если номер свободен</li>
+          <li data-i18n="club.silver.b3">Ночи копятся во всех трёх отелях сети</li>
+        </ul>
+      </article>
+      <article class="tier tier--featured reveal">
+        <span class="tier__name" data-i18n="club.gold.name">Gold</span>
+        <p data-i18n="club.gold.cond">От 10 ночей в год</p>
+        <ul class="tier__list">
+          <li data-i18n="club.gold.b1">−10% на проживание</li>
+          <li data-i18n="club.gold.b2">Ранний заезд по договорённости</li>
+          <li data-i18n="club.gold.b3">Повышение категории при наличии мест</li>
+        </ul>
+      </article>
+      <article class="tier reveal">
+        <span class="tier__name" data-i18n="club.platinum.name">Platinum</span>
+        <p data-i18n="club.platinum.cond">От 30 ночей в год</p>
+        <ul class="tier__list">
+          <li data-i18n="club.platinum.b1">−15% на проживание</li>
+          <li data-i18n="club.platinum.b2">Повышение категории в первую очередь — при наличии свободных номеров</li>
+          <li data-i18n="club.platinum.b3">Трансфер от аэропорта</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="club.form.eyebrow">Вступление</p>
+      <h2 data-i18n="club.form.title">Заявка на вступление</h2>
+      <p class="lead" data-i18n="club.form.lead">Заполните три поля — заявка уйдёт в WhatsApp AMINA Hotel, администратор закрепит за вами уровень Silver и ответит в течение дня.</p>
+    </div>
+    <div class="book reveal">
+      <div>
+        <form id="club-form" novalidate>
+          <div class="field-row">
+            <label class="field">
+              <span data-i18n="club.form.name">Имя и фамилия</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" data-i18n-attr="placeholder:club.form.name-ph">
+              <span class="field__error" data-i18n="club.form.name-err">Укажите имя — не короче двух букв</span>
+            </label>
+            <label class="field">
+              <span data-i18n="club.form.phone">Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+7 ___ ___ __ __" data-i18n-attr="placeholder:club.form.phone-ph">
+              <span class="field__error" data-i18n="club.form.phone-err">Введите номер телефона целиком</span>
+            </label>
+          </div>
+          <label class="field">
+            <span data-i18n="club.form.city">Город</span>
+            <input type="text" name="city" autocomplete="address-level2" placeholder="Откуда вы приезжаете" data-i18n-attr="placeholder:club.form.city-ph">
+            <span class="field__error" data-i18n="club.form.city-err">Укажите город — он нужен для подбора трансфера</span>
+          </label>
+          <div class="field extras">
+            <label>
+              <input type="checkbox" name="consent">
+              <span data-i18n="club.form.consent">Согласен на обработку имени и телефона для участия в программе</span>
+            </label>
+            <span class="field__error" data-i18n="club.form.consent-err">Отметьте согласие на обработку данных</span>
+          </div>
+          <p><button class="btn btn--gold" type="submit" data-i18n="club.form.submit">Отправить в WhatsApp</button></p>
+        </form>
+        <div class="form-done" role="status" aria-live="polite">
+          <h3 data-i18n="club.done.title">Заявка собрана</h3>
+          <p data-i18n="club.done.text">Если вкладка WhatsApp не открылась, скопируйте текст ниже и отправьте его на номер AMINA Hotel: +7 701 335 35 30.</p>
+          <pre></pre>
+        </div>
+      </div>
+      <aside class="summary">
+        <h3 data-i18n="club.summary.title">Что даёт членство</h3>
+        <div class="summary__row">
+          <span data-i18n="club.summary.level">Уровень при вступлении</span>
+          <span data-i18n="club.summary.level-value">Silver</span>
+        </div>
+        <div class="summary__row">
+          <span data-i18n="club.summary.cost">Стоимость участия</span>
+          <span data-i18n="club.summary.cost-value">Бесплатно</span>
+        </div>
+        <div class="summary__row">
+          <span data-i18n="club.summary.where">Где действует</span>
+          <span data-i18n="club.summary.where-value">Три отеля сети</span>
+        </div>
+        <div class="summary__row summary__row--total">
+          <span data-i18n="club.summary.total">Скидка сразу</span>
+          <span data-i18n="club.summary.total-value">−5%</span>
+        </div>
+        <p class="summary__note" data-i18n="club.summary.note">Пластиковая карта не выпускается: уровень закреплён за номером телефона, назовите его при бронировании.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="club.faq.eyebrow">Вопросы</p>
+      <h2 data-i18n="club.faq.title">Как считаются ночи</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc__item">
+        <button class="acc__q" type="button" aria-expanded="false" data-i18n="club.faq.q1">Какие ночи идут в счёт?</button>
+        <div class="acc__a">
+          <p data-i18n="club.faq.a1">Только те, что забронированы напрямую: через форму на сайте, по телефону отеля или в WhatsApp. Ночь засчитывается после выезда и оплаты проживания.</p>
+        </div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__q" type="button" aria-expanded="false" data-i18n="club.faq.q2">Сгорают ли накопленные ночи?</button>
+        <div class="acc__a">
+          <p data-i18n="club.faq.a2">Счёт ведётся за двенадцать месяцев с даты вступления и затем начинается заново. Достигнутый уровень сохраняется до конца следующего расчётного года — он не падает сразу после обнуления счёта.</p>
+        </div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__q" type="button" aria-expanded="false" data-i18n="club.faq.q3">Программа работает во всех трёх отелях?</button>
+        <div class="acc__a">
+          <p data-i18n="club.faq.a3">Да. AMINA Hotel, City Line Hotel и Botanic Garden Apartments — одна сеть: ночи копятся вместе, а скидка уровня действует при заселении в любой из них.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+        <p data-i18n="footer.about">Три отеля в Астане: городской, бутик и апартаменты.</p>
+      </div>
+      <div>
+        <h4>AMINA Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77013353530">+7 701 335 35 30</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>City Line Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.cityline.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77759590088">+7 775 959 00 88</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Botanic Garden Apartments</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.botanic.addr">ул. Туркестан, 14а</li>
+          <li><a href="tel:+77027771503">+7 702 777 15 03</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <span data-i18n="footer.city">Астана, Казахстан</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui.js"></script>
+<script type="module" src="assets/js/i18n.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+<script type="module">
+// Заявка на вступление в AST Club уходит тем же путём, что и бронь:
+// собирается текст и открывается WhatsApp основного номера сети (AMINA).
+import { buildWhatsAppUrl } from './assets/js/booking.js';
+
+const form = document.querySelector('#club-form');
+if (form) {
+  // consent проверяется наравне с остальными полями: у чекбокса есть обёртка
+  // .field и своя строка ошибки, поэтому подсветка работает так же.
+  const FIELDS = ['name', 'phone', 'city', 'consent'];
+  const el = (name) => form.elements[name];
+  const setError = (name, on) => el(name).closest('.field')?.classList.toggle('has-error', on);
+
+  form.addEventListener('input', () => FIELDS.forEach((name) => setError(name, false)));
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = {
+      name: el('name').value.trim(),
+      phone: el('phone').value.trim(),
+      city: el('city').value.trim(),
+    };
+    const errors = [];
+    if (data.name.length < 2) errors.push('name');
+    if ((data.phone.match(/\d/g) || []).length < 10) errors.push('phone');
+    if (data.city.length < 2) errors.push('city');
+    if (!el('consent').checked) errors.push('consent');
+    FIELDS.forEach((name) => setError(name, errors.includes(name)));
+    if (errors.length) {
+      el(errors[0]).focus();
+      return;
+    }
+
+    const message = [
+      'Заявка на вступление в AST Club',
+      `Имя: ${data.name}`,
+      `Телефон: ${data.phone}`,
+      `Город: ${data.city}`,
+    ].join('\n');
+
+    // Текст показывается до попытки открыть вкладку: если сработал
+    // блокировщик всплывающих окон, заявку можно скопировать вручную.
+    const done = document.querySelector('.form-done');
+    done.querySelector('pre').textContent = message;
+    done.classList.add('is-open');
+    window.open(buildWhatsAppUrl('amina', message), '_blank', 'noopener');
+    done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+</script>
+</body>
+</html>

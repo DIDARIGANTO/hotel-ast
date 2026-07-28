@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AST Hotels — прогон тестов</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  /* Оформление страницы прогона: цвета строк задаёт сам раннер. */
+  .runner{max-width:900px;margin:0 auto;padding:40px 20px}
+  .runner h1{margin-bottom:8px}
+  .runner__hint{color:#6B7280;margin-bottom:28px}
+  #results{display:grid;gap:6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+  #results .test{padding:6px 10px;border-left:3px solid currentColor;background:rgba(0,0,0,.03)}
+  #total{margin-top:28px;padding-top:16px;border-top:1px solid rgba(0,0,0,.12);font-size:18px;font-weight:600}
+</style>
+</head>
+<body>
+<main class="runner">
+  <h1>Прогон тестов AST Hotels</h1>
+  <p class="runner__hint">Наборы: данные сети и расчёт брони. Страница открывается через локальный сервер: модули не грузятся по протоколу file://.</p>
+  <div id="results"></div>
+  <p id="total">Тесты запускаются…</p>
+</main>
+
+<script type="module">
+  import { fail, renderTotal } from './harness.js';
+
+  // Наборы подключаются по одному: если один не загрузится,
+  // остальные всё равно прогонятся, а ошибка попадёт в отчёт.
+  const SUITES = ['./hotels.test.js', './booking.test.js'];
+
+  for (const suite of SUITES) {
+    try {
+      await import(suite);
+    } catch (error) {
+      fail(`Набор ${suite} не загрузился`, error);
+    }
+  }
+
+  renderTotal();
+</script>
+</body>
+</html>

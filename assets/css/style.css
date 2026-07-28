@@ -1,0 +1,425 @@
+/* ═══════════════════════════════════════════════════════════
+   AST Hotels — единая таблица стилей
+   Порядок блоков: токены и база → шапка и футер → hero и поиск →
+   фильтры → галерея, удобства, FAQ → бронь → предложения и клуб →
+   контакты → мелочи (доступность, таблицы, врезки).
+   Фирменные цвета правятся в блоке «Токены» ниже.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ═══ 1. Токены, база, типографика, кнопки, сетки ═══ */
+
+/* ── Токены ─────────────────────────────────────────────── */
+:root{
+  --indigo:#101B33;
+  --indigo-soft:#1B2A48;
+  --gold:#C8A96A;
+  --gold-dim:#A98A4E;     /* только как фон: на нём лежит тёмный текст */
+  --gold-ink:#8A6F3A;     /* золотой для текста: 4.8:1 на белом, WCAG AA */
+  --white:#FFFFFF;
+  --sand:#F4F2EE;
+  --graphite:#2A2E36;
+  --muted:#5F6672;        /* 5.1:1 на песочном фоне секций */
+  --line:rgba(16,27,51,.12);
+  --line-dark:rgba(255,255,255,.16);
+
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+
+  --step:clamp(56px,7vw,112px);      /* вертикальные отступы секций */
+  --gutter:clamp(16px,4vw,48px);
+  --maxw:1280px;
+  --radius:2px;                      /* сетевой отель — почти без скруглений */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);color:var(--graphite);
+  background:var(--white);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+/* Собственные display у .card и .summary__row перебивают правило браузера,
+   поэтому атрибут hidden приходится усиливать явно. */
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(38px,6vw,72px)}
+h2{font-size:clamp(30px,4vw,50px)}
+h3{font-size:clamp(20px,2.2vw,28px)}
+p{margin:0 0 1em}
+
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.section{padding:var(--step) 0}
+.section--dark{background:var(--indigo);color:var(--white)}
+.section--sand{background:var(--sand)}
+
+/* Надзаголовок с золотой чертой */
+.eyebrow{
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-ink);margin:0 0 14px;display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
+.section--dark .eyebrow{color:var(--gold)}
+
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:62ch}
+.section--dark .lead{color:rgba(255,255,255,.72)}
+
+/* ── Кнопки ─────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border:1px solid transparent;border-radius:var(--radius);
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.btn--gold{background:var(--gold);color:var(--indigo)}
+.btn--gold:hover{background:var(--gold-dim)}
+.btn--ghost{border-color:currentColor;background:transparent}
+.btn--ghost:hover{background:currentColor;color:var(--indigo)}
+.btn--dark{background:var(--indigo);color:var(--white)}
+.btn--dark:hover{background:var(--indigo-soft)}
+
+/* ── Сетки и карточки ───────────────────────────────────── */
+.grid{display:grid;gap:clamp(16px,2.5vw,32px)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+
+.card{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column}
+.card__media{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .card__media img{transform:scale(1.05)}
+.card__body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card__meta{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.card__price{font-family:var(--serif);font-size:24px;color:var(--indigo);margin-top:auto}
+
+.rating{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.rating__star{color:var(--gold)}
+.rating__count{color:var(--muted);font-weight:400}
+
+/* ── Анимация появления ─────────────────────────────────── */
+/* Контент виден по умолчанию. Прятать его перед анимацией разрешено только
+   когда скрипт подтвердил, что умеет показать обратно: класс js-anim ставит
+   ui.js и снимает, если наблюдатель так и не отработал. */
+.js-anim .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js-anim .reveal.is-visible,body.noanim .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ── Адаптив ────────────────────────────────────────────── */
+@media (max-width:960px){
+  .grid--4{grid-template-columns:repeat(2,1fr)}
+  .grid--3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .grid--2,.grid--3,.grid--4{grid-template-columns:1fr}
+  .btn{width:100%}
+}
+
+/* ═══ 2. Шапка, мобильное меню, футер ═══ */
+
+/* ── Шапка ──────────────────────────────────────────────── */
+.header{
+  position:sticky;top:0;z-index:60;background:transparent;
+  transition:background .35s var(--ease),box-shadow .35s var(--ease);
+}
+.header__inner{display:flex;align-items:center;gap:24px;height:76px;color:var(--white)}
+.header.is-solid{background:var(--indigo);box-shadow:0 1px 0 var(--line-dark)}
+.header--static{background:var(--indigo)}
+
+.logo{font-family:var(--serif);font-size:22px;letter-spacing:.06em;color:inherit;white-space:nowrap}
+.logo span{color:var(--gold)}
+
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:13px;letter-spacing:.08em;text-transform:uppercase;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="page"]::after{width:100%}
+
+.header__actions{display:flex;align-items:center;gap:14px}
+.lang{display:flex;gap:2px;border:1px solid var(--line-dark);border-radius:var(--radius)}
+.lang button{background:none;border:0;padding:7px 10px;font-size:12px;letter-spacing:.06em;cursor:pointer;color:inherit;opacity:.6}
+.lang button.is-active{background:var(--gold);color:var(--indigo);opacity:1}
+.header .btn{padding:12px 22px}
+
+.burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;width:22px;height:1px;background:currentColor;transition:transform .3s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:17px}
+.burger span:nth-child(2){top:22px}
+.burger span:nth-child(3){top:27px}
+.burger.is-open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+@media (max-width:1024px){
+  .burger{display:block;margin-left:auto}
+  .nav{
+    position:fixed;inset:76px 0 auto;background:var(--indigo);color:var(--white);
+    flex-direction:column;gap:0;padding:16px var(--gutter) 32px;margin:0;
+    transform:translateY(-120%);visibility:hidden;
+    transition:transform .4s var(--ease),visibility .4s var(--ease);
+  }
+  .nav.is-open{transform:none;visibility:visible}
+  .nav a{padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:15px}
+  .header__actions{display:none}
+  .nav.is-open ~ .header__actions{display:flex}
+}
+
+/* ── Футер ──────────────────────────────────────────────── */
+.footer{background:var(--indigo);color:rgba(255,255,255,.72);padding:var(--step) 0 40px}
+.footer a:hover{color:var(--gold)}
+.footer__grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+.footer h4{color:var(--white);font-size:15px;letter-spacing:.06em;margin-bottom:14px}
+.footer__list{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
+.footer__bottom{
+  margin-top:48px;padding-top:24px;border-top:1px solid var(--line-dark);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;
+}
+@media (max-width:900px){.footer__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.footer__grid{grid-template-columns:1fr}}
+
+/* ═══ 3. Hero, бейдж карточки, полоса поиска ═══ */
+
+/* ── Hero ───────────────────────────────────────────────── */
+.hero{position:relative;min-height:clamp(560px,88vh,900px);display:flex;align-items:flex-end;color:var(--white);margin-top:-76px}
+.hero__media{position:absolute;inset:0;overflow:hidden}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,27,51,.55) 0%,rgba(16,27,51,.25) 45%,rgba(16,27,51,.85) 100%)}
+/* Только вертикальные отступы: на страницах отелей класс висит на том же
+   элементе, что и .container, и сокращённая запись padding затирала бы
+   боковые поля — заголовок упирался бы в край экрана. */
+.hero__inner{position:relative;padding-top:140px;padding-bottom:var(--step);width:100%}
+.hero h1{max-width:16ch}
+.hero .lead{color:rgba(255,255,255,.82)}
+.hero--compact{min-height:clamp(380px,54vh,560px)}
+
+.card__badge{
+  position:absolute;left:0;top:16px;background:var(--indigo);color:var(--white);
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;
+}
+
+/* ── Полоса поиска ──────────────────────────────────────── */
+.searchbar{
+  position:relative;z-index:5;background:var(--white);border:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr) auto;gap:0;margin-top:-44px;
+  box-shadow:0 24px 60px rgba(16,27,51,.16);
+}
+.searchbar label{display:flex;flex-direction:column;gap:6px;padding:18px 22px;border-right:1px solid var(--line)}
+.searchbar span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.searchbar select,.searchbar input{border:0;background:none;padding:0;font-size:15px;outline:none}
+.searchbar .btn{border-radius:0;height:100%}
+.searchbar label.has-error{box-shadow:inset 0 0 0 1px #B3261E}
+.searchbar label.has-error span{color:#B3261E}
+@media (max-width:900px){
+  .searchbar{grid-template-columns:1fr 1fr;margin-top:0}
+  .searchbar label{border-bottom:1px solid var(--line)}
+  .searchbar .btn{grid-column:1/-1}
+}
+
+/* ═══ 4. Фильтры портфеля ═══ */
+
+.filters{display:flex;flex-wrap:wrap;gap:28px;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.filters__group{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filters__group > b{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-right:6px}
+.filters button{
+  background:none;border:1px solid var(--line);padding:9px 18px;border-radius:var(--radius);
+  font-size:13px;cursor:pointer;transition:all .25s var(--ease);
+}
+.filters button:hover{border-color:var(--indigo)}
+.filters button.is-active{background:var(--indigo);color:var(--white);border-color:var(--indigo)}
+.filter-empty{padding:60px 0;text-align:center;color:var(--muted)}
+
+/* ═══ 5. Галерея, удобства, аккордеон, лайтбокс ═══ */
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.gallery > *:first-child{grid-column:span 2;grid-row:span 2}
+@media (max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+.amenities{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px 32px}
+.amenities li{display:flex;gap:12px;align-items:baseline;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.amenities li::before{content:"—";color:var(--gold)}
+@media (max-width:760px){.amenities{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.amenities{grid-template-columns:1fr}}
+
+.acc__item{border-bottom:1px solid var(--line)}
+.acc__q{width:100%;background:none;border:0;text-align:left;padding:22px 40px 22px 0;font-size:17px;cursor:pointer;position:relative}
+.acc__q::after{content:"+";position:absolute;right:8px;top:20px;color:var(--gold);font-size:22px;transition:transform .3s var(--ease)}
+.acc__item.is-open .acc__q::after{transform:rotate(45deg)}
+.acc__a{max-height:0;overflow:hidden;visibility:hidden;transition:max-height .4s var(--ease),visibility .4s}
+.acc__item.is-open .acc__a{max-height:420px;visibility:visible}
+.acc__a p{padding-bottom:22px;color:var(--muted);margin:0}
+
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,15,26,.94);display:none;align-items:center;justify-content:center;gap:20px;padding:40px}
+.lightbox.is-open{display:flex}
+.lightbox img{max-width:88vw;max-height:86vh;object-fit:contain}
+.lightbox button{background:none;border:0;color:var(--white);font-size:34px;cursor:pointer;opacity:.7;transition:opacity .2s}
+.lightbox button:hover{opacity:1}
+.lightbox__close{position:absolute;top:20px;right:26px;font-size:24px}
+@media (max-width:640px){.lightbox__nav{position:absolute;bottom:24px}.lightbox__nav--prev{left:24px}.lightbox__nav--next{right:24px}}
+
+/* ═══ 6. Форма брони и сводка ═══ */
+
+.book{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.field > span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{
+  border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;background:var(--white);
+  transition:border-color .2s var(--ease);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field.has-error input,.field.has-error select{border-color:#B3261E}
+.field__error{color:#B3261E;font-size:13px;display:none}
+.field.has-error .field__error{display:block}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+.extras{display:grid;gap:12px;margin-bottom:26px}
+.extras label{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);cursor:pointer}
+.extras label:hover{border-color:var(--indigo)}
+
+.summary{background:var(--sand);padding:32px;position:sticky;top:96px}
+.summary__row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.summary__row--total{border:0;padding-top:20px;font-family:var(--serif);font-size:26px;color:var(--indigo)}
+.summary__row--promo{color:var(--gold-ink)}
+.summary__note{font-size:13px;color:var(--muted);margin-top:16px}
+.form-done{background:var(--sand);padding:28px;margin-top:24px;display:none}
+.form-done.is-open{display:block}
+.form-done pre{white-space:pre-wrap;font:inherit;font-size:14px;color:var(--muted);margin:12px 0 0}
+@media (max-width:900px){
+  .book{grid-template-columns:1fr}
+  .summary{position:static}
+  .field-row{grid-template-columns:1fr}
+}
+
+/* ═══ 7. Карточка предложения и уровни клуба ═══ */
+
+.offer{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:28px}
+.offer img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.offer__body{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+.offer__badge{align-self:flex-start;background:var(--gold);color:var(--indigo);padding:6px 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.offer:nth-child(even) img{order:2}
+@media (max-width:860px){.offer{grid-template-columns:1fr}.offer:nth-child(even) img{order:0}}
+
+.tier{border:1px solid var(--line-dark);padding:34px 28px;display:flex;flex-direction:column;gap:14px}
+.tier--featured{border-color:var(--gold);background:rgba(200,169,106,.08)}
+.tier__name{font-family:var(--serif);font-size:26px;color:var(--gold)}
+.tier__list{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.tier__list li::before{content:"— ";color:var(--gold)}
+
+/* ═══ 8. Карточки контактов и блок карты ═══ */
+
+.contact-card{border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:10px}
+.contact-card h3{margin-bottom:4px}
+.contact-card a{border-bottom:1px solid var(--line)}
+.contact-card a:hover{border-color:var(--gold);color:var(--gold-ink)}
+.map{
+  aspect-ratio:16/7;background:var(--sand);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:24px;
+}
+.map iframe{width:100%;height:100%;border:0}
+@media (max-width:640px){.map{aspect-ratio:4/3}}
+
+/* ═══ 9. Мелочи: доступность, таблицы, врезки ═══ */
+
+/* ── Ссылка «к содержимому» для клавиатуры ──────────────── */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--gold);color:var(--indigo);
+  padding:12px 20px;border-radius:var(--radius);
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+}
+.skip-link:focus,.skip-link:focus-visible{left:var(--gutter);top:12px}
+
+/* ── Видимый фокус с клавиатуры ─────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible,
+.searchbar input:focus-visible,
+.searchbar select:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:2px;
+}
+
+/* ── Таблица сравнения ──────────────────────────────────── */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll table,.table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;text-align:left}
+.table-scroll th,.table-scroll td,.table th,.table td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+.table-scroll thead th,.table thead th{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;white-space:nowrap;
+}
+.table-scroll tbody tr:last-child td,.table tbody tr:last-child td{border-bottom:0}
+
+/* ── Карточка отзыва ────────────────────────────────────── */
+.quote{background:var(--sand);padding:30px;display:flex;flex-direction:column;gap:14px;height:100%}
+.quote__text,.quote > p:first-of-type{
+  font-family:var(--serif);font-size:clamp(19px,1.8vw,23px);line-height:1.35;
+  color:var(--indigo);margin:0;
+}
+.quote__author{font-size:13px;letter-spacing:.06em;color:var(--muted);margin:auto 0 0}
+
+/* ── Двухколоночная секция «текст + врезка» ─────────────── */
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+
+/* ── Врезка с фактами ───────────────────────────────────── */
+.facts{background:var(--sand);padding:28px;list-style:none;margin:0}
+.facts__row,.facts li{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;
+}
+.facts__row:last-child,.facts li:last-child{border-bottom:0;padding-bottom:0}
+.facts__label{color:var(--muted)}
+.facts__value{text-align:right}
+
+/* ── Пронумерованные шаги ───────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px);counter-reset:step;list-style:none;margin:0;padding:0}
+.step{display:flex;flex-direction:column;gap:10px}
+.step::before,.step__num{
+  counter-increment:step;content:counter(step);
+  font-family:var(--serif);font-size:clamp(42px,5vw,64px);line-height:1;
+  color:var(--gold);
+}
+.step:has(.step__num)::before{content:none}
+.step__num{counter-increment:none}
+.step h3{margin:0}
+.step p{color:var(--muted);margin:0}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* ── Блок акции ─────────────────────────────────────────── */
+.promo{border:1px solid var(--gold);background:rgba(200,169,106,.08);padding:28px;display:flex;flex-direction:column;gap:12px}
+.promo__title{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);color:var(--indigo);margin:0}
+.promo p{margin:0}
+.promo__dates{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dim)}
+.section--dark .promo__title{color:var(--white)}
+
+/* ═══ 10. Фирменные акценты отелей ═══
+   Каждая страница отеля несёт свой характер поверх общей айдентики:
+   класс на <body> переопределяет золото сети. Палитры проверены на
+   контраст (кнопки ≥4.5:1 с индиго, текстовые акценты ≥4.5:1 на белом
+   и песочном). Остальные страницы остаются в сетевом золоте. */
+.theme-amina{        /* деловой холодный синий — нейтральная подача отеля */
+  --gold:#9DB4D0;
+  --gold-dim:#7E99BC;
+  --gold-ink:#3A5A80;
+}
+.theme-cityline{     /* зелень из профиля отеля: «комфорт, стиль и домашнее тепло» */
+  --gold:#A9C3A4;
+  --gold-dim:#8CAB86;
+  --gold-ink:#3F6B4A;
+}
+.theme-botanic{      /* тёплый терракот — «гостиничный сервис и домашний уют» */
+  --gold:#D9AC93;
+  --gold-dim:#C4906F;
+  --gold-ink:#94502F;
+}
+.theme-botanic .promo{border-color:var(--gold);background:rgba(217,172,147,.12)}

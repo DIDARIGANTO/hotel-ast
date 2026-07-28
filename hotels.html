@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Отели сети AST Hotels в Астане — три адреса</title>
+<meta name="description" content="Три отеля AST Hotels в Астане: городской AMINA, бутик-отель City Line и апартаменты Botanic Garden. Фильтр по формату и району, сравнение цен и рейтингов 2ГИС.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skip">К содержимому</a>
+<header class="header header--static">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+    <nav class="nav">
+      <a href="hotels.html" data-i18n="nav.hotels">Отели</a>
+      <a href="offers.html" data-i18n="nav.offers">Предложения</a>
+      <a href="club.html" data-i18n="nav.club">AST Club</a>
+      <a href="contacts.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang">
+        <button type="button" data-lang="ru" class="is-active">RU</button>
+        <button type="button" data-lang="kk">KZ</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Бронировать</a>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero hero--compact">
+  <div class="hero__media">
+    <img src="https://images.unsplash.com/photo-1519449556851-5720b33024e7?auto=format&fit=crop&w=1600&q=80" alt="Номер городского отеля с панорамным окном и видом на город">
+  </div>
+  <div class="hero__inner">
+    <div class="container">
+      <p class="eyebrow" data-i18n="hotels.hero.eyebrow">Портфель сети</p>
+      <h1 data-i18n="hotels.hero.title">Отели сети</h1>
+      <p class="lead" data-i18n="hotels.hero.lead">Городской отель, бутик и апартаменты с кухней — три адреса в Астане с единым стандартом обслуживания; время заезда согласуем заранее.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="hotels.list.eyebrow">Выбор отеля</p>
+      <h2 data-i18n="hotels.list.title">Три адреса, три сценария поездки</h2>
+      <p class="lead" data-i18n="hotels.list.lead">Выберите формат и район — список отелей перестроится сразу.</p>
+    </div>
+
+    <div class="filters" data-filter data-type="all" data-district="all">
+      <div class="filters__group" data-key="type">
+        <b data-i18n="hotels.filter.type">Формат</b>
+        <button type="button" data-value="all" class="is-active" data-i18n="hotels.filter.all">Все</button>
+        <button type="button" data-value="hotel" data-i18n="hotels.filter.hotel">Городской</button>
+        <button type="button" data-value="boutique" data-i18n="hotels.filter.boutique">Бутик</button>
+        <button type="button" data-value="apartments" data-i18n="hotels.filter.apartments">Апартаменты</button>
+      </div>
+      <div class="filters__group" data-key="district">
+        <b data-i18n="hotels.filter.district">Район</b>
+        <button type="button" data-value="all" class="is-active" data-i18n="hotels.filter.all">Все</button>
+        <button type="button" data-value="Сарайшык" data-i18n="district.Сарайшык">Сарайшык</button>
+        <button type="button" data-value="Есиль" data-i18n="district.Есиль">Есиль</button>
+      </div>
+    </div>
+    <div class="grid grid--3" data-hotels data-filter-target></div>
+    <p class="filter-empty" data-filter-empty hidden data-i18n="hotels.empty">По этим условиям ничего не нашлось.</p>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="hotels.compare.eyebrow">Сравнение</p>
+      <h2 data-i18n="hotels.compare.title">Чем объекты отличаются</h2>
+      <p class="lead" data-i18n="hotels.compare.lead">Два формата в одном здании на Шамши Калдаякова, 15 и апартаменты с кухней в Есиле — выбирайте по сценарию поездки.</p>
+    </div>
+
+    <div class="table-scroll reveal">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="hotels.compare.param">Параметр</th>
+            <th scope="col">AMINA Hotel</th>
+            <th scope="col">City Line Hotel</th>
+            <th scope="col">Botanic Garden Apartments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" data-i18n="hotels.compare.format">Формат</th>
+            <td data-i18n="hotels.type.hotel">Городской отель</td>
+            <td data-i18n="hotels.type.boutique">Бутик-отель</td>
+            <td data-i18n="hotels.type.apartments">Апартаменты</td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="hotels.compare.district">Район</th>
+            <td data-i18n="hotels.district.sarayshyk">Сарайшык</td>
+            <td data-i18n="hotels.district.sarayshyk">Сарайшык</td>
+            <td data-i18n="hotels.district.esil">Есиль</td>
+          </tr>
+          <!-- Цены и рейтинги заполняет скрипт из assets/js/hotels.js.
+               Текст внутри ячеек — запасной вариант для случая без JS. -->
+          <tr>
+            <th scope="row" data-i18n="hotels.compare.price">Цена от, за ночь</th>
+            <td data-cell="price" data-hotel="amina">12 000 ₸</td>
+            <td data-cell="price" data-hotel="cityline">25 000 ₸</td>
+            <td data-cell="price" data-hotel="botanic" data-i18n="hotels.compare.tbd">уточняется</td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="hotels.compare.rating">Рейтинг 2ГИС</th>
+            <td data-cell="rating" data-hotel="amina"><span class="rating"><span class="rating__star">★</span>4.7</span></td>
+            <td data-cell="rating" data-hotel="cityline"><span class="rating"><span class="rating__star">★</span>4.9</span></td>
+            <td data-cell="rating" data-hotel="botanic"><span class="rating"><span class="rating__star">★</span>4.6</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="summary__note reveal" data-i18n="hotels.compare.note">Цены — минимальные на момент публикации, окончательную стоимость отель подтверждает при бронировании. Оценки — из карточек 2ГИС на июль 2026 года.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+        <p data-i18n="footer.about">Три отеля в Астане: городской, бутик и апартаменты.</p>
+      </div>
+      <div>
+        <h4>AMINA Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77013353530">+7 701 335 35 30</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>City Line Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.cityline.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77759590088">+7 775 959 00 88</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Botanic Garden Apartments</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.botanic.addr">ул. Туркестан, 14а</li>
+          <li><a href="tel:+77027771503">+7 702 777 15 03</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <span data-i18n="footer.city">Астана, Казахстан</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui.js"></script>
+<script type="module" src="assets/js/i18n.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AST Hotels — три отеля в Астане</title>
+<meta name="description" content="Сеть AST Hotels в Астане: городской отель AMINA, бутик-отель City Line и апартаменты Botanic Garden. Прямое бронирование без посредников, заявка в WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skip">К содержимому</a>
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+    <nav class="nav">
+      <a href="hotels.html" data-i18n="nav.hotels">Отели</a>
+      <a href="offers.html" data-i18n="nav.offers">Предложения</a>
+      <a href="club.html" data-i18n="nav.club">AST Club</a>
+      <a href="contacts.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang">
+        <button type="button" data-lang="ru" class="is-active">RU</button>
+        <button type="button" data-lang="kk">KZ</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Бронировать</a>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero: сеть целиком, поэтому фото города, а не конкретного отеля -->
+<section class="hero">
+  <div class="hero__media">
+    <img src="https://images.unsplash.com/photo-1703690693312-2c18e6e2631f?auto=format&fit=crop&w=1600&q=80" alt="Панорама Астаны на закате: высотные дома нового центра">
+  </div>
+  <div class="hero__inner">
+    <div class="container">
+      <p class="eyebrow" data-i18n="home.hero.eyebrow">Сеть отелей Астаны</p>
+      <h1 data-i18n="home.hero.title">Три адреса. Один стандарт гостеприимства.</h1>
+      <p class="lead" data-i18n="home.hero.lead">Городской отель, бутик-отель и апартаменты с кухней в новом центре Астаны. Бронирование напрямую, без комиссии агрегаторов.</p>
+      <p>
+        <a class="btn btn--gold" href="hotels.html" data-i18n="home.hero.cta1">Подобрать отель</a>
+        <a class="btn btn--ghost" href="booking.html" data-i18n="home.hero.cta2">Забронировать</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Полоса поиска: значения уходят в booking.html строкой запроса -->
+<div class="container">
+  <form class="searchbar" action="booking.html" method="get">
+    <label>
+      <span data-i18n="home.search.hotel">Отель</span>
+      <select name="hotel">
+        <option value="amina">AMINA Hotel</option>
+        <option value="cityline">City Line Hotel</option>
+        <option value="botanic">Botanic Garden Apartments</option>
+      </select>
+    </label>
+    <label>
+      <span data-i18n="home.search.in">Заезд</span>
+      <input type="date" name="in">
+    </label>
+    <label>
+      <span data-i18n="home.search.out">Выезд</span>
+      <input type="date" name="out">
+    </label>
+    <label>
+      <span data-i18n="home.search.guests">Гости</span>
+      <input type="number" name="guests" min="1" max="6" value="2">
+    </label>
+    <button class="btn btn--gold" type="submit" data-i18n="home.search.submit">Найти</button>
+  </form>
+</div>
+
+<!-- Портфель сети: карточки рендерит assets/js/pages.js из hotels.js -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="home.portfolio.eyebrow">Портфель сети</p>
+      <h2 data-i18n="home.portfolio.title">Три формата под разные поездки</h2>
+      <p class="lead" data-i18n="home.portfolio.lead">Командировка на пару ночей, выходные в городе или долгая поездка с семьёй — в сети найдётся подходящий формат и бюджет.</p>
+    </div>
+    <div class="grid grid--3" data-hotels></div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="home.why.eyebrow">Преимущества сети</p>
+      <h2 data-i18n="home.why.title">Почему бронировать напрямую</h2>
+    </div>
+    <div class="grid grid--4">
+      <div class="step reveal">
+        <span class="step__num">3</span>
+        <h3 data-i18n="home.why.1">Три локации в центре</h3>
+        <p class="lead" data-i18n="home.why.1.text">AMINA и City Line стоят в одном здании на Шамши Калдаякова, Botanic Garden Apartments — у ботанического сада.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">24/7</span>
+        <h3 data-i18n="home.why.2">Стойка работает круглосуточно</h3>
+        <p class="lead" data-i18n="home.why.2.text">Ночной заезд согласуем заранее: напишите рейс и время прилёта, и вас встретят.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">0 %</span>
+        <h3 data-i18n="home.why.3">Прямая бронь без комиссии</h3>
+        <p class="lead" data-i18n="home.why.3.text">Заявка уходит в WhatsApp выбранного отеля: цену не увеличивает ни один посредник.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">4.9</span>
+        <h3 data-i18n="home.why.4">Рейтинг 4.6–4.9 в 2ГИС</h3>
+        <p class="lead" data-i18n="home.why.4.text">Оценки трёх отелей сети на июль 2026 года — по данным карточек 2ГИС; актуальные цифры всегда видны в самих карточках.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <div class="grid grid--2 reveal">
+      <div>
+        <p class="eyebrow" data-i18n="home.club.eyebrow">Программа лояльности</p>
+        <h2 data-i18n="home.club.title">AST Club: выгода с первой брони</h2>
+        <p class="lead" data-i18n="home.club.text">Три уровня — Silver, Gold и Platinum: скидка на проживание, поздний выезд и повышение категории при наличии свободных номеров. Ночи считаются во всех трёх отелях сети.</p>
+        <p><a class="btn btn--dark" href="club.html" data-i18n="home.club.cta">Условия программы</a></p>
+      </div>
+      <div class="card__media">
+        <img src="https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&w=1600&q=80" alt="Лобби отеля с деревянными панелями, креслами и живыми растениями" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Отзывы: сводные оценки 2ГИС, без цитат от имени конкретных гостей -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="home.reviews.eyebrow">Оценки гостей</p>
+      <h2 data-i18n="home.reviews.title">Что говорят оценки 2ГИС</h2>
+      <p class="lead" data-i18n="home.reviews.lead">Сводные баллы трёх отелей сети на июль 2026 года. Отдельные отзывы гостей открыты в карточках 2ГИС.</p>
+    </div>
+    <div class="grid grid--3">
+      <article class="quote reveal">
+        <span class="rating"><span class="rating__star">★</span>4.7
+          <span class="rating__count" data-i18n="home.reviews.amina.count">436 оценок</span></span>
+        <p class="quote__text" data-i18n="home.reviews.amina.text">Городской отель у делового центра: круглосуточная стойка, завтрак, парковка и трансфер по договорённости.</p>
+        <p class="quote__author">AMINA Hotel · <span data-i18n="home.reviews.source">Рейтинг 2ГИС, июль 2026 · описание отеля от сети</span></p>
+      </article>
+      <article class="quote reveal">
+        <span class="rating"><span class="rating__star">★</span>4.9
+          <span class="rating__count" data-i18n="home.reviews.cityline.count">68 оценок</span></span>
+        <p class="quote__text" data-i18n="home.reviews.cityline.text">Самая высокая оценка в сети. Бутик-формат: немного номеров, бар и панорамные виды на город.</p>
+        <p class="quote__author">City Line Hotel · <span data-i18n="home.reviews.source">Рейтинг 2ГИС, июль 2026 · описание отеля от сети</span></p>
+      </article>
+      <article class="quote reveal">
+        <span class="rating"><span class="rating__star">★</span>4.6
+          <span class="rating__count" data-i18n="home.reviews.botanic.count">503 оценки</span></span>
+        <p class="quote__text" data-i18n="home.reviews.botanic.text">Больше всего отзывов в сети. Апартаменты с кухней, стиральной машиной и рабочим местом — для долгих поездок.</p>
+        <p class="quote__author">Botanic Garden Apartments · <span data-i18n="home.reviews.source">Рейтинг 2ГИС, июль 2026 · описание отеля от сети</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="home.cta.eyebrow">Подбор отеля</p>
+      <h2 data-i18n="home.cta.title">Не определились? Подберём отель под задачу</h2>
+      <p class="lead" data-i18n="home.cta.text">Напишите даты, число гостей и бюджет — предложим вариант в одном из трёх отелей сети и подтвердим свободные номера.</p>
+      <p><a class="btn btn--gold" href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="home.cta.button">Написать в WhatsApp</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+        <p data-i18n="footer.about">Три отеля в Астане: городской, бутик и апартаменты.</p>
+      </div>
+      <div>
+        <h4>AMINA Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77013353530">+7 701 335 35 30</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>City Line Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.cityline.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77759590088">+7 775 959 00 88</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Botanic Garden Apartments</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.botanic.addr">ул. Туркестан, 14а</li>
+          <li><a href="tel:+77027771503">+7 702 777 15 03</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <span data-i18n="footer.city">Астана, Казахстан</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui.js"></script>
+<script type="module" src="assets/js/i18n.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+</body>
+</html>

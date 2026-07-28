@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бронирование номера — AST Hotels, Астана</title>
+<meta name="description" content="Бронирование в отелях сети AST Hotels: выберите отель, категорию, даты и услуги — стоимость посчитается сразу, а заявка уйдёт в WhatsApp выбранного отеля.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skip">К содержимому</a>
+<header class="header header--static">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+    <nav class="nav">
+      <a href="hotels.html" data-i18n="nav.hotels">Отели</a>
+      <a href="offers.html" data-i18n="nav.offers">Предложения</a>
+      <a href="club.html" data-i18n="nav.club">AST Club</a>
+      <a href="contacts.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang">
+        <button type="button" data-lang="ru" class="is-active">RU</button>
+        <button type="button" data-lang="kk">KZ</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Бронировать</a>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero hero--compact">
+  <div class="hero__media">
+    <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1600&q=80" alt="Лаундж-зона в лобби отеля с мягкими диванами и торшерами">
+  </div>
+  <div class="hero__inner">
+    <div class="container">
+      <p class="eyebrow" data-i18n="booking.eyebrow">Бронирование</p>
+      <h1 data-i18n="booking.title">Забронировать номер</h1>
+      <p class="lead" data-i18n="booking.lead">Заполните форму — стоимость пересчитывается на лету, а заявка уходит прямо в WhatsApp выбранного отеля. Подтверждение приходит в ответном сообщении.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="book">
+
+      <form id="booking-form" novalidate>
+        <h2 data-i18n="booking.stay.title">Проживание</h2>
+
+        <label class="field">
+          <span data-i18n="booking.field.hotel">Отель</span>
+          <select name="hotel" required></select>
+        </label>
+
+        <label class="field">
+          <span data-i18n="booking.field.room">Категория номера</span>
+          <select name="room" required></select>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="booking.field.in">Заезд</span>
+            <input type="date" name="in" required>
+            <span class="field__error" data-i18n="booking.error.in">Укажите дату заезда.</span>
+          </label>
+          <label class="field">
+            <span data-i18n="booking.field.out">Выезд</span>
+            <input type="date" name="out" required>
+            <span class="field__error" data-i18n="booking.error.out">Дата выезда должна быть позже даты заезда.</span>
+          </label>
+        </div>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="booking.field.rooms">Номеров</span>
+            <input type="number" name="rooms" min="1" max="6" step="1" value="1" inputmode="numeric" required>
+          </label>
+          <label class="field">
+            <span data-i18n="booking.field.guests">Гостей</span>
+            <input type="number" name="guests" min="1" max="6" step="1" value="2" inputmode="numeric" required>
+            <span class="field__error" data-i18n="booking.error.guests">Столько гостей в выбранной категории не размещается — число уменьшено до максимума.</span>
+          </label>
+        </div>
+
+        <h3 data-i18n="booking.extras.title">Дополнительные услуги</h3>
+        <p class="summary__note" data-i18n="booking.extras.note">Услуги можно добавить и позже, при заселении. Их стоимость сразу входит в сводку справа.</p>
+        <div class="extras">
+          <label>
+            <input type="checkbox" name="extra-breakfast">
+            <span data-i18n="booking.extra.breakfast">Завтрак — за каждого гостя за ночь</span>
+          </label>
+          <label>
+            <input type="checkbox" name="extra-transfer">
+            <span data-i18n="booking.extra.transfer">Трансфер из аэропорта — разово за бронь</span>
+          </label>
+          <label>
+            <input type="checkbox" name="extra-parking">
+            <span data-i18n="booking.extra.parking">Охраняемая парковка — за ночь</span>
+          </label>
+          <label>
+            <input type="checkbox" name="extra-latecheckout">
+            <span data-i18n="booking.extra.latecheckout">Поздний выезд после 14:00 — разово за бронь</span>
+          </label>
+        </div>
+
+        <h3 data-i18n="booking.guest.title">Контакты гостя</h3>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="booking.field.name">Имя и фамилия</span>
+            <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="Как к вам обращаться" required>
+            <span class="field__error" data-i18n="booking.error.name">Напишите имя — так мы обратимся к вам в ответе.</span>
+          </label>
+          <label class="field">
+            <span data-i18n="booking.field.phone">Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" data-i18n-attr="placeholder:booking.ph.phone" placeholder="+7 (___) ___ __ __" required>
+            <span class="field__error" data-i18n="booking.error.phone">Введите номер целиком — не меньше 10 цифр.</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span data-i18n="booking.field.comment">Комментарий</span>
+          <textarea name="comment" rows="4" data-i18n-attr="placeholder:booking.ph.comment" placeholder="Ранний заезд, вид из окна, детская кроватка — что важно учесть"></textarea>
+        </label>
+
+        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Отправить в WhatsApp</button></p>
+        <p class="summary__note" data-i18n="booking.legal">Заявка не списывает деньги: отель подтверждает даты и стоимость в ответном сообщении.</p>
+
+        <div class="form-done" role="status" aria-live="polite">
+          <h3 data-i18n="booking.done.title">Заявка собрана</h3>
+          <p data-i18n="booking.done.text">Мы открыли WhatsApp с готовым текстом. Если вкладка не открылась, скопируйте текст ниже и отправьте его нам сами.</p>
+          <pre></pre>
+        </div>
+      </form>
+
+      <aside class="summary">
+        <h3 data-i18n="booking.summary.title">Ваша бронь</h3>
+        <div class="summary__row">
+          <span data-i18n="booking.summary.nights">Ночей</span>
+          <span data-sum="nights">0</span>
+        </div>
+        <div class="summary__row">
+          <span data-i18n="booking.summary.base">Проживание</span>
+          <span data-sum="base">—</span>
+        </div>
+        <div class="summary__row summary__row--promo" hidden>
+          <span data-i18n="booking.summary.discount">Скидка по акции</span>
+          <span data-sum="discount">—</span>
+        </div>
+        <div class="summary__row">
+          <span data-i18n="booking.summary.extras">Услуги</span>
+          <span data-sum="extras">—</span>
+        </div>
+        <div class="summary__row summary__row--total">
+          <span data-i18n="booking.summary.total">Итого</span>
+          <span data-sum="total">—</span>
+        </div>
+        <p class="summary__note" data-i18n="booking.summary.note">Оплата в отеле при заселении — наличными или картой. В высокий сезон отель может попросить предоплату за первую ночь.</p>
+        <p class="summary__note" data-i18n="booking.summary.hint">Расчёт предварительный. Окончательную стоимость отель подтверждает в WhatsApp.</p>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <p class="eyebrow" data-i18n="booking.direct.eyebrow">Без формы</p>
+    <h2 data-i18n="booking.direct.title">Позвонить или написать напрямую</h2>
+    <p class="lead" data-i18n="booking.direct.lead">Если удобнее голосом или в мессенджере — свяжитесь со стойкой нужного отеля.</p>
+    <div class="grid grid--3">
+      <article class="contact-card reveal">
+        <h3>AMINA Hotel</h3>
+        <p data-i18n="booking.direct.amina">Городской отель в Сарайшыке, на Шамши Калдаякова, 15 — четыре категории номеров.</p>
+        <p><a href="tel:+77013353530">+7 701 335 35 30</a></p>
+        <p><a href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="booking.direct.whatsapp">Написать в WhatsApp</a></p>
+      </article>
+      <article class="contact-card reveal">
+        <h3>City Line Hotel</h3>
+        <p data-i18n="booking.direct.cityline">Бутик-отель с панорамными номерами и лобби-баром.</p>
+        <p><a href="tel:+77759590088">+7 775 959 00 88</a></p>
+        <p><a href="https://wa.me/77759590088" target="_blank" rel="noopener" data-i18n="booking.direct.whatsapp">Написать в WhatsApp</a></p>
+      </article>
+      <article class="contact-card reveal">
+        <h3>Botanic Garden Apartments</h3>
+        <p data-i18n="booking.direct.botanic">Апартаменты с кухней у Ботанического сада — для долгих поездок.</p>
+        <p><a href="tel:+77027771503">+7 702 777 15 03</a></p>
+        <p><a href="https://wa.me/77027771503" target="_blank" rel="noopener" data-i18n="booking.direct.whatsapp">Написать в WhatsApp</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+        <p data-i18n="footer.about">Три отеля в Астане: городской, бутик и апартаменты.</p>
+      </div>
+      <div>
+        <h4>AMINA Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77013353530">+7 701 335 35 30</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>City Line Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.cityline.addr">ул. Шамши Калдаякова, 15</li>
+          <li><a href="tel:+77759590088">+7 775 959 00 88</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Botanic Garden Apartments</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.botanic.addr">ул. Туркестан, 14а</li>
+          <li><a href="tel:+77027771503">+7 702 777 15 03</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <span data-i18n="footer.city">Астана, Казахстан</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui.js"></script>
+<script type="module" src="assets/js/i18n.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+<script type="module" src="assets/js/booking-form.js"></script>
+</body>
+</html>
