@@ -158,7 +158,7 @@ p{margin:0 0 1em}
 @media (max-width:1024px){
   .burger{display:block;margin-left:auto}
   .nav{
-    position:fixed;inset:76px 0 auto;background:var(--indigo);color:var(--white);
+    position:fixed;inset:76px 0 0;overflow:auto;background:var(--indigo);color:var(--white);
     flex-direction:column;gap:0;padding:16px var(--gutter) 32px;margin:0;
     transform:translateY(-120%);visibility:hidden;
     transition:transform .4s var(--ease),visibility .4s var(--ease);
@@ -166,7 +166,15 @@ p{margin:0 0 1em}
   .nav.is-open{transform:none;visibility:visible}
   .nav a{padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:15px}
   .header__actions{display:none}
-  .nav.is-open ~ .header__actions{display:flex}
+  /* При открытом меню язык и «Бронировать» уходят в панель внизу экрана:
+     в строке шапки рядом с логотипом и бургером им не хватает ширины,
+     и страница уезжала вправо. */
+  .nav.is-open ~ .header__actions{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:61;
+    padding:16px var(--gutter) calc(16px + env(safe-area-inset-bottom));
+    background:var(--indigo);border-top:1px solid var(--line-dark);gap:12px;
+  }
+  .nav.is-open ~ .header__actions .btn{flex:1}
 }
 
 /* ── Футер ──────────────────────────────────────────────── */

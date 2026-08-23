@@ -62,7 +62,7 @@ export function hotelCard(hotel, lang = currentLang()) {
   return `
     <article class="card reveal" data-type="${hotel.type}" data-district="${hotel.district}" data-price="${hotel.priceFrom}">
       <div class="card__media">
-        <img src="${hotel.hero}" alt="${name}" loading="lazy">
+        <img src="${hotel.hero.replace(/w=\d+/, 'w=900')}" alt="${name}" loading="lazy">
         <span class="card__badge">${t(`pages.type.${hotel.type}`, lang, hotel.type)}</span>
       </div>
       <div class="card__body">
