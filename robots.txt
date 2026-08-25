@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://didariganto.github.io/hotel-ast/sitemap.xml

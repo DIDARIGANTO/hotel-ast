@@ -9,6 +9,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<!-- SEO -->
+<link rel="canonical" href="https://didariganto.github.io/hotel-ast/">
+<link rel="alternate" hreflang="ru" href="https://didariganto.github.io/hotel-ast/">
+<link rel="alternate" hreflang="kk" href="https://didariganto.github.io/hotel-ast/?lang=kk">
+<link rel="alternate" hreflang="en" href="https://didariganto.github.io/hotel-ast/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://didariganto.github.io/hotel-ast/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AST Hotels">
+<meta property="og:title" content="AST Hotels — три отеля в Астане">
+<meta property="og:description" content="Сеть AST Hotels в Астане: городской отель AMINA, бутик-отель City Line и апартаменты Botanic Garden. Прямое бронирование без посредников, заявка в WhatsApp.">
+<meta property="og:url" content="https://didariganto.github.io/hotel-ast/">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://didariganto.github.io/hotel-ast/assets/img/cityline/city-line-hotel-astana-fasad.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "AST Hotels",
+ "url": "https://didariganto.github.io/hotel-ast/",
+ "description": "Сеть AST Hotels в Астане: городской отель AMINA, бутик-отель City Line и апартаменты Botanic Garden. Прямое бронирование без посредников, заявка в WhatsApp.",
+ "sameAs": [
+  "https://www.instagram.com/amina.hotel/",
+  "https://www.instagram.com/city_line_hotel/",
+  "https://www.instagram.com/bg.apartments/"
+ ]
+}
+</script>
+<!-- /SEO -->
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="common.skip">К содержимому</a>
@@ -36,7 +65,7 @@
 <main id="main">
 
 <!-- Hero: сеть целиком, поэтому фото города, а не конкретного отеля -->
-<section class="hero">
+<section class="hero hero--home">
   <div class="hero__media">
     <img src="https://images.unsplash.com/photo-1703690693312-2c18e6e2631f?auto=format&fit=crop&w=1600&q=80" alt="Панорама Астаны на закате: высотные дома нового центра">
   </div>
@@ -45,40 +74,27 @@
       <p class="eyebrow" data-i18n="home.hero.eyebrow">Сеть отелей Астаны</p>
       <h1 data-i18n="home.hero.title">Три адреса. Один стандарт гостеприимства.</h1>
       <p class="lead" data-i18n="home.hero.lead">Городской отель, бутик-отель и апартаменты с кухней в новом центре Астаны. Бронирование напрямую, без комиссии агрегаторов.</p>
+      <nav class="hero-choice" aria-label="Выбор отеля">
+        <a href="amina.html">
+          <b>AMINA Hotel</b>
+          <span data-i18n="pages.type.hotel">Городской отель</span>
+        </a>
+        <a href="cityline.html">
+          <b>City Line Hotel</b>
+          <span data-i18n="pages.type.boutique">Бутик-отель</span>
+        </a>
+        <a href="botanic.html">
+          <b>Botanic Garden</b>
+          <span data-i18n="pages.type.apartments">Апартаменты</span>
+        </a>
+      </nav>
       <p>
-        <a class="btn btn--gold" href="hotels.html" data-i18n="home.hero.cta1">Подобрать отель</a>
-        <a class="btn btn--ghost" href="booking.html" data-i18n="home.hero.cta2">Забронировать</a>
+        <a class="btn btn--gold" href="booking.html" data-i18n="home.hero.cta2">Забронировать</a>
       </p>
     </div>
   </div>
 </section>
 
-<!-- Полоса поиска: значения уходят в booking.html строкой запроса -->
-<div class="container">
-  <form class="searchbar" action="booking.html" method="get">
-    <label>
-      <span data-i18n="home.search.hotel">Отель</span>
-      <select name="hotel">
-        <option value="amina">AMINA Hotel</option>
-        <option value="cityline">City Line Hotel</option>
-        <option value="botanic">Botanic Garden Apartments</option>
-      </select>
-    </label>
-    <label>
-      <span data-i18n="home.search.in">Заезд</span>
-      <input type="date" name="in">
-    </label>
-    <label>
-      <span data-i18n="home.search.out">Выезд</span>
-      <input type="date" name="out">
-    </label>
-    <label>
-      <span data-i18n="home.search.guests">Гости</span>
-      <input type="number" name="guests" min="1" max="6" value="2">
-    </label>
-    <button class="btn btn--gold" type="submit" data-i18n="home.search.submit">Найти</button>
-  </form>
-</div>
 
 <!-- Портфель сети: карточки рендерит assets/js/pages.js из hotels.js -->
 <section class="section">

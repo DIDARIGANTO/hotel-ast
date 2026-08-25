@@ -24,7 +24,7 @@ export const HOTELS = [
     roomsTotal: 21,
     gis: 'https://2gis.kz/astana/firm/70000001060984202',
     instagram: 'https://www.instagram.com/amina.hotel/',
-    hero: 'https://images.unsplash.com/photo-1765009434216-d232ecd3bbf4?auto=format&fit=crop&w=1920&q=80',
+    hero: 'assets/img/amina/amina-hotel-astana-fasad.jpg',
     amenities: ['wifi', 'parking', 'breakfast', 'reception24', 'coworking', 'transfer'],
     rooms: [
       {
@@ -34,7 +34,7 @@ export const HOTELS = [
         guests: 2,
         beds: '1 двуспальная кровать',
         price: 12000,
-        img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-standart.jpg',
       },
       {
         id: 'twin',
@@ -43,7 +43,7 @@ export const HOTELS = [
         guests: 2,
         beds: '2 односпальные кровати',
         price: 19000,
-        img: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-tvin.jpg',
       },
       {
         id: 'junior',
@@ -52,7 +52,7 @@ export const HOTELS = [
         guests: 3,
         beds: '1 двуспальная + диван',
         price: 26000,
-        img: 'https://images.unsplash.com/photo-1776763018821-8feeaeeee0a5?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-polulyuks.jpg',
       },
       {
         id: 'lux',
@@ -61,7 +61,7 @@ export const HOTELS = [
         guests: 4,
         beds: '1 двуспальная + гостиная',
         price: 38000,
-        img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-lyuks.jpg',
       },
     ],
   },
@@ -82,7 +82,7 @@ export const HOTELS = [
     gis: 'https://2gis.kz/astana/firm/70000001105837375',
     instagram: 'https://www.instagram.com/city_line_hotel/',
     tour3d: true,
-    hero: 'https://images.unsplash.com/photo-1771206331424-44b8ec9acdf4?auto=format&fit=crop&w=1920&q=80',
+    hero: 'assets/img/cityline/city-line-hotel-astana-fasad.jpg',
     amenities: ['wifi', 'parking', 'breakfast', 'reception24', 'bar', 'transfer'],
     // Категории и цены — из прайса в Instagram отеля (июль 2026).
     // Площади и спальные места по-прежнему предположение.
@@ -94,7 +94,7 @@ export const HOTELS = [
         guests: 2,
         beds: '1 двуспальная кровать',
         price: 25000,
-        img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/cityline/city-line-hotel-astana-nomer-ekonom.jpg',
       },
       {
         id: 'standard',
@@ -103,7 +103,7 @@ export const HOTELS = [
         guests: 2,
         beds: '1 двуспальная кровать',
         price: 28000,
-        img: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/cityline/city-line-hotel-astana-nomer-standart.jpg',
       },
       {
         id: 'twin',
@@ -112,7 +112,7 @@ export const HOTELS = [
         guests: 2,
         beds: '2 односпальные кровати',
         price: 30000,
-        img: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/cityline/city-line-hotel-astana-nomer-tvin.jpg',
       },
       {
         id: 'delux',
@@ -121,7 +121,7 @@ export const HOTELS = [
         guests: 3,
         beds: '1 двуспальная кровать и зона отдыха',
         price: 35000,
-        img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/cityline/city-line-hotel-astana-nomer-delux.jpg',
       },
     ],
   },

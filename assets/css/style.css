@@ -204,6 +204,19 @@ p{margin:0 0 1em}
 .hero h1{max-width:16ch}
 .hero .lead{color:rgba(255,255,255,.82)}
 .hero--compact{min-height:clamp(380px,54vh,560px)}
+.hero--home{min-height:clamp(520px,68vh,760px)}
+
+/* Мгновенный выбор отеля в hero главной */
+.hero-choice{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 22px}
+.hero-choice a{
+  display:flex;flex-direction:column;gap:3px;padding:14px 22px;min-width:180px;
+  border:1px solid rgba(255,255,255,.35);background:rgba(16,27,51,.45);
+  transition:border-color .25s var(--ease),background .25s var(--ease),transform .25s var(--ease);
+}
+.hero-choice a:hover{border-color:var(--gold);background:rgba(16,27,51,.7);transform:translateY(-2px)}
+.hero-choice b{font-family:var(--serif);font-size:19px;font-weight:500}
+.hero-choice span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+@media (max-width:640px){.hero-choice{flex-direction:column}.hero-choice a{min-width:0}}
 
 .card__badge{
   position:absolute;left:0;top:16px;background:var(--indigo);color:var(--white);
@@ -415,10 +428,10 @@ textarea:focus-visible,
    класс на <body> переопределяет золото сети. Палитры проверены на
    контраст (кнопки ≥4.5:1 с индиго, текстовые акценты ≥4.5:1 на белом
    и песочном). Остальные страницы остаются в сетевом золоте. */
-.theme-amina{        /* деловой холодный синий — нейтральная подача отеля */
-  --gold:#9DB4D0;
-  --gold-dim:#7E99BC;
-  --gold-ink:#3A5A80;
+.theme-amina{        /* приглушённый фиолет — кресла и вывеска отеля */
+  --gold:#B3A5D6;
+  --gold-dim:#9887C2;
+  --gold-ink:#5B4A8A;
 }
 .theme-cityline{     /* зелень из профиля отеля: «комфорт, стиль и домашнее тепло» */
   --gold:#A9C3A4;
