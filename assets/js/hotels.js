@@ -144,7 +144,7 @@ export const HOTELS = [
     gis: 'https://2gis.kz/astana/firm/70000001044528049',
     instagram: 'https://www.instagram.com/bg.apartments/',
     promo: { discount: 0.15, from: '2026-06-15', to: '2026-08-31' },
-    hero: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1920&q=80',
+    hero: 'assets/img/botanic/botanic-garden-astana-studiya.jpg',
     amenities: ['wifi', 'kitchen', 'parking', 'reception24', 'laundry', 'workspace'],
     rooms: [
       {
@@ -154,7 +154,7 @@ export const HOTELS = [
         guests: 2,
         beds: '1 двуспальная кровать, кухня',
         price: 18000,
-        img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/botanic/botanic-garden-astana-studiya-gostinaya.jpg',
       },
       {
         id: 'apt1',
@@ -163,7 +163,7 @@ export const HOTELS = [
         guests: 3,
         beds: 'спальня + гостиная с кухней',
         price: 24000,
-        img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/botanic/botanic-garden-astana-apartament-1-spalnya.jpg',
       },
       {
         id: 'apt2',
@@ -172,16 +172,7 @@ export const HOTELS = [
         guests: 5,
         beds: '2 спальни + гостиная с кухней',
         price: 35000,
-        img: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80',
-      },
-      {
-        id: 'panoramic',
-        name: 'Панорамный апартамент',
-        area: 70,
-        guests: 6,
-        beds: '2 спальни, панорамные окна',
-        price: 45000,
-        img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+        img: 'assets/img/botanic/botanic-garden-astana-apartament-2-spalnya.jpg',
       },
     ],
   },

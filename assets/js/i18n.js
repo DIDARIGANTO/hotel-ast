@@ -192,7 +192,7 @@ export const DICT = {
     'hotel.botanic.about.more': 'Комплекс стоит на улице Туркестан, в тихой части Есиля, рядом с Ботаническим садом.',
     'hotel.botanic.amenities.title': 'Что входит в проживание',
     'hotel.botanic.gallery.title': 'Гостиные, кухни и вид на сад',
-    'hotel.botanic.rooms.title': 'Четыре планировки: от студии до двух спален',
+    'hotel.botanic.rooms.title': 'Три планировки: от студии до двух спален',
     'hotel.botanic.location.title': 'Есиль, тихая сторона у Ботанического сада',
     'hotel.botanic.location.text': 'Улица Туркестан идёт вдоль Ботанического сада — зелёной части Есиля. Выставочный комплекс EXPO и офисы на Мангилик Ел находятся в том же районе; маршрут удобно построить в 2ГИС.',
     'hotel.botanic.near.garden': 'Ботанический сад',
@@ -357,7 +357,7 @@ export const DICT = {
     'booking.direct.title': 'Позвонить или написать напрямую',
     'booking.direct.lead': 'Если удобнее голосом или в мессенджере — свяжитесь со стойкой нужного отеля.',
     'booking.direct.amina': 'Городской отель в Сарайшыке, на Шамши Калдаякова, 15 — четыре категории номеров.',
-    'booking.direct.cityline': 'Бутик-отель с панорамными номерами и лобби-баром.',
+    'booking.direct.cityline': 'Бутик-отель с лобби-баром и четырьмя категориями номеров.',
     'booking.direct.botanic': 'Апартаменты с кухней у Ботанического сада — для долгих поездок.',
     'booking.direct.whatsapp': 'Написать в WhatsApp',
     // ── Контакты: обложка и адреса ─────────────────────────────
@@ -444,7 +444,6 @@ export const DICT = {
     'room.botanic.studio': 'Студия',
     'room.botanic.apt1': 'Апартамент, 1 спальня',
     'room.botanic.apt2': 'Апартамент, 2 спальни',
-    'room.botanic.panoramic': 'Панорамный апартамент',
     'beds.amina.standard': '1 двуспальная кровать',
     'beds.amina.twin': '2 односпальные кровати',
     'beds.amina.junior': '1 двуспальная и диван',
@@ -452,7 +451,6 @@ export const DICT = {
     'beds.botanic.studio': '1 двуспальная кровать, кухня',
     'beds.botanic.apt1': 'спальня и гостиная с кухней',
     'beds.botanic.apt2': '2 спальни и гостиная с кухней',
-    'beds.botanic.panoramic': '2 спальни, панорамные окна',
   },
   kk: {
     // ── Навигация и общие ──────────────────────────────────────
@@ -643,7 +641,7 @@ export const DICT = {
     'hotel.botanic.about.more': 'Кешен Түркістан көшесінде, Есілдің тыныш бөлігінде, Ботаникалық бақтың қасында орналасқан.',
     'hotel.botanic.amenities.title': 'Тұру құнына не кіреді',
     'hotel.botanic.gallery.title': 'Қонақ бөлмелер, ас үйлер және баққа көрініс',
-    'hotel.botanic.rooms.title': 'Төрт жоспарлау: студиядан екі жатын бөлмеге дейін',
+    'hotel.botanic.rooms.title': 'Үш жоспарлау: студиядан екі жатын бөлмеге дейін',
     'hotel.botanic.location.title': 'Есіл, Ботаникалық бақ жанындағы тыныш жақ',
     'hotel.botanic.location.text': 'Түркістан көшесі Ботаникалық бақтың — Есілдің жасыл бөлігінің — бойымен өтеді. EXPO көрме кешені мен Мәңгілік Елдегі кеңселер осы ауданда орналасқан; бағытты 2ГИС-те құрған ыңғайлы.',
     'hotel.botanic.near.garden': 'Ботаникалық бақ',
@@ -808,7 +806,7 @@ export const DICT = {
     'booking.direct.title': 'Тікелей қоңырау шалу немесе жазу',
     'booking.direct.lead': 'Дауыспен немесе мессенджерде ыңғайлы болса, қажет қонақ үйдің тіркеу орнына хабарласыңыз.',
     'booking.direct.amina': 'Сарайшықтағы, Шәмші Қалдаяқов көшесі, 15 мекенжайындағы қалалық қонақ үй — нөмірдің төрт санаты.',
-    'booking.direct.cityline': 'Панорамалық нөмірлері және лобби-бары бар бутик-қонақ үй.',
+    'booking.direct.cityline': 'Лобби-бары және төрт санаттағы нөмірлері бар бутик-қонақ үй.',
     'booking.direct.botanic': 'Ботаникалық бақтың жанындағы ас үйі бар апартаменттер — ұзақ сапарға.',
     'booking.direct.whatsapp': 'WhatsApp-қа жазу',
     // ── Контакты: обложка и адреса ─────────────────────────────
@@ -895,7 +893,6 @@ export const DICT = {
     'room.botanic.studio': 'Студия',
     'room.botanic.apt1': 'Апартамент, 1 жатын бөлме',
     'room.botanic.apt2': 'Апартамент, 2 жатын бөлме',
-    'room.botanic.panoramic': 'Панорамалық апартамент',
     'beds.amina.standard': '1 екі орындық төсек',
     'beds.amina.twin': '2 бір орындық төсек',
     'beds.amina.junior': '1 екі орындық төсек және диван',
@@ -903,7 +900,6 @@ export const DICT = {
     'beds.botanic.studio': '1 екі орындық төсек, ас үй',
     'beds.botanic.apt1': 'жатын бөлме және ас үйі бар қонақ бөлме',
     'beds.botanic.apt2': '2 жатын бөлме және ас үйі бар қонақ бөлме',
-    'beds.botanic.panoramic': '2 жатын бөлме, панорамалық терезелер',
   },
   en: {
     // ── Навигация и общие ──────────────────────────────────────
@@ -1094,7 +1090,7 @@ export const DICT = {
     'hotel.botanic.about.more': 'The complex stands on Turkestan St., in a quiet part of Esil, next to the Botanical Garden.',
     'hotel.botanic.amenities.title': 'What the rate includes',
     'hotel.botanic.gallery.title': 'Living rooms, kitchens and garden views',
-    'hotel.botanic.rooms.title': 'Four layouts: from a studio to two bedrooms',
+    'hotel.botanic.rooms.title': 'Three layouts: from a studio to two bedrooms',
     'hotel.botanic.location.title': 'Esil, the quiet side by the Botanical Garden',
     'hotel.botanic.location.text': 'Turkestan St. runs along the Botanical Garden, the green part of Esil. The EXPO exhibition complex and the offices on Mangilik El are in the same district; 2GIS is the easy way to plan the route.',
     'hotel.botanic.near.garden': 'Botanical Garden',
@@ -1259,7 +1255,7 @@ export const DICT = {
     'booking.direct.title': 'Call or message us directly',
     'booking.direct.lead': 'If you would rather talk or use a messenger, contact the desk of the hotel you need.',
     'booking.direct.amina': 'A city hotel in Sarayshyk, at 15 Shamshi Kaldayakov St., with four room categories.',
-    'booking.direct.cityline': 'A boutique hotel with panoramic rooms and a lobby bar.',
+    'booking.direct.cityline': 'A boutique hotel with a lobby bar and four room categories.',
     'booking.direct.botanic': 'Apartments with kitchens by the Botanical Garden, made for long stays.',
     'booking.direct.whatsapp': 'Message on WhatsApp',
     // ── Контакты: обложка и адреса ─────────────────────────────
@@ -1346,7 +1342,6 @@ export const DICT = {
     'room.botanic.studio': 'Studio',
     'room.botanic.apt1': 'One-bedroom apartment',
     'room.botanic.apt2': 'Two-bedroom apartment',
-    'room.botanic.panoramic': 'Panoramic apartment',
     'beds.amina.standard': '1 double bed',
     'beds.amina.twin': '2 single beds',
     'beds.amina.junior': '1 double bed and a sofa',
@@ -1354,7 +1349,6 @@ export const DICT = {
     'beds.botanic.studio': '1 double bed, kitchen',
     'beds.botanic.apt1': 'bedroom and living room with kitchen',
     'beds.botanic.apt2': '2 bedrooms and living room with kitchen',
-    'beds.botanic.panoramic': '2 bedrooms, panoramic windows',
   },
 };
 
