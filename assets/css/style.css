@@ -444,3 +444,56 @@ textarea:focus-visible,
   --gold-ink:#94502F;
 }
 .theme-botanic .promo{border-color:var(--gold);background:rgba(217,172,147,.12)}
+
+/* ═══ 11. Казахский орнамент ═══
+   Мотив «қошқар мүйіз» (бараний рог) тонкой линией. Рисуется маской,
+   поэтому цвет берётся из --gold и меняется вместе с темой отеля.
+   Сдержанно: росчерк под заголовком, мотив в углу тёмных секций,
+   фриз над подвалом, метка на карточках. */
+:root{
+  /* одиночный рог, 48×40 */
+  --orn-unit:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 40'><g fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round'><path d='M24 38V20C24 10 10 8 8 16C6 23 14 25 15 19C15.5 15 11 15 11 18'/><path d='M24 20C24 10 38 8 40 16C42 23 34 25 33 19C32.5 15 37 15 37 18'/></g></svg>");
+  /* фриз: рога чередуются вверх-вниз, между ними линия, 96×40 */
+  --orn-frieze:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 40'><g fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round'><path d='M24 38V20C24 10 10 8 8 16C6 23 14 25 15 19C15.5 15 11 15 11 18'/><path d='M24 20C24 10 38 8 40 16C42 23 34 25 33 19C32.5 15 37 15 37 18'/><path d='M72 2V20C72 30 58 32 56 24C54 17 62 15 63 21C63.5 25 59 25 59 22'/><path d='M72 20C72 30 86 32 88 24C90 17 82 15 81 21C81.5 25 86 25 85 22'/></g></svg>");
+}
+.orn,.hero h1::after,.footer::before,.section--dark::before,.quote::before,.tier::before{
+  background:var(--gold);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:contain;mask-size:contain;
+}
+/* росчерк под заголовком hero */
+.hero h1::after{
+  content:"";display:block;width:96px;height:24px;margin-top:16px;
+  -webkit-mask-image:var(--orn-frieze);mask-image:var(--orn-frieze);
+  opacity:.9;
+}
+/* крупный мотив в углу тёмной секции — едва заметный */
+.section--dark{position:relative;overflow:hidden}
+.section--dark::before{
+  content:"";position:absolute;right:-40px;top:-30px;width:320px;height:270px;
+  -webkit-mask-image:var(--orn-unit);mask-image:var(--orn-unit);
+  opacity:.07;pointer-events:none;
+}
+.section--dark > .container{position:relative}
+/* фриз над подвалом */
+.footer{position:relative}
+.footer::before{
+  content:"";position:absolute;left:50%;top:26px;transform:translateX(-50%);
+  width:min(480px,80%);height:22px;
+  -webkit-mask-image:var(--orn-frieze);mask-image:var(--orn-frieze);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-size:auto 100%;mask-size:auto 100%;
+  -webkit-mask-position:center;mask-position:center;
+  opacity:.55;
+}
+/* метка на карточках оценок и уровней клуба */
+.quote,.tier{position:relative}
+.quote::before,.tier::before{
+  content:"";position:absolute;right:22px;top:22px;width:26px;height:22px;
+  -webkit-mask-image:var(--orn-unit);mask-image:var(--orn-unit);
+  opacity:.7;
+}
+@media (max-width:640px){
+  .section--dark::before{width:200px;height:170px;right:-30px;top:-20px}
+  .hero h1::after{width:72px;height:18px}
+}
