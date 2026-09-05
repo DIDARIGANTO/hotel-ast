@@ -19,6 +19,7 @@ export const DICT = {
     'footer.botanic.addr': 'ул. Туркестан, 14а',
     'footer.rights': '© 2026 AST Hotels',
     'footer.city': 'Астана, Казахстан',
+    'footer.call': 'Позвонить',
     // ── Главная: обложка и поиск ───────────────────────────────
     'home.hero.eyebrow': 'Сеть отелей Астаны',
     'home.hero.title': 'Три адреса. Один стандарт гостеприимства.',
@@ -468,6 +469,7 @@ export const DICT = {
     'footer.botanic.addr': 'Түркістан көшесі, 14а',
     'footer.rights': '© 2026 AST Hotels',
     'footer.city': 'Астана, Қазақстан',
+    'footer.call': 'Қоңырау шалу',
     // ── Главная: обложка и поиск ───────────────────────────────
     'home.hero.eyebrow': 'Астанадағы қонақ үйлер желісі',
     'home.hero.title': 'Үш мекенжай. Қонақжайлылықтың бір деңгейі.',
@@ -917,6 +919,7 @@ export const DICT = {
     'footer.botanic.addr': '14a Turkestan St.',
     'footer.rights': '© 2026 AST Hotels',
     'footer.city': 'Astana, Kazakhstan',
+    'footer.call': 'Call',
     // ── Главная: обложка и поиск ───────────────────────────────
     'home.hero.eyebrow': 'Hotel group in Astana',
     'home.hero.title': 'Three addresses. One standard of hospitality.',
