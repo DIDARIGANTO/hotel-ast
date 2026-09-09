@@ -76,7 +76,8 @@ if (form) {
     if (!data.checkOut || calcTotal(data).nights === 0) errors.push('out');
     if (data.name.length < 2) errors.push('name');
     if ((data.phone.match(/\d/g) || []).length < 10) errors.push('phone');
-    ['in', 'out', 'name', 'phone'].forEach((n) => setError(n, errors.includes(n)));
+    if (!el('consent')?.checked) errors.push('consent');
+    ['in', 'out', 'name', 'phone', 'consent'].forEach((n) => setError(n, errors.includes(n)));
     return errors;
   }
 

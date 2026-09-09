@@ -146,6 +146,14 @@
           <textarea name="comment" rows="4" data-i18n-attr="placeholder:booking.ph.comment" placeholder="Ранний заезд, вид из окна, детская кроватка — что важно учесть"></textarea>
         </label>
 
+        <div class="field consent">
+          <label>
+            <input type="checkbox" name="consent" required>
+            <span data-i18n="consent.text">Согласен на обработку персональных данных</span>
+            <a href="privacy.html" target="_blank" rel="noopener" data-i18n="consent.link">Политика обработки данных</a>
+          </label>
+          <span class="field__error" data-i18n="consent.err">Отметьте согласие на обработку данных</span>
+        </div>
         <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Отправить в WhatsApp</button></p>
         <p class="summary__note" data-i18n="booking.legal">Заявка не списывает деньги: отель подтверждает даты и стоимость в ответном сообщении.</p>
 
@@ -250,6 +258,7 @@
     </div>
     <div class="footer__bottom">
       <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <a href="privacy.html" data-i18n="footer.privacy">Политика обработки персональных данных</a>
       <span data-i18n="footer.city">Астана, Казахстан</span>
     </div>
   </div>

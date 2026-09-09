@@ -168,6 +168,14 @@
             <span data-i18n="contacts.form.message">Сообщение</span>
             <textarea name="message" rows="5" placeholder="Даты, количество гостей, детали запроса" data-i18n-attr="placeholder:contacts.form.message-ph"></textarea>
           </label>
+          <div class="field consent">
+          <label>
+            <input type="checkbox" name="consent" required>
+            <span data-i18n="consent.text">Согласен на обработку персональных данных</span>
+            <a href="privacy.html" target="_blank" rel="noopener" data-i18n="consent.link">Политика обработки данных</a>
+          </label>
+          <span class="field__error" data-i18n="consent.err">Отметьте согласие на обработку данных</span>
+        </div>
           <p><button class="btn btn--gold" type="submit" data-i18n="contacts.form.submit">Отправить в WhatsApp</button></p>
         </form>
         <div class="form-done" role="status" aria-live="polite">
@@ -235,6 +243,7 @@
     </div>
     <div class="footer__bottom">
       <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <a href="privacy.html" data-i18n="footer.privacy">Политика обработки персональных данных</a>
       <span data-i18n="footer.city">Астана, Казахстан</span>
     </div>
   </div>
@@ -251,7 +260,7 @@ import { getHotel } from './assets/js/hotels.js';
 
 const form = document.querySelector('#contact-form');
 if (form) {
-  const FIELDS = ['name', 'phone'];
+  const FIELDS = ['name', 'phone', 'consent'];
   const el = (name) => form.elements[name];
   const setError = (name, on) => el(name).closest('.field')?.classList.toggle('has-error', on);
 
@@ -271,6 +280,7 @@ if (form) {
     const errors = [];
     if (data.name.length < 2) errors.push('name');
     if ((data.phone.match(/\d/g) || []).length < 10) errors.push('phone');
+    if (!el('consent').checked) errors.push('consent');
     FIELDS.forEach((name) => setError(name, errors.includes(name)));
     if (errors.length) {
       el(errors[0]).focus();
