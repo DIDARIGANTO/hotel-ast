@@ -48,8 +48,8 @@ export const DICT = {
     'footer.call': 'Позвонить',
     // ── Главная: обложка и поиск ───────────────────────────────
     'home.hero.eyebrow': 'Сеть отелей Астаны',
-    'home.hero.title': 'Три адреса. Один стандарт гостеприимства.',
-    'home.hero.lead': 'Городской отель, бутик-отель и апартаменты с кухней в новом центре Астаны. Бронирование напрямую, без комиссии агрегаторов.',
+    'home.hero.title': 'Три адреса в Астане',
+    'home.hero.lead': 'Городской отель, бутик-отель и апартаменты с кухней. Один стандарт гостеприимства и прямое бронирование без посредников.',
     // ── Главная: портфель ──────────────────────────────────────
     'home.portfolio.eyebrow': 'Портфель сети',
     'home.portfolio.title': 'Три формата под разные поездки',
@@ -524,8 +524,8 @@ export const DICT = {
     'footer.call': 'Қоңырау шалу',
     // ── Главная: обложка и поиск ───────────────────────────────
     'home.hero.eyebrow': 'Астанадағы қонақ үйлер желісі',
-    'home.hero.title': 'Үш мекенжай. Қонақжайлылықтың бір деңгейі.',
-    'home.hero.lead': 'Астананың жаңа орталығындағы қалалық қонақ үй, бутик-қонақ үй және ас үйі бар апартаменттер. Брондау тікелей, делдалдарға комиссиясыз.',
+    'home.hero.title': 'Астанадағы үш мекенжай',
+    'home.hero.lead': 'Қалалық қонақ үй, бутик-қонақ үй және ас үйі бар апартаменттер. Қонақжайлылықтың бір деңгейі және делдалсыз тікелей брондау.',
     // ── Главная: портфель ──────────────────────────────────────
     'home.portfolio.eyebrow': 'Желі нысандары',
     'home.portfolio.title': 'Әртүрлі сапарға арналған үш формат',
@@ -1000,8 +1000,8 @@ export const DICT = {
     'footer.call': 'Call',
     // ── Главная: обложка и поиск ───────────────────────────────
     'home.hero.eyebrow': 'Hotel group in Astana',
-    'home.hero.title': 'Three addresses. One standard of hospitality.',
-    'home.hero.lead': 'A city hotel, a boutique hotel and apartments with kitchens in the new centre of Astana. Book direct, with no booking-site commission.',
+    'home.hero.title': 'Three addresses in Astana',
+    'home.hero.lead': 'A city hotel, a boutique hotel and serviced apartments. One standard of hospitality and direct booking with no intermediaries.',
     // ── Главная: портфель ──────────────────────────────────────
     'home.portfolio.eyebrow': 'Our properties',
     'home.portfolio.title': 'Three formats for three kinds of trip',
