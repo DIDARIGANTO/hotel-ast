@@ -186,11 +186,6 @@ export const EXTRAS = [
   { id: 'latecheckout', label: 'Поздний выезд', price: 5000, per: 'once' },
 ];
 
-export const CLUB_LEVELS = [
-  { id: 'silver', nights: 0, discount: 0.05 },
-  { id: 'gold', nights: 10, discount: 0.1 },
-  { id: 'platinum', nights: 30, discount: 0.15 },
-];
 
 export const getHotel = (id) => HOTELS.find((h) => h.id === id);
 
