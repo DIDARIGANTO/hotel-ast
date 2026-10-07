@@ -11,11 +11,17 @@ export function countNights(checkIn, checkOut) {
   return nights > 0 ? nights : 0;
 }
 
-function promoDiscount(hotel, checkIn) {
-  if (!hotel?.promo || !checkIn) return 0;
-  return checkIn >= hotel.promo.from && checkIn <= hotel.promo.to
-    ? hotel.promo.discount
-    : 0;
+// Акция «длительное проживание»: скидка включается, когда ночей не меньше
+// порога minNights. Акции по датам (from/to) тоже поддерживаются — если у
+// отеля заданы обе границы, проверяется дата заезда.
+function promoDiscount(hotel, checkIn, nights) {
+  const promo = hotel?.promo;
+  if (!promo) return 0;
+  if (promo.minNights) return nights >= promo.minNights ? promo.discount : 0;
+  if (promo.from && promo.to && checkIn) {
+    return checkIn >= promo.from && checkIn <= promo.to ? promo.discount : 0;
+  }
+  return 0;
 }
 
 function extraCost(extra, { nights, guests, rooms }) {
@@ -32,7 +38,7 @@ export function calcTotal({ hotelId, roomId, checkIn, checkOut, rooms = 1, guest
     return { nights: 0, base: 0, discount: 0, extrasTotal: 0, total: 0 };
   }
   const base = room.price * nights * rooms;
-  const discount = Math.round(base * promoDiscount(hotel, checkIn));
+  const discount = Math.round(base * promoDiscount(hotel, checkIn, nights));
   const extrasTotal = extras
     .map((id) => EXTRAS.find((e) => e.id === id))
     .filter(Boolean)

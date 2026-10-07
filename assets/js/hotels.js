@@ -143,7 +143,7 @@ export const HOTELS = [
     priceConfirmed: false, // в 2ГИС цены нет — считается по нашим категориям
     gis: 'https://2gis.kz/astana/firm/70000001044528049',
     instagram: 'https://www.instagram.com/bg.apartments/',
-    promo: { discount: 0.15, from: '2026-06-15', to: '2026-08-31' },
+    promo: { discount: 0.10, minNights: 7 },   // длительное проживание: от 7 ночей −10 %
     hero: 'assets/img/botanic/botanic-garden-astana-studiya.jpg',
     amenities: ['wifi', 'kitchen', 'parking', 'reception24', 'laundry', 'workspace'],
     rooms: [

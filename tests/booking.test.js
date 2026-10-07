@@ -35,25 +35,27 @@ test('calcTotal считает услуги по своим правилам', (
   assert.equal(res.total, 24000 + 26000);
 });
 
-test('акция Botanic снимает 15% с проживания в период действия', () => {
+test('акция Botanic снимает 10% с проживания от 7 ночей', () => {
   const res = calcTotal({
     hotelId: 'botanic', roomId: 'studio',
-    checkIn: '2026-07-10', checkOut: '2026-07-12',
+    checkIn: '2026-11-01', checkOut: '2026-11-08',
     rooms: 1, guests: 2, extras: [],
   });
-  assert.equal(res.base, 36000);
-  assert.equal(res.discount, 5400);
-  assert.equal(res.total, 30600);
+  assert.equal(res.nights, 7);
+  assert.equal(res.base, 126000);   // 18000 × 7
+  assert.equal(res.discount, 12600);
+  assert.equal(res.total, 113400);
 });
 
-test('акция не применяется вне срока и к услугам', () => {
+test('акция не применяется при 6 ночах и к услугам', () => {
   const res = calcTotal({
     hotelId: 'botanic', roomId: 'studio',
-    checkIn: '2026-10-01', checkOut: '2026-10-03',
+    checkIn: '2026-11-01', checkOut: '2026-11-07',
     rooms: 1, guests: 2, extras: ['transfer'],
   });
+  assert.equal(res.nights, 6);
   assert.equal(res.discount, 0);
-  assert.equal(res.total, 44000);
+  assert.equal(res.total, 108000 + 8000);
 });
 
 test('calcTotal возвращает нули при пустых датах', () => {
