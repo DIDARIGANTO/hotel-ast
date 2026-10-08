@@ -8,6 +8,11 @@ import { formatPrice } from './booking.js';
 import { translate, currentLang } from './i18n.js';
 import { observeReveal } from './ui.js';
 
+// Языковые версии лежат в /kk/ и /en/: относительный путь к фото из
+// данных (assets/…) оттуда не ведёт никуда, поэтому поднимаемся на уровень.
+const ASSET_PREFIX = /\/(kk|en)\//.test(location.pathname) ? '../' : '';
+const asset = (src) => (src.startsWith('http') ? src : ASSET_PREFIX + src);
+
 const t = (key, lang, fallback) => {
   const value = translate(key, lang);
   return value === key ? fallback : value;
@@ -62,7 +67,7 @@ export function hotelCard(hotel, lang = currentLang()) {
   return `
     <article class="card reveal" data-type="${hotel.type}" data-district="${hotel.district}" data-price="${hotel.priceFrom}">
       <div class="card__media">
-        <img src="${hotel.hero.replace(/w=\d+/, 'w=900')}" alt="${name}" loading="lazy">
+        <img src="${asset(hotel.hero).replace(/w=\d+/, 'w=900')}" alt="${name}" loading="lazy">
         <span class="card__badge">${t(`pages.type.${hotel.type}`, lang, hotel.type)}</span>
       </div>
       <div class="card__body">
@@ -80,7 +85,7 @@ export function roomCard(hotel, room, lang = currentLang()) {
   const name = roomNameSafe(roomName(hotel, room, lang));
   return `
     <article class="card reveal">
-      <div class="card__media"><img src="${room.img}" alt="${name}" loading="lazy"></div>
+      <div class="card__media"><img src="${asset(room.img)}" alt="${name}" loading="lazy"></div>
       <div class="card__body">
         <h3>${name}</h3>
         <p class="card__meta">${fmt(t('pages.roomMeta', lang, '{area} м² · до {guests} гостей · {beds}'), {

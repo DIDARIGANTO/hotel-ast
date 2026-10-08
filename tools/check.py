@@ -62,7 +62,7 @@ def fail(text):
 
 def pages():
     """Страницы сайта в алфавитном порядке."""
-    return sorted(f for f in os.listdir(ROOT) if f.endswith('.html'))
+    return sorted(f for f in os.listdir(ROOT) if f.endswith('.html'))  # kk/ и en/ — генерируются из корня
 
 
 def read(path):

@@ -1215,11 +1215,28 @@ export function translate(key, lang) {
 
 const STORAGE_KEY = 'ast-lang';
 
+// Язык задаёт папка адреса: /kk/ и /en/ — отдельные статические версии,
+// корень — русская. Параметр ?lang= оставлен для старых ссылок.
+export function langFromPath() {
+  const m = location.pathname.match(/\/(kk|en)\//);
+  return m ? m[1] : null;
+}
+
 export function currentLang() {
+  const fromPath = langFromPath();
+  if (fromPath) return fromPath;
   const fromUrl = new URLSearchParams(location.search).get('lang');
   if (LANGS.includes(fromUrl)) return fromUrl;
-  const saved = localStorage.getItem(STORAGE_KEY);
-  return LANGS.includes(saved) ? saved : 'ru';
+  return 'ru';
+}
+
+// Адрес той же страницы на другом языке.
+export function pageUrlFor(lang) {
+  const path = location.pathname.replace(/\/(kk|en)\//, '/');
+  const file = path.split('/').pop() || 'index.html';
+  const base = path.slice(0, path.length - file.length);
+  const name = file === '' ? 'index.html' : file;
+  return lang === 'ru' ? `${base}${name}` : `${base}${lang}/${name}`;
 }
 
 export function applyLang(lang) {
@@ -1252,7 +1269,11 @@ export function applyLang(lang) {
 export function initI18n() {
   applyLang(currentLang());
   document.querySelectorAll('.lang button').forEach((btn) => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (lang === currentLang()) return;
+      location.href = pageUrlFor(lang);
+    });
   });
 }
 

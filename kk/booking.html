@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Нөмір брондау — AST Hotels, Астана</title>
+<meta name="description" content="Астанадағы AST Hotels желісінің үш қонақ үйінің бірінде нөмір брондаңыз: құны лезде есептеледі, өтінім қонақ үйдің WhatsApp-ына кетеді. Делдалсыз, алдын ала төлемсіз.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<!-- SEO -->
+<link rel="canonical" href="https://didariganto.github.io/hotel-ast/kk/booking.html">
+<link rel="alternate" hreflang="ru" href="https://didariganto.github.io/hotel-ast/booking.html">
+<link rel="alternate" hreflang="kk" href="https://didariganto.github.io/hotel-ast/kk/booking.html">
+<link rel="alternate" hreflang="en" href="https://didariganto.github.io/hotel-ast/en/booking.html">
+<link rel="alternate" hreflang="x-default" href="https://didariganto.github.io/hotel-ast/booking.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AST Hotels">
+<meta property="og:title" content="Нөмір брондау — AST Hotels, Астана">
+<meta property="og:description" content="Астанадағы AST Hotels желісінің үш қонақ үйінің бірінде нөмір брондаңыз: құны лезде есептеледі, өтінім қонақ үйдің WhatsApp-ына кетеді. Делдалсыз, алдын ала төлемсіз.">
+<meta property="og:url" content="https://didariganto.github.io/hotel-ast/kk/booking.html">
+<meta property="og:locale" content="kk_KZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://didariganto.github.io/hotel-ast/assets/img/cityline/city-line-hotel-astana-fasad.jpg">
+<!-- /SEO -->
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skip">Мазмұнға өту</a>
+<header class="header header--static">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+    <nav class="nav">
+      <a href="hotels.html" data-i18n="nav.hotels">Қонақ үйлер</a>
+      <a href="offers.html" data-i18n="nav.offers">Ұсыныстар</a>
+      <a href="contacts.html" data-i18n="nav.contacts">Байланыс</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang">
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="kk" class="is-active">KZ</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Брондау</a>
+    </div>
+    <button class="burger" type="button" aria-label="Мәзір" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero hero--compact">
+  <div class="hero__media">
+    <img src="../assets/img/cityline/city-line-hotel-astana-resepshen.jpg" alt="Тіркеу орны City Line Hotel">
+  </div>
+  <div class="hero__inner">
+    <div class="container">
+      <p class="eyebrow" data-i18n="booking.eyebrow">Брондау</p>
+      <h1 data-i18n="booking.title">Нөмір брондау</h1>
+      <p class="lead" data-i18n="booking.lead">Форманы толтырыңыз — баға бірден қайта есептеледі, ал өтінім таңдаған қонақ үйдің WhatsApp нөміріне тікелей жіберіледі. Растау жауап хабарламамен келеді.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="book">
+
+      <form id="booking-form" novalidate>
+        <h2 data-i18n="booking.stay.title">Тұру</h2>
+
+        <label class="field">
+          <span data-i18n="booking.field.hotel">Қонақ үй</span>
+          <select name="hotel" required></select>
+        </label>
+
+        <label class="field">
+          <span data-i18n="booking.field.room">Нөмір санаты</span>
+          <select name="room" required></select>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="booking.field.in">Кіру күні</span>
+            <input type="date" name="in" required>
+            <span class="field__error" data-i18n="booking.error.in">Кіру күнін көрсетіңіз.</span>
+          </label>
+          <label class="field">
+            <span data-i18n="booking.field.out">Шығу күні</span>
+            <input type="date" name="out" required>
+            <span class="field__error" data-i18n="booking.error.out">Шығу күні кіру күнінен кейін болуы керек.</span>
+          </label>
+        </div>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="booking.field.rooms">Нөмір саны</span>
+            <input type="number" name="rooms" min="1" max="6" step="1" value="1" inputmode="numeric" required>
+          </label>
+          <label class="field">
+            <span data-i18n="booking.field.guests">Қонақ саны</span>
+            <input type="number" name="guests" min="1" max="6" step="1" value="2" inputmode="numeric" required>
+            <span class="field__error" data-i18n="booking.error.guests">Таңдалған санатқа мұншама қонақ сыймайды — сан ең үлкен мәнге дейін азайтылды.</span>
+          </label>
+        </div>
+
+        <h3 data-i18n="booking.extras.title">Қосымша қызметтер</h3>
+        <p class="summary__note" data-i18n="booking.extras.note">Қызметтерді кейін, тіркелу кезінде де қосуға болады. Олардың құны жиынтық есепке бірден кіреді.</p>
+        <div class="extras">
+          <label>
+            <input type="checkbox" name="extra-breakfast">
+            <span data-i18n="booking.extra.breakfast">Таңғы ас — әр қонаққа бір түнге</span>
+          </label>
+          <label>
+            <input type="checkbox" name="extra-transfer">
+            <span data-i18n="booking.extra.transfer">Әуежайдан трансфер — брондауға бір рет</span>
+          </label>
+          <label>
+            <input type="checkbox" name="extra-parking">
+            <span data-i18n="booking.extra.parking">Күзетілетін тұрақ — бір түнге</span>
+          </label>
+          <label>
+            <input type="checkbox" name="extra-latecheckout">
+            <span data-i18n="booking.extra.latecheckout">14:00-ден кейін кеш шығу — брондауға бір рет</span>
+          </label>
+        </div>
+
+        <h3 data-i18n="booking.guest.title">Қонақтың байланысы</h3>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="booking.field.name">Аты-жөні</span>
+            <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="Сізге қалай жүгінейік" required>
+            <span class="field__error" data-i18n="booking.error.name">Атыңызды жазыңыз — жауабымызда сізге солай жүгінеміз.</span>
+          </label>
+          <label class="field">
+            <span data-i18n="booking.field.phone">Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" data-i18n-attr="placeholder:booking.ph.phone" placeholder="+7 (___) ___ __ __" required>
+            <span class="field__error" data-i18n="booking.error.phone">Нөмірді толық енгізіңіз — кемінде 10 сан.</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span data-i18n="booking.field.comment">Ескертпе</span>
+          <textarea name="comment" rows="4" data-i18n-attr="placeholder:booking.ph.comment" placeholder="Ерте кіру, терезеден көрініс, балалар төсегі — ескеру керегін жазыңыз"></textarea>
+        </label>
+
+        <div class="field consent">
+          <label>
+            <input type="checkbox" name="consent" required>
+            <span data-i18n="consent.text">Дербес деректерді өңдеуге келісемін</span>
+            <a href="privacy.html" target="_blank" rel="noopener" data-i18n="consent.link">Деректерді өңдеу саясаты</a>
+          </label>
+          <span class="field__error" data-i18n="consent.err">Деректерді өңдеуге келісуді белгілеңіз</span>
+        </div>
+        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">WhatsApp-қа жіберу</button></p>
+        <p class="summary__note" data-i18n="booking.legal">Өтінім ақша шешпейді: қонақ үй күндер мен бағаны жауап хабарламада растайды.</p>
+
+        <div class="form-done" role="status" aria-live="polite">
+          <h3 data-i18n="booking.done.title">Өтінім дайын</h3>
+          <p data-i18n="booking.done.text">WhatsApp-ты дайын мәтінмен аштық. Қосымша бет ашылмаса, төмендегі мәтінді көшіріп, өзіңіз жіберіңіз.</p>
+          <pre></pre>
+        </div>
+      </form>
+
+      <aside class="summary">
+        <h3 data-i18n="booking.summary.title">Сіздің брондауыңыз</h3>
+        <div class="summary__row">
+          <span data-i18n="booking.summary.nights">Түн саны</span>
+          <span data-sum="nights">0</span>
+        </div>
+        <div class="summary__row">
+          <span data-i18n="booking.summary.base">Тұру</span>
+          <span data-sum="base">—</span>
+        </div>
+        <div class="summary__row summary__row--promo" hidden>
+          <span data-i18n="booking.summary.discount">Науқан жеңілдігі</span>
+          <span data-sum="discount">—</span>
+        </div>
+        <div class="summary__row">
+          <span data-i18n="booking.summary.extras">Қызметтер</span>
+          <span data-sum="extras">—</span>
+        </div>
+        <div class="summary__row summary__row--total">
+          <span data-i18n="booking.summary.total">Барлығы</span>
+          <span data-sum="total">—</span>
+        </div>
+        <p class="summary__note" data-i18n="booking.summary.note">Төлем қонақ үйде тіркелу кезінде — қолма-қол ақшамен немесе картамен. Маусым қызған кезде қонақ үй бірінші түнге алдын ала төлем сұрауы мүмкін.</p>
+        <p class="summary__note" data-i18n="booking.summary.hint">Есеп алдын ала жүргізіледі. Түпкілікті бағаны қонақ үй WhatsApp арқылы растайды.</p>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <p class="eyebrow" data-i18n="booking.direct.eyebrow">Формасыз</p>
+    <h2 data-i18n="booking.direct.title">Тікелей қоңырау шалу немесе жазу</h2>
+    <p class="lead" data-i18n="booking.direct.lead">Дауыспен немесе мессенджерде ыңғайлы болса, қажет қонақ үйдің тіркеу орнына хабарласыңыз.</p>
+    <div class="grid grid--3">
+      <article class="contact-card reveal">
+        <h3>AMINA Hotel</h3>
+        <p data-i18n="booking.direct.amina">Сарайшықтағы, Шәмші Қалдаяқов көшесі, 15 мекенжайындағы қалалық қонақ үй — нөмірдің төрт санаты.</p>
+        <p><a href="tel:+77013353530">+7 701 335 35 30</a></p>
+        <p><a href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="booking.direct.whatsapp">WhatsApp-қа жазу</a></p>
+      </article>
+      <article class="contact-card reveal">
+        <h3>City Line Hotel</h3>
+        <p data-i18n="booking.direct.cityline">Лобби-бары және төрт санаттағы нөмірлері бар бутик-қонақ үй.</p>
+        <p><a href="tel:+77759590088">+7 775 959 00 88</a></p>
+        <p><a href="https://wa.me/77759590088" target="_blank" rel="noopener" data-i18n="booking.direct.whatsapp">WhatsApp-қа жазу</a></p>
+      </article>
+      <article class="contact-card reveal">
+        <h3>Botanic Garden Apartments</h3>
+        <p data-i18n="booking.direct.botanic">Ботаникалық бақтың жанындағы ас үйі бар апартаменттер — ұзақ сапарға.</p>
+        <p><a href="tel:+77027771503">+7 702 777 15 03</a></p>
+        <p><a href="https://wa.me/77027771503" target="_blank" rel="noopener" data-i18n="booking.direct.whatsapp">WhatsApp-қа жазу</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html">AST<span>.</span>HOTELS</a>
+        <p data-i18n="footer.about">Астанадағы үш қонақ үй: қалалық, бутик және апартаменттер.</p>
+      </div>
+      <div>
+        <h4>AMINA Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.amina.addr">Шәмші Қалдаяқов көшесі, 15</li>
+          <li><a href="tel:+77013353530">+7 701 335 35 30</a></li>
+          <li class="footer__actions"><a class="footer__act" href="tel:+77013353530" data-i18n="footer.call">Қоңырау шалу</a><a class="footer__act footer__wa" href="https://wa.me/77013353530" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>City Line Hotel</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.cityline.addr">Шәмші Қалдаяқов көшесі, 15</li>
+          <li><a href="tel:+77759590088">+7 775 959 00 88</a></li>
+          <li class="footer__actions"><a class="footer__act" href="tel:+77759590088" data-i18n="footer.call">Қоңырау шалу</a><a class="footer__act footer__wa" href="https://wa.me/77759590088" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Botanic Garden Apartments</h4>
+        <ul class="footer__list">
+          <li data-i18n="footer.botanic.addr">Түркістан көшесі, 14а</li>
+          <li><a href="tel:+77027771503">+7 702 777 15 03</a></li>
+          <li class="footer__actions"><a class="footer__act" href="tel:+77027771503" data-i18n="footer.call">Қоңырау шалу</a><a class="footer__act footer__wa" href="https://wa.me/77027771503" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer.rights">© 2026 AST Hotels</span>
+      <a href="privacy.html" data-i18n="footer.privacy">Дербес деректерді өңдеу саясаты</a>
+      <span data-i18n="footer.city">Астана, Қазақстан</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="../assets/js/ui.js"></script>
+<script type="module" src="../assets/js/i18n.js"></script>
+<script type="module" src="../assets/js/pages.js"></script>
+<script type="module" src="../assets/js/booking-form.js"></script>
+</body>
+</html>
