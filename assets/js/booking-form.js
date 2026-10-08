@@ -1,5 +1,12 @@
 import { HOTELS, EXTRAS, getHotel, getRoom } from './hotels.js';
 import { calcTotal, buildMessage, buildWhatsAppUrl, formatPrice } from './booking.js';
+import { translate, currentLang } from './i18n.js';
+
+// Подписи категорий и валюта — через словарь, как в карточках номеров:
+// на /kk/ и /en/ выпадающий список не должен оставаться русским.
+const t = (key, fallback) => { const v = translate(key, currentLang()); return v === key ? fallback : v; };
+const roomLabel = (hotelId, r) =>
+  `${t(`room.${hotelId}.${r.id}`, r.name)} · ${formatPrice(r.price)} ${t('pages.currency', '₸')}`;
 
 const form = document.querySelector('#booking-form');
 if (form) {
@@ -15,7 +22,7 @@ if (form) {
     // Что стараемся сохранить: категорию из ссылки либо выбранную до смены отеля.
     const wanted = preferred || el('room').value;
     el('room').innerHTML = hotel.rooms
-      .map((r) => `<option value="${r.id}">${r.name} · ${formatPrice(r.price)} ₸</option>`)
+      .map((r) => `<option value="${r.id}">${roomLabel(el('hotel').value, r)}</option>`)
       .join('');
     // Если такой категории у нового отеля нет — берём первую доступную.
     const kept = hotel.rooms.find((r) => r.id === wanted);
