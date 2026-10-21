@@ -104,3 +104,8 @@ test('buildQuickMessage собирает короткую заявку с вые
   assert.match(msg, /Дидар/);
   assert.equal(msg.includes('Категория'), false);
 });
+
+test('buildQuickMessage добавляет категорию, если гость пришёл с карточки', () => {
+  const msg = buildQuickMessage({ hotelId: 'cityline', roomName: 'DeLux', checkIn: '2026-11-01', nights: 2, guests: 2, name: 'Дидар', phone: '+7 777 000 00 00' });
+  assert.match(msg, /Категория: DeLux/);
+});

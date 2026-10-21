@@ -90,6 +90,7 @@ export function buildQuickMessage(form) {
   return [
     'Заявка на бронирование — AST Hotels',
     `Отель: ${hotel?.name ?? '—'}`,
+    ...(form.roomName ? [`Категория: ${form.roomName}`] : []),
     `Заезд: ${formatDate(form.checkIn)}`,
     `Ночей: ${form.nights}${out ? ` (выезд ${formatDate(out)})` : ''}`,
     `Гостей: ${form.guests}`,

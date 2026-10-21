@@ -1,4 +1,4 @@
-import { HOTELS, getHotel } from './hotels.js';
+import { HOTELS, getHotel, getRoom } from './hotels.js';
 import { buildQuickMessage, buildWhatsAppUrl } from './booking.js';
 
 // Быстрая заявка: отель, имя, дата заезда, число ночей, гостей, телефон,
@@ -18,6 +18,9 @@ if (form) {
       guests: Number(el('guests').value) || 1,
       name: el('name').value.trim(),
       phone: el('phone').value.trim(),
+      // Категория не выбирается в форме, но если гость пришёл с карточки
+      // номера — она едет в заявку отдельной строкой.
+      roomName: getRoom(el('hotel').value, params.get('room'))?.name ?? '',
     };
   }
 
