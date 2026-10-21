@@ -57,17 +57,18 @@
     <div class="container">
       <p class="eyebrow" data-i18n="booking.eyebrow">Booking</p>
       <h1 data-i18n="booking.title">Book a room</h1>
-      <p class="lead" data-i18n="booking.lead">Fill in the form — the price updates as you go, and the request goes straight to the WhatsApp of the hotel you choose. Confirmation comes in the reply.</p>
+      <p class="lead" data-i18n="booking.lead">Your name, check-in date, number of nights and guests — the request goes straight to the selected hotel on WhatsApp. Confirmation comes in the reply.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="book">
+    <div class="book book--quick">
 
       <form id="booking-form" novalidate>
-        <h2 data-i18n="booking.stay.title">Your stay</h2>
+        <h2 data-i18n="booking.stay.title">Quick request</h2>
+        <p class="lead" data-i18n="booking.stay.lead">Six fields — and the request goes to the selected hotel on WhatsApp. The front desk confirms dates and price in reply.</p>
 
         <label class="field">
           <span data-i18n="booking.field.hotel">Hotel</span>
@@ -75,63 +76,28 @@
         </label>
 
         <label class="field">
-          <span data-i18n="booking.field.room">Room category</span>
-          <select name="room" required></select>
+          <span data-i18n="booking.field.name">Name</span>
+          <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="What should we call you" required>
+          <span class="field__error" data-i18n="booking.error.name">Please enter your name — we will use it when we reply.</span>
         </label>
 
         <div class="field-row">
           <label class="field">
-            <span data-i18n="booking.field.in">Check-in</span>
+            <span data-i18n="booking.field.in">Check-in date</span>
             <input type="date" name="in" required>
             <span class="field__error" data-i18n="booking.error.in">Choose the check-in date.</span>
           </label>
           <label class="field">
-            <span data-i18n="booking.field.out">Check-out</span>
-            <input type="date" name="out" required>
-            <span class="field__error" data-i18n="booking.error.out">The check-out date must be later than the check-in date.</span>
+            <span data-i18n="booking.field.nights">Nights</span>
+            <input type="number" name="nights" min="1" max="90" step="1" value="1" inputmode="numeric" required>
+            <span class="field__error" data-i18n="booking.error.nights">Enter the number of nights — from 1 to 90.</span>
           </label>
         </div>
 
         <div class="field-row">
-          <label class="field">
-            <span data-i18n="booking.field.rooms">Rooms</span>
-            <input type="number" name="rooms" min="1" max="6" step="1" value="1" inputmode="numeric" required>
-          </label>
           <label class="field">
             <span data-i18n="booking.field.guests">Guests</span>
-            <input type="number" name="guests" min="1" max="6" step="1" value="2" inputmode="numeric" required>
-            <span class="field__error" data-i18n="booking.error.guests">The chosen category cannot take that many guests — the number has been reduced to the maximum.</span>
-          </label>
-        </div>
-
-        <h3 data-i18n="booking.extras.title">Extra services</h3>
-        <p class="summary__note" data-i18n="booking.extras.note">Services can also be added later, at check-in. Their cost appears in the summary straight away.</p>
-        <div class="extras">
-          <label>
-            <input type="checkbox" name="extra-breakfast">
-            <span data-i18n="booking.extra.breakfast">Breakfast — per guest per night</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-transfer">
-            <span data-i18n="booking.extra.transfer">Airport transfer — once per booking</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-parking">
-            <span data-i18n="booking.extra.parking">Secure parking — per night</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-latecheckout">
-            <span data-i18n="booking.extra.latecheckout">Late check-out after 14:00 — one-off charge per booking</span>
-          </label>
-        </div>
-
-        <h3 data-i18n="booking.guest.title">Guest details</h3>
-
-        <div class="field-row">
-          <label class="field">
-            <span data-i18n="booking.field.name">First and last name</span>
-            <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="What should we call you" required>
-            <span class="field__error" data-i18n="booking.error.name">Please enter your name — we will use it when we reply.</span>
+            <input type="number" name="guests" min="1" max="12" step="1" value="2" inputmode="numeric" required>
           </label>
           <label class="field">
             <span data-i18n="booking.field.phone">Phone</span>
@@ -139,11 +105,6 @@
             <span class="field__error" data-i18n="booking.error.phone">Enter the full number — at least 10 digits.</span>
           </label>
         </div>
-
-        <label class="field">
-          <span data-i18n="booking.field.comment">Notes</span>
-          <textarea name="comment" rows="4" data-i18n-attr="placeholder:booking.ph.comment" placeholder="Early check-in, a view, a cot — anything we should know"></textarea>
-        </label>
 
         <div class="field consent">
           <label>
@@ -153,7 +114,7 @@
           </label>
           <span class="field__error" data-i18n="consent.err">Please confirm consent to data processing</span>
         </div>
-        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Send on WhatsApp</button></p>
+        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Send request</button></p>
         <p class="summary__note" data-i18n="booking.legal">The request takes no money: the hotel confirms the dates and the price in its reply.</p>
 
         <div class="form-done" role="status" aria-live="polite">
@@ -162,32 +123,6 @@
           <pre></pre>
         </div>
       </form>
-
-      <aside class="summary">
-        <h3 data-i18n="booking.summary.title">Your booking</h3>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.nights">Nights</span>
-          <span data-sum="nights">0</span>
-        </div>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.base">Room rate</span>
-          <span data-sum="base">—</span>
-        </div>
-        <div class="summary__row summary__row--promo" hidden>
-          <span data-i18n="booking.summary.discount">Offer discount</span>
-          <span data-sum="discount">—</span>
-        </div>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.extras">Services</span>
-          <span data-sum="extras">—</span>
-        </div>
-        <div class="summary__row summary__row--total">
-          <span data-i18n="booking.summary.total">Total</span>
-          <span data-sum="total">—</span>
-        </div>
-        <p class="summary__note" data-i18n="booking.summary.note">Payment at the hotel on arrival, in cash or by card. In high season the hotel may ask for prepayment for the first night.</p>
-        <p class="summary__note" data-i18n="booking.summary.hint">This is an estimate. The hotel confirms the final price on WhatsApp.</p>
-      </aside>
 
     </div>
   </div>

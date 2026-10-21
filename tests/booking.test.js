@@ -1,5 +1,5 @@
 import { test, assert } from './harness.js';
-import { countNights, calcTotal, buildMessage, buildWhatsAppUrl } from '../assets/js/booking.js';
+import { countNights, calcTotal, buildMessage, buildWhatsAppUrl, buildQuickMessage, addDays } from '../assets/js/booking.js';
 
 test('countNights считает разницу в сутках', () => {
   assert.equal(countNights('2026-08-01', '2026-08-04'), 3);
@@ -88,4 +88,19 @@ test('buildWhatsAppUrl ведёт на номер выбранного отел�
   const url = buildWhatsAppUrl('botanic', 'тест');
   assert.ok(url.startsWith('https://wa.me/77027771503?text='));
   assert.ok(url.includes(encodeURIComponent('тест')));
+});
+
+test('addDays прибавляет ночи к дате заезда', () => {
+  assert.equal(addDays('2026-11-28', 5), '2026-12-03');
+  assert.equal(addDays('', 3), '');
+});
+
+test('buildQuickMessage собирает короткую заявку с выездом', () => {
+  const msg = buildQuickMessage({ hotelId: 'amina', checkIn: '2026-11-01', nights: 3, guests: 2, name: 'Дидар', phone: '+7 777 000 00 00' });
+  assert.match(msg, /AMINA Hotel/);
+  assert.match(msg, /Заезд: 01\.11\.2026/);
+  assert.match(msg, /Ночей: 3 \(выезд 04\.11\.2026\)/);
+  assert.match(msg, /Гостей: 2/);
+  assert.match(msg, /Дидар/);
+  assert.equal(msg.includes('Категория'), false);
 });

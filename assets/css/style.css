@@ -303,6 +303,9 @@ p{margin:0 0 1em}
 /* ═══ 6. Форма брони и сводка ═══ */
 
 .book{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+/* Быстрая заявка — одна узкая колонка без сводки */
+.book--quick{grid-template-columns:minmax(0,640px)}
+.book--quick .lead{margin-bottom:28px}
 .field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .field > span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .field input,.field select,.field textarea{

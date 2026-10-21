@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Бронирование номера — AST Hotels, Астана</title>
-<meta name="description" content="Бронирование в отелях сети AST Hotels: выберите отель, категорию, даты и услуги — стоимость посчитается сразу, а заявка уйдёт в WhatsApp выбранного отеля.">
+<meta name="description" content="Быстрая заявка на бронирование в отелях сети AST Hotels: имя, дата заезда, число ночей и гостей — и заявка уходит в WhatsApp выбранного отеля.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AST Hotels">
 <meta property="og:title" content="Бронирование номера — AST Hotels, Астана">
-<meta property="og:description" content="Бронирование в отелях сети AST Hotels: выберите отель, категорию, даты и услуги — стоимость посчитается сразу, а заявка уйдёт в WhatsApp выбранного отеля.">
+<meta property="og:description" content="Быстрая заявка на бронирование в отелях сети AST Hotels: имя, дата заезда, число ночей и гостей — и заявка уходит в WhatsApp выбранного отеля.">
 <meta property="og:url" content="https://didariganto.github.io/hotel-ast/booking.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
@@ -57,17 +57,18 @@
     <div class="container">
       <p class="eyebrow" data-i18n="booking.eyebrow">Бронирование</p>
       <h1 data-i18n="booking.title">Забронировать номер</h1>
-      <p class="lead" data-i18n="booking.lead">Заполните форму — стоимость пересчитывается на лету, а заявка уходит прямо в WhatsApp выбранного отеля. Подтверждение приходит в ответном сообщении.</p>
+      <p class="lead" data-i18n="booking.lead">Имя, дата заезда, число ночей и гостей — заявка уйдёт прямо в WhatsApp выбранного отеля. Подтверждение приходит в ответном сообщении.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="book">
+    <div class="book book--quick">
 
       <form id="booking-form" novalidate>
-        <h2 data-i18n="booking.stay.title">Проживание</h2>
+        <h2 data-i18n="booking.stay.title">Быстрая заявка</h2>
+        <p class="lead" data-i18n="booking.stay.lead">Шесть полей — и заявка уходит в WhatsApp выбранного отеля. Администратор подтвердит даты и стоимость в ответ.</p>
 
         <label class="field">
           <span data-i18n="booking.field.hotel">Отель</span>
@@ -75,63 +76,28 @@
         </label>
 
         <label class="field">
-          <span data-i18n="booking.field.room">Категория номера</span>
-          <select name="room" required></select>
+          <span data-i18n="booking.field.name">Имя</span>
+          <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="Как к вам обращаться" required>
+          <span class="field__error" data-i18n="booking.error.name">Напишите имя — так мы обратимся к вам в ответе.</span>
         </label>
 
         <div class="field-row">
           <label class="field">
-            <span data-i18n="booking.field.in">Заезд</span>
+            <span data-i18n="booking.field.in">Дата заезда</span>
             <input type="date" name="in" required>
             <span class="field__error" data-i18n="booking.error.in">Укажите дату заезда.</span>
           </label>
           <label class="field">
-            <span data-i18n="booking.field.out">Выезд</span>
-            <input type="date" name="out" required>
-            <span class="field__error" data-i18n="booking.error.out">Дата выезда должна быть позже даты заезда.</span>
+            <span data-i18n="booking.field.nights">Ночей</span>
+            <input type="number" name="nights" min="1" max="90" step="1" value="1" inputmode="numeric" required>
+            <span class="field__error" data-i18n="booking.error.nights">Укажите, сколько ночей — от 1 до 90.</span>
           </label>
         </div>
 
         <div class="field-row">
-          <label class="field">
-            <span data-i18n="booking.field.rooms">Номеров</span>
-            <input type="number" name="rooms" min="1" max="6" step="1" value="1" inputmode="numeric" required>
-          </label>
           <label class="field">
             <span data-i18n="booking.field.guests">Гостей</span>
-            <input type="number" name="guests" min="1" max="6" step="1" value="2" inputmode="numeric" required>
-            <span class="field__error" data-i18n="booking.error.guests">Столько гостей в выбранной категории не размещается — число уменьшено до максимума.</span>
-          </label>
-        </div>
-
-        <h3 data-i18n="booking.extras.title">Дополнительные услуги</h3>
-        <p class="summary__note" data-i18n="booking.extras.note">Услуги можно добавить и позже, при заселении. Их стоимость сразу входит в сводку справа.</p>
-        <div class="extras">
-          <label>
-            <input type="checkbox" name="extra-breakfast">
-            <span data-i18n="booking.extra.breakfast">Завтрак — за каждого гостя за ночь</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-transfer">
-            <span data-i18n="booking.extra.transfer">Трансфер из аэропорта — разово за бронь</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-parking">
-            <span data-i18n="booking.extra.parking">Охраняемая парковка — за ночь</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-latecheckout">
-            <span data-i18n="booking.extra.latecheckout">Поздний выезд после 14:00 — разово за бронь</span>
-          </label>
-        </div>
-
-        <h3 data-i18n="booking.guest.title">Контакты гостя</h3>
-
-        <div class="field-row">
-          <label class="field">
-            <span data-i18n="booking.field.name">Имя и фамилия</span>
-            <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="Как к вам обращаться" required>
-            <span class="field__error" data-i18n="booking.error.name">Напишите имя — так мы обратимся к вам в ответе.</span>
+            <input type="number" name="guests" min="1" max="12" step="1" value="2" inputmode="numeric" required>
           </label>
           <label class="field">
             <span data-i18n="booking.field.phone">Телефон</span>
@@ -139,11 +105,6 @@
             <span class="field__error" data-i18n="booking.error.phone">Введите номер целиком — не меньше 10 цифр.</span>
           </label>
         </div>
-
-        <label class="field">
-          <span data-i18n="booking.field.comment">Комментарий</span>
-          <textarea name="comment" rows="4" data-i18n-attr="placeholder:booking.ph.comment" placeholder="Ранний заезд, вид из окна, детская кроватка — что важно учесть"></textarea>
-        </label>
 
         <div class="field consent">
           <label>
@@ -153,7 +114,7 @@
           </label>
           <span class="field__error" data-i18n="consent.err">Отметьте согласие на обработку данных</span>
         </div>
-        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Отправить в WhatsApp</button></p>
+        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Отправить заявку</button></p>
         <p class="summary__note" data-i18n="booking.legal">Заявка не списывает деньги: отель подтверждает даты и стоимость в ответном сообщении.</p>
 
         <div class="form-done" role="status" aria-live="polite">
@@ -162,32 +123,6 @@
           <pre></pre>
         </div>
       </form>
-
-      <aside class="summary">
-        <h3 data-i18n="booking.summary.title">Ваша бронь</h3>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.nights">Ночей</span>
-          <span data-sum="nights">0</span>
-        </div>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.base">Проживание</span>
-          <span data-sum="base">—</span>
-        </div>
-        <div class="summary__row summary__row--promo" hidden>
-          <span data-i18n="booking.summary.discount">Скидка по акции</span>
-          <span data-sum="discount">—</span>
-        </div>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.extras">Услуги</span>
-          <span data-sum="extras">—</span>
-        </div>
-        <div class="summary__row summary__row--total">
-          <span data-i18n="booking.summary.total">Итого</span>
-          <span data-sum="total">—</span>
-        </div>
-        <p class="summary__note" data-i18n="booking.summary.note">Оплата в отеле при заселении — наличными или картой. В высокий сезон отель может попросить предоплату за первую ночь.</p>
-        <p class="summary__note" data-i18n="booking.summary.hint">Расчёт предварительный. Окончательную стоимость отель подтверждает в WhatsApp.</p>
-      </aside>
 
     </div>
   </div>

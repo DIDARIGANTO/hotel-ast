@@ -83,6 +83,29 @@ export function buildMessage(form) {
   ].join('\n');
 }
 
+// Текст быстрой заявки: без категории и суммы — их называет отель.
+export function buildQuickMessage(form) {
+  const hotel = getHotel(form.hotelId);
+  const out = addDays(form.checkIn, form.nights);
+  return [
+    'Заявка на бронирование — AST Hotels',
+    `Отель: ${hotel?.name ?? '—'}`,
+    `Заезд: ${formatDate(form.checkIn)}`,
+    `Ночей: ${form.nights}${out ? ` (выезд ${formatDate(out)})` : ''}`,
+    `Гостей: ${form.guests}`,
+    `Гость: ${form.name}`,
+    `Телефон: ${form.phone}`,
+  ].join('\n');
+}
+
+export function addDays(iso, days) {
+  if (!iso || !days) return '';
+  const d = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return '';
+  d.setUTCDate(d.getUTCDate() + Number(days));
+  return d.toISOString().slice(0, 10);
+}
+
 export function buildWhatsAppUrl(hotelId, message) {
   const hotel = getHotel(hotelId);
   return `https://wa.me/${hotel?.whatsapp ?? ''}?text=${encodeURIComponent(message)}`;

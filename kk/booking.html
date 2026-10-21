@@ -57,17 +57,18 @@
     <div class="container">
       <p class="eyebrow" data-i18n="booking.eyebrow">Брондау</p>
       <h1 data-i18n="booking.title">Нөмір брондау</h1>
-      <p class="lead" data-i18n="booking.lead">Форманы толтырыңыз — баға бірден қайта есептеледі, ал өтінім таңдаған қонақ үйдің WhatsApp нөміріне тікелей жіберіледі. Растау жауап хабарламамен келеді.</p>
+      <p class="lead" data-i18n="booking.lead">Аты-жөні, кіру күні, түн мен қонақ саны — өтінім тікелей таңдалған қонақ үйдің WhatsApp-ына кетеді. Растау жауап хабарламасымен келеді.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="book">
+    <div class="book book--quick">
 
       <form id="booking-form" novalidate>
-        <h2 data-i18n="booking.stay.title">Тұру</h2>
+        <h2 data-i18n="booking.stay.title">Жылдам өтінім</h2>
+        <p class="lead" data-i18n="booking.stay.lead">Алты өріс — және өтінім таңдалған қонақ үйдің WhatsApp-ына кетеді. Әкімші жауабында күндер мен құнды растайды.</p>
 
         <label class="field">
           <span data-i18n="booking.field.hotel">Қонақ үй</span>
@@ -75,8 +76,9 @@
         </label>
 
         <label class="field">
-          <span data-i18n="booking.field.room">Нөмір санаты</span>
-          <select name="room" required></select>
+          <span data-i18n="booking.field.name">Аты-жөні</span>
+          <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="Сізге қалай жүгінейік" required>
+          <span class="field__error" data-i18n="booking.error.name">Атыңызды жазыңыз — жауабымызда сізге солай жүгінеміз.</span>
         </label>
 
         <div class="field-row">
@@ -86,52 +88,16 @@
             <span class="field__error" data-i18n="booking.error.in">Кіру күнін көрсетіңіз.</span>
           </label>
           <label class="field">
-            <span data-i18n="booking.field.out">Шығу күні</span>
-            <input type="date" name="out" required>
-            <span class="field__error" data-i18n="booking.error.out">Шығу күні кіру күнінен кейін болуы керек.</span>
+            <span data-i18n="booking.field.nights">Түн саны</span>
+            <input type="number" name="nights" min="1" max="90" step="1" value="1" inputmode="numeric" required>
+            <span class="field__error" data-i18n="booking.error.nights">Түн санын көрсетіңіз — 1-ден 90-ға дейін.</span>
           </label>
         </div>
 
         <div class="field-row">
-          <label class="field">
-            <span data-i18n="booking.field.rooms">Нөмір саны</span>
-            <input type="number" name="rooms" min="1" max="6" step="1" value="1" inputmode="numeric" required>
-          </label>
           <label class="field">
             <span data-i18n="booking.field.guests">Қонақ саны</span>
-            <input type="number" name="guests" min="1" max="6" step="1" value="2" inputmode="numeric" required>
-            <span class="field__error" data-i18n="booking.error.guests">Таңдалған санатқа мұншама қонақ сыймайды — сан ең үлкен мәнге дейін азайтылды.</span>
-          </label>
-        </div>
-
-        <h3 data-i18n="booking.extras.title">Қосымша қызметтер</h3>
-        <p class="summary__note" data-i18n="booking.extras.note">Қызметтерді кейін, тіркелу кезінде де қосуға болады. Олардың құны жиынтық есепке бірден кіреді.</p>
-        <div class="extras">
-          <label>
-            <input type="checkbox" name="extra-breakfast">
-            <span data-i18n="booking.extra.breakfast">Таңғы ас — әр қонаққа бір түнге</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-transfer">
-            <span data-i18n="booking.extra.transfer">Әуежайдан трансфер — брондауға бір рет</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-parking">
-            <span data-i18n="booking.extra.parking">Күзетілетін тұрақ — бір түнге</span>
-          </label>
-          <label>
-            <input type="checkbox" name="extra-latecheckout">
-            <span data-i18n="booking.extra.latecheckout">14:00-ден кейін кеш шығу — брондауға бір рет</span>
-          </label>
-        </div>
-
-        <h3 data-i18n="booking.guest.title">Қонақтың байланысы</h3>
-
-        <div class="field-row">
-          <label class="field">
-            <span data-i18n="booking.field.name">Аты-жөні</span>
-            <input type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:booking.ph.name" placeholder="Сізге қалай жүгінейік" required>
-            <span class="field__error" data-i18n="booking.error.name">Атыңызды жазыңыз — жауабымызда сізге солай жүгінеміз.</span>
+            <input type="number" name="guests" min="1" max="12" step="1" value="2" inputmode="numeric" required>
           </label>
           <label class="field">
             <span data-i18n="booking.field.phone">Телефон</span>
@@ -139,11 +105,6 @@
             <span class="field__error" data-i18n="booking.error.phone">Нөмірді толық енгізіңіз — кемінде 10 сан.</span>
           </label>
         </div>
-
-        <label class="field">
-          <span data-i18n="booking.field.comment">Ескертпе</span>
-          <textarea name="comment" rows="4" data-i18n-attr="placeholder:booking.ph.comment" placeholder="Ерте кіру, терезеден көрініс, балалар төсегі — ескеру керегін жазыңыз"></textarea>
-        </label>
 
         <div class="field consent">
           <label>
@@ -153,7 +114,7 @@
           </label>
           <span class="field__error" data-i18n="consent.err">Деректерді өңдеуге келісуді белгілеңіз</span>
         </div>
-        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">WhatsApp-қа жіберу</button></p>
+        <p><button class="btn btn--gold" type="submit" data-i18n="booking.submit">Өтінім жіберу</button></p>
         <p class="summary__note" data-i18n="booking.legal">Өтінім ақша шешпейді: қонақ үй күндер мен бағаны жауап хабарламада растайды.</p>
 
         <div class="form-done" role="status" aria-live="polite">
@@ -162,32 +123,6 @@
           <pre></pre>
         </div>
       </form>
-
-      <aside class="summary">
-        <h3 data-i18n="booking.summary.title">Сіздің брондауыңыз</h3>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.nights">Түн саны</span>
-          <span data-sum="nights">0</span>
-        </div>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.base">Тұру</span>
-          <span data-sum="base">—</span>
-        </div>
-        <div class="summary__row summary__row--promo" hidden>
-          <span data-i18n="booking.summary.discount">Науқан жеңілдігі</span>
-          <span data-sum="discount">—</span>
-        </div>
-        <div class="summary__row">
-          <span data-i18n="booking.summary.extras">Қызметтер</span>
-          <span data-sum="extras">—</span>
-        </div>
-        <div class="summary__row summary__row--total">
-          <span data-i18n="booking.summary.total">Барлығы</span>
-          <span data-sum="total">—</span>
-        </div>
-        <p class="summary__note" data-i18n="booking.summary.note">Төлем қонақ үйде тіркелу кезінде — қолма-қол ақшамен немесе картамен. Маусым қызған кезде қонақ үй бірінші түнге алдын ала төлем сұрауы мүмкін.</p>
-        <p class="summary__note" data-i18n="booking.summary.hint">Есеп алдын ала жүргізіледі. Түпкілікті бағаны қонақ үй WhatsApp арқылы растайды.</p>
-      </aside>
 
     </div>
   </div>
