@@ -10,8 +10,8 @@
 
 /* ── Токены ─────────────────────────────────────────────── */
 :root{
-  --indigo:#101B33;
-  --indigo-soft:#1B2A48;
+  --indigo:#343D52;      /* на 15 % светлее прежнего #101B33 */
+  --indigo-soft:#3D4A63;
   --gold:#C8A96A;
   --gold-dim:#A98A4E;     /* только как фон: на нём лежит тёмный текст */
   --gold-ink:#8A6F3A;     /* золотой для текста: 4.8:1 на белом, WCAG AA */
@@ -133,7 +133,7 @@ p{margin:0 0 1em}
   transition:background .35s var(--ease),box-shadow .35s var(--ease);
 }
 .header__inner{display:flex;align-items:center;gap:28px;height:84px;color:var(--white)}
-.header.is-solid{background:rgba(16,27,51,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line-dark)}
+.header.is-solid{background:rgba(52,61,82,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line-dark)}
 .header--static{background:var(--indigo)}
 
 .logo{font-family:var(--serif);font-size:20px;letter-spacing:.14em;color:inherit;white-space:nowrap}
@@ -209,7 +209,7 @@ p{margin:0 0 1em}
 .hero{position:relative;min-height:clamp(560px,88vh,900px);display:flex;align-items:flex-end;color:var(--white);margin-top:-84px}
 .hero__media{position:absolute;inset:0;overflow:hidden}
 .hero__media img{width:100%;height:100%;object-fit:cover}
-.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,27,51,.5) 0%,rgba(16,27,51,.2) 40%,rgba(16,27,51,.78) 100%)}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(52,61,82,.5) 0%,rgba(52,61,82,.2) 40%,rgba(52,61,82,.78) 100%)}
 /* Только вертикальные отступы: на страницах отелей класс висит на том же
    элементе, что и .container, и сокращённая запись padding затирала бы
    боковые поля — заголовок упирался бы в край экрана. */
@@ -244,7 +244,7 @@ p{margin:0 0 1em}
 .searchbar{
   position:relative;z-index:5;background:var(--white);border:1px solid var(--line);
   display:grid;grid-template-columns:repeat(4,1fr) auto;gap:0;margin-top:-44px;
-  box-shadow:0 24px 60px rgba(16,27,51,.16);
+  box-shadow:0 24px 60px rgba(52,61,82,.16);
 }
 .searchbar label{display:flex;flex-direction:column;gap:6px;padding:18px 22px;border-right:1px solid var(--line)}
 .searchbar span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
