@@ -92,88 +92,46 @@
 </section>
 
 
-<!-- Портфель сети: карточки рендерит assets/js/pages.js из hotels.js -->
+<!-- Три отеля: адрес, звонок, WhatsApp — и ничего лишнего -->
 <section class="section">
   <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.portfolio.eyebrow">Желі нысандары</p>
-      <h2 data-i18n="home.portfolio.title">Әртүрлі сапарға арналған үш формат</h2>
-      <p class="lead" data-i18n="home.portfolio.lead">Бір-екі түнге созылатын іссапар, қаладағы демалыс күндері немесе отбасымен ұзақ сапар — желіден лайықты формат та, бюджет те табылады.</p>
-    </div>
-    <div class="grid grid--3" data-hotels></div>
-  </div>
-</section>
-
-<section class="section section--dark">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.why.eyebrow">Желінің артықшылықтары</p>
-      <h2 data-i18n="home.why.title">Неге тікелей брондаған тиімді</h2>
-    </div>
-    <div class="grid grid--4">
-      <div class="step reveal">
-        <span class="step__num">3</span>
-        <h3 data-i18n="home.why.1">Орталықтағы үш локация</h3>
-        <p class="lead" data-i18n="home.why.1.text">AMINA мен City Line Шәмші Қалдаяқов көшесіндегі бір ғимаратта орналасқан, Botanic Garden Apartments — ботаникалық бақтың қасында.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__num">24/7</span>
-        <h3 data-i18n="home.why.2">Тіркеу орны тәулік бойы жұмыс істейді</h3>
-        <p class="lead" data-i18n="home.why.2.text">Түнгі кіруді алдын ала келісеміз: рейсіңіз бен ұшып келу уақытын жазыңыз, сізді қарсы алады.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__num">0 %</span>
-        <h3 data-i18n="home.why.3">Комиссиясыз тікелей брондау</h3>
-        <p class="lead" data-i18n="home.why.3.text">Өтінім таңдаған қонақ үйдің WhatsApp нөміріне түседі: бағаны бірде-бір делдал көтермейді.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__num">4.9</span>
-        <h3 data-i18n="home.why.4">2ГИС рейтингі — 4.6–4.9</h3>
-        <p class="lead" data-i18n="home.why.4.text">Желінің үш қонақ үйінің 2026 жылғы шілдедегі бағалары — 2ГИС карточкаларының деректері бойынша; өзекті сандар әрқашан сол карточкаларда көрінеді.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Отзывы: сводные оценки 2ГИС, без цитат от имени конкретных гостей -->
-<section class="section">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.reviews.eyebrow">Қонақтардың бағасы</p>
-      <h2 data-i18n="home.reviews.title">2ГИС-тегі қонақ бағалары</h2>
-      <p class="lead" data-i18n="home.reviews.lead">Рейтингтер 2026 жылғы шілдедегі ашық 2ГИС карточкаларынан алынған, қонақ пікірлері де сонда. Ал төменде үш қонақ үйдің әрқайсысына не үшін келетінін қысқаша сипаттадық.</p>
-    </div>
-    <div class="grid grid--3">
-      <article class="quote reveal">
-        <span class="rating"><span class="rating__star">★</span>4.7
-          <span class="rating__count" data-i18n="home.reviews.amina.count">436 баға</span></span>
-        <p class="quote__text" data-i18n="home.reviews.amina.text">Іссапар мен қысқа сапарларға арналған қалалық қонақ үй: тіркеу орны тәулік бойы жұмыс істейді, таңғы ас пен трансфер — сұраныс бойынша.</p>
-        <p class="quote__author">AMINA Hotel · <span data-i18n="home.reviews.source">2ГИС рейтингі, 2026 жылғы шілде</span></p>
+    <div class="grid grid--3 hotel-tiles">
+      <article class="hotel-tile reveal">
+        <a href="amina.html" class="hotel-tile__media"><img src="../assets/img/amina/amina-hotel-astana-fasad.jpg" alt="Қасбеті AMINA Hotel Шәмші Қалдаяқов көшесі, 15 Астанада" loading="lazy"></a>
+        <div class="hotel-tile__body">
+          <p class="eyebrow" data-i18n="pages.type.hotel">Қалалық қонақ үй</p>
+          <h2><a href="amina.html">AMINA Hotel</a></h2>
+          <p class="card__meta"><span data-i18n="hotel.amina.address">Шәмші Қалдаяқов көшесі, 15</span> · <span data-i18n="hotel.amina.district">Сарайшық</span></p>
+          <div class="hotel-actions">
+            <a class="btn btn--gold" href="tel:+77013353530" data-i18n="hotel.act.call">Қоңырау шалу</a>
+            <a class="btn btn--gold" href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="hotel.act.write">Жазу</a>
+          </div>
+        </div>
       </article>
-      <article class="quote reveal">
-        <span class="rating"><span class="rating__star">★</span>4.9
-          <span class="rating__count" data-i18n="home.reviews.cityline.count">68 баға</span></span>
-        <p class="quote__text" data-i18n="home.reviews.cityline.text">Желідегі ең жоғары баға. Нөмір саны аз — бутик-форматтың мәні де осында: әкімшінің әр қонаққа уақыты бар.</p>
-        <p class="quote__author">City Line Hotel · <span data-i18n="home.reviews.source">2ГИС рейтингі, 2026 жылғы шілде</span></p>
+      <article class="hotel-tile reveal">
+        <a href="cityline.html" class="hotel-tile__media"><img src="../assets/img/cityline/city-line-hotel-astana-fasad.jpg" alt="Қасбеті City Line Hotel Шәмші Қалдаяқов көшесі, 15 Астанада" loading="lazy"></a>
+        <div class="hotel-tile__body">
+          <p class="eyebrow" data-i18n="pages.type.boutique">Бутик-қонақ үй</p>
+          <h2><a href="cityline.html">City Line Hotel</a></h2>
+          <p class="card__meta"><span data-i18n="hotel.cityline.address">Шәмші Қалдаяқов көшесі, 15</span> · <span data-i18n="hotel.cityline.district">Сарайшық</span></p>
+          <div class="hotel-actions">
+            <a class="btn btn--gold" href="tel:+77759590088" data-i18n="hotel.act.call">Қоңырау шалу</a>
+            <a class="btn btn--gold" href="https://wa.me/77759590088" target="_blank" rel="noopener" data-i18n="hotel.act.write">Жазу</a>
+          </div>
+        </div>
       </article>
-      <article class="quote reveal">
-        <span class="rating"><span class="rating__star">★</span>4.6
-          <span class="rating__count" data-i18n="home.reviews.botanic.count">503 баға</span></span>
-        <p class="quote__text" data-i18n="home.reviews.botanic.text">Желідегі ең көп пікір. Әр апартаментте ас үй, кір жуғыш машина және жұмыс орны бар — апталап тұруға ыңғайлы формат.</p>
-        <p class="quote__author">Botanic Garden Apartments · <span data-i18n="home.reviews.source">2ГИС рейтингі, 2026 жылғы шілде</span></p>
+      <article class="hotel-tile reveal">
+        <a href="botanic.html" class="hotel-tile__media"><img src="../assets/img/botanic/botanic-garden-astana-studiya.jpg" alt="Студия Botanic Garden Apartments Түркістан көшесі, 14а Астанада" loading="lazy"></a>
+        <div class="hotel-tile__body">
+          <p class="eyebrow" data-i18n="pages.type.apartments">Апартаменттер</p>
+          <h2><a href="botanic.html">Botanic Garden Apartments</a></h2>
+          <p class="card__meta"><span data-i18n="hotel.botanic.address">Түркістан көшесі, 14а</span> · <span data-i18n="hotel.botanic.district">Есіл</span></p>
+          <div class="hotel-actions">
+            <a class="btn btn--gold" href="tel:+77027771503" data-i18n="hotel.act.call">Қоңырау шалу</a>
+            <a class="btn btn--gold" href="https://wa.me/77027771503" target="_blank" rel="noopener" data-i18n="hotel.act.write">Жазу</a>
+          </div>
+        </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--sand">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.cta.eyebrow">Қонақ үй таңдау</p>
-      <h2 data-i18n="home.cta.title">Шеше алмай тұрсыз ба? Мақсатыңызға сай қонақ үй табамыз</h2>
-      <p class="lead" data-i18n="home.cta.text">Күндерді, қонақ санын және бюджетті жазыңыз — желінің үш қонақ үйінің бірінен нұсқа ұсынып, бос нөмірлерді растаймыз.</p>
-      <p><a class="btn btn--gold" href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="home.cta.button">WhatsApp-қа жазу</a></p>
     </div>
   </div>
 </section>

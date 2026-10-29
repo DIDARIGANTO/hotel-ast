@@ -15,13 +15,13 @@ test('countNights возвращает 0 на некорректном инте�
 test('calcTotal умножает цену на ночи и количество номеров', () => {
   const res = calcTotal({
     hotelId: 'amina', roomId: 'standard',
-    checkIn: '2026-09-01', checkOut: '2026-09-04',
+    checkIn: '2026-09-01', checkOut: '2026-09-03',
     rooms: 2, guests: 2, extras: [],
   });
-  assert.equal(res.nights, 3);
-  assert.equal(res.base, 72000); // 12000 * 3 * 2
+  assert.equal(res.nights, 2);
+  assert.equal(res.base, 48000); // 12000 * 2 * 2, две ночи — без акции
   assert.equal(res.discount, 0);
-  assert.equal(res.total, 72000);
+  assert.equal(res.total, 48000);
 });
 
 test('calcTotal считает услуги по своим правилам', () => {
@@ -35,27 +35,27 @@ test('calcTotal считает услуги по своим правилам', (
   assert.equal(res.total, 24000 + 26000);
 });
 
-test('акция Botanic снимает 10% с проживания от 7 ночей', () => {
+test('акция снимает 10% с проживания от 3 ночей', () => {
   const res = calcTotal({
-    hotelId: 'botanic', roomId: 'studio',
-    checkIn: '2026-11-01', checkOut: '2026-11-08',
+    hotelId: 'amina', roomId: 'standard',
+    checkIn: '2026-11-01', checkOut: '2026-11-04',
     rooms: 1, guests: 2, extras: [],
   });
-  assert.equal(res.nights, 7);
-  assert.equal(res.base, 126000);   // 18000 × 7
-  assert.equal(res.discount, 12600);
-  assert.equal(res.total, 113400);
+  assert.equal(res.nights, 3);
+  assert.equal(res.base, 36000);   // 12000 × 3
+  assert.equal(res.discount, 3600);
+  assert.equal(res.total, 32400);
 });
 
-test('акция не применяется при 6 ночах и к услугам', () => {
+test('акция не применяется при 2 ночах и к услугам', () => {
   const res = calcTotal({
     hotelId: 'botanic', roomId: 'studio',
-    checkIn: '2026-11-01', checkOut: '2026-11-07',
+    checkIn: '2026-11-01', checkOut: '2026-11-03',
     rooms: 1, guests: 2, extras: ['transfer'],
   });
-  assert.equal(res.nights, 6);
+  assert.equal(res.nights, 2);
   assert.equal(res.discount, 0);
-  assert.equal(res.total, 108000 + 8000);
+  assert.equal(res.total, 36000 + 8000);
 });
 
 test('calcTotal возвращает нули при пустых датах', () => {

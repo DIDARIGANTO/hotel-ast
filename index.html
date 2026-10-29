@@ -92,88 +92,46 @@
 </section>
 
 
-<!-- Портфель сети: карточки рендерит assets/js/pages.js из hotels.js -->
+<!-- Три отеля: адрес, звонок, WhatsApp — и ничего лишнего -->
 <section class="section">
   <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.portfolio.eyebrow">Портфель сети</p>
-      <h2 data-i18n="home.portfolio.title">Три формата под разные поездки</h2>
-      <p class="lead" data-i18n="home.portfolio.lead">Командировка на пару ночей, выходные в городе или долгая поездка с семьёй — в сети найдётся подходящий формат и бюджет.</p>
-    </div>
-    <div class="grid grid--3" data-hotels></div>
-  </div>
-</section>
-
-<section class="section section--dark">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.why.eyebrow">Преимущества сети</p>
-      <h2 data-i18n="home.why.title">Почему бронировать напрямую</h2>
-    </div>
-    <div class="grid grid--4">
-      <div class="step reveal">
-        <span class="step__num">3</span>
-        <h3 data-i18n="home.why.1">Три локации в центре</h3>
-        <p class="lead" data-i18n="home.why.1.text">AMINA и City Line стоят в одном здании на Шамши Калдаякова, Botanic Garden Apartments — у ботанического сада.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__num">24/7</span>
-        <h3 data-i18n="home.why.2">Стойка работает круглосуточно</h3>
-        <p class="lead" data-i18n="home.why.2.text">Ночной заезд согласуем заранее: напишите рейс и время прилёта, и вас встретят.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__num">0 %</span>
-        <h3 data-i18n="home.why.3">Прямая бронь без комиссии</h3>
-        <p class="lead" data-i18n="home.why.3.text">Заявка уходит в WhatsApp выбранного отеля: цену не увеличивает ни один посредник.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__num">4.9</span>
-        <h3 data-i18n="home.why.4">Рейтинг 4.6–4.9 в 2ГИС</h3>
-        <p class="lead" data-i18n="home.why.4.text">Оценки трёх отелей сети на июль 2026 года — по данным карточек 2ГИС; актуальные цифры всегда видны в самих карточках.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Отзывы: сводные оценки 2ГИС, без цитат от имени конкретных гостей -->
-<section class="section">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.reviews.eyebrow">Оценки гостей</p>
-      <h2 data-i18n="home.reviews.title">Оценки гостей в 2ГИС</h2>
-      <p class="lead" data-i18n="home.reviews.lead">Рейтинги взяты из открытых карточек 2ГИС (июль 2026), отзывы гостей — там же. А ниже мы коротко описали, за чем едут в каждый из трёх отелей.</p>
-    </div>
-    <div class="grid grid--3">
-      <article class="quote reveal">
-        <span class="rating"><span class="rating__star">★</span>4.7
-          <span class="rating__count" data-i18n="home.reviews.amina.count">436 оценок</span></span>
-        <p class="quote__text" data-i18n="home.reviews.amina.text">Городской отель для командировок и коротких поездок: стойка работает круглосуточно, завтрак и трансфер — по запросу.</p>
-        <p class="quote__author">AMINA Hotel · <span data-i18n="home.reviews.source">рейтинг 2ГИС, июль 2026</span></p>
+    <div class="grid grid--3 hotel-tiles">
+      <article class="hotel-tile reveal">
+        <a href="amina.html" class="hotel-tile__media"><img src="assets/img/amina/amina-hotel-astana-fasad.jpg" alt="Фасад AMINA Hotel на улице Шамши Калдаякова, 15 в Астане" loading="lazy"></a>
+        <div class="hotel-tile__body">
+          <p class="eyebrow" data-i18n="pages.type.hotel">Городской отель</p>
+          <h2><a href="amina.html">AMINA Hotel</a></h2>
+          <p class="card__meta"><span data-i18n="hotel.amina.address">ул. Шамши Калдаякова, 15</span> · <span data-i18n="hotel.amina.district">Сарайшык</span></p>
+          <div class="hotel-actions">
+            <a class="btn btn--gold" href="tel:+77013353530" data-i18n="hotel.act.call">Позвонить</a>
+            <a class="btn btn--gold" href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
+          </div>
+        </div>
       </article>
-      <article class="quote reveal">
-        <span class="rating"><span class="rating__star">★</span>4.9
-          <span class="rating__count" data-i18n="home.reviews.cityline.count">68 оценок</span></span>
-        <p class="quote__text" data-i18n="home.reviews.cityline.text">Самая высокая оценка сети. Номеров немного — в этом смысл бутик-формата: у администратора есть время на каждого гостя.</p>
-        <p class="quote__author">City Line Hotel · <span data-i18n="home.reviews.source">рейтинг 2ГИС, июль 2026</span></p>
+      <article class="hotel-tile reveal">
+        <a href="cityline.html" class="hotel-tile__media"><img src="assets/img/cityline/city-line-hotel-astana-fasad.jpg" alt="Фасад City Line Hotel на улице Шамши Калдаякова, 15 в Астане" loading="lazy"></a>
+        <div class="hotel-tile__body">
+          <p class="eyebrow" data-i18n="pages.type.boutique">Бутик-отель</p>
+          <h2><a href="cityline.html">City Line Hotel</a></h2>
+          <p class="card__meta"><span data-i18n="hotel.cityline.address">ул. Шамши Калдаякова, 15</span> · <span data-i18n="hotel.cityline.district">Сарайшык</span></p>
+          <div class="hotel-actions">
+            <a class="btn btn--gold" href="tel:+77759590088" data-i18n="hotel.act.call">Позвонить</a>
+            <a class="btn btn--gold" href="https://wa.me/77759590088" target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
+          </div>
+        </div>
       </article>
-      <article class="quote reveal">
-        <span class="rating"><span class="rating__star">★</span>4.6
-          <span class="rating__count" data-i18n="home.reviews.botanic.count">503 оценки</span></span>
-        <p class="quote__text" data-i18n="home.reviews.botanic.text">Больше всех отзывов в сети. Кухня, стиральная машина и рабочее место в каждом апартаменте — формат, в котором удобно жить неделями.</p>
-        <p class="quote__author">Botanic Garden Apartments · <span data-i18n="home.reviews.source">рейтинг 2ГИС, июль 2026</span></p>
+      <article class="hotel-tile reveal">
+        <a href="botanic.html" class="hotel-tile__media"><img src="assets/img/botanic/botanic-garden-astana-studiya.jpg" alt="Студия Botanic Garden Apartments на Туркестан, 14а в Астане" loading="lazy"></a>
+        <div class="hotel-tile__body">
+          <p class="eyebrow" data-i18n="pages.type.apartments">Апартаменты</p>
+          <h2><a href="botanic.html">Botanic Garden Apartments</a></h2>
+          <p class="card__meta"><span data-i18n="hotel.botanic.address">ул. Туркестан, 14а</span> · <span data-i18n="hotel.botanic.district">Есиль</span></p>
+          <div class="hotel-actions">
+            <a class="btn btn--gold" href="tel:+77027771503" data-i18n="hotel.act.call">Позвонить</a>
+            <a class="btn btn--gold" href="https://wa.me/77027771503" target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
+          </div>
+        </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--sand">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="home.cta.eyebrow">Подбор отеля</p>
-      <h2 data-i18n="home.cta.title">Не определились? Подберём отель под задачу</h2>
-      <p class="lead" data-i18n="home.cta.text">Напишите даты, число гостей и бюджет — предложим вариант в одном из трёх отелей сети и подтвердим свободные номера.</p>
-      <p><a class="btn btn--gold" href="https://wa.me/77013353530" target="_blank" rel="noopener" data-i18n="home.cta.button">Написать в WhatsApp</a></p>
     </div>
   </div>
 </section>

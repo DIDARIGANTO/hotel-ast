@@ -26,10 +26,11 @@ test('getHotel и getRoom находят запись', () => {
   assert.equal(getHotel('нет-такого'), undefined);
 });
 
-test('у Botanic задана акция за длительное проживание', () => {
-  const promo = getHotel('botanic').promo;
-  assert.equal(promo.discount, 0.10);
-  assert.equal(promo.minNights, 7);
+test('у всех трёх отелей акция −10% от 3 ночей', () => {
+  for (const hotel of HOTELS) {
+    assert.equal(hotel.promo.discount, 0.10, hotel.id);
+    assert.equal(hotel.promo.minNights, 3, hotel.id);
+  }
 });
 
 test('дополнительные услуги имеют цену и способ расчёта', () => {

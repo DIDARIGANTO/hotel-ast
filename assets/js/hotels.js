@@ -9,6 +9,7 @@
 export const HOTELS = [
   {
     id: 'amina',
+    promo: { discount: 0.10, minNights: 3 },   // спецпредложение сети: от 3 ночей −10 %
     name: 'AMINA Hotel',
     page: 'amina.html',
     type: 'hotel',
@@ -67,6 +68,7 @@ export const HOTELS = [
   },
   {
     id: 'cityline',
+    promo: { discount: 0.10, minNights: 3 },   // спецпредложение сети: от 3 ночей −10 %
     name: 'City Line Hotel',
     page: 'cityline.html',
     type: 'boutique',
@@ -127,6 +129,7 @@ export const HOTELS = [
   },
   {
     id: 'botanic',
+    promo: { discount: 0.10, minNights: 3 },   // спецпредложение сети: от 3 ночей −10 %
     name: 'Botanic Garden Apartments',
     page: 'botanic.html',
     type: 'apartments',
@@ -143,7 +146,6 @@ export const HOTELS = [
     priceConfirmed: false, // в 2ГИС цены нет — считается по нашим категориям
     gis: 'https://2gis.kz/astana/firm/70000001044528049',
     instagram: 'https://www.instagram.com/bg.apartments/',
-    promo: { discount: 0.10, minNights: 7 },   // длительное проживание: от 7 ночей −10 %
     hero: 'assets/img/botanic/botanic-garden-astana-studiya.jpg',
     amenities: ['wifi', 'kitchen', 'parking', 'reception24', 'laundry', 'workspace'],
     rooms: [
