@@ -498,3 +498,10 @@ textarea:focus-visible,
 .geo__links a{color:inherit}
 .split .promo{align-self:center}
 @media (max-width:640px){.split .promo{align-self:stretch}}
+/* ── Главная: список форматов в hero, подзаголовки секций ─────────── */
+.hero-list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;max-width:60ch;color:rgba(255,255,255,.86)}
+.hero-list b{font-weight:600;color:var(--white)}
+.hero__note{margin:22px 0 0;max-width:60ch;font-size:15px;line-height:1.6;color:rgba(255,255,255,.78)}
+.section-head{max-width:70ch;margin-bottom:clamp(28px,4vw,48px)}
+.section-head h2{margin:0 0 12px}
+.section-head .lead{margin:0}
