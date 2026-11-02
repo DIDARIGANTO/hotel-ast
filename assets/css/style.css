@@ -505,3 +505,8 @@ textarea:focus-visible,
 .section-head{max-width:70ch;margin-bottom:clamp(28px,4vw,48px)}
 .section-head h2{margin:0 0 12px}
 .section-head .lead{margin:0}
+/* ── Страницы отелей: hero начинается под шапкой, фасад выровнен по верху,
+   чтобы вывеска не пряталась под меню ───────────────────────────────── */
+.theme-amina .hero--compact,.theme-cityline .hero--compact,.theme-botanic .hero--compact{margin-top:0;min-height:clamp(420px,60vh,620px)}
+.theme-amina .hero--compact .hero__inner,.theme-cityline .hero--compact .hero__inner,.theme-botanic .hero--compact .hero__inner{padding-top:72px}
+.theme-amina .hero__media img,.theme-cityline .hero__media img{object-position:50% 0}
