@@ -25,20 +25,20 @@ PAGES = ['index', 'hotels', 'amina', 'cityline', 'botanic', 'offers',
 META = {
     'index': {
         'kk': ('AST Hotels — Астанадағы үш қонақ үй',
-               'Астанадағы AST Hotels желісі: AMINA қалалық қонақ үйі, City Line бутик-қонақ үйі және Botanic Garden апартаменттері. Делдалсыз тікелей брондау, WhatsApp арқылы өтінім.'),
+               'Астанадағы AST Hotels желісі: AMINA смарт-қонақ үйі, City Line бутик-қонақ үйі және Botanic Garden апартаменттері. Делдалсыз тікелей брондау, WhatsApp арқылы өтінім.'),
         'en': ('AST Hotels — three hotels in Astana, Kazakhstan',
-               'AST Hotels in Astana: AMINA city hotel, City Line boutique hotel and Botanic Garden serviced apartments. Book directly with no intermediaries — requests go straight to the hotel on WhatsApp.'),
+               'AST Hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden serviced apartments. Book directly with no intermediaries — requests go straight to the hotel on WhatsApp.'),
     },
     'hotels': {
         'kk': ('Астанадағы AST Hotels желісінің қонақ үйлері — үш мекенжай',
-               'Қалалық қонақ үй, бутик-қонақ үй және ас үйі бар апартаменттер: AMINA, City Line және Botanic Garden. Формат, аудан және баға бойынша салыстыру.'),
-        'en': ('Hotels in Astana — AST Hotels: city hotel, boutique hotel, apartments',
-               'Compare the three AST Hotels properties in Astana: AMINA city hotel, City Line boutique hotel and Botanic Garden apartments with a kitchen. Format, district, prices and 2GIS ratings.'),
+               'Смарт-қонақ үй, бутик-қонақ үй және ас үйі бар апартаменттер: AMINA, City Line және Botanic Garden. Формат, аудан және баға бойынша салыстыру.'),
+        'en': ('Hotels in Astana — AST Hotels: smart hotel, boutique hotel, apartments',
+               'Compare the three AST Hotels properties in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden apartments with a kitchen. Format, district, prices and 2GIS ratings.'),
     },
     'amina': {
-        'kk': ('AMINA Hotel — Астанадағы қалалық қонақ үй | AST Hotels',
+        'kk': ('AMINA Hotel — Астанадағы смарт-қонақ үй | AST Hotels',
                'Астана, Шәмші Қалдаяқов көшесі, 15: 21 нөмір, тәулік бойы тіркеу, коворкинг, таңғы ас пен трансфер сұраныс бойынша. 12 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('AMINA Hotel — city hotel in Astana, Kazakhstan | AST Hotels',
+        'en': ('AMINA Hotel — smart hotel in Astana, Kazakhstan | AST Hotels',
                'AMINA Hotel at 15 Shamshi Kaldayakov St., Astana: 21 rooms, 24-hour check-in, coworking, breakfast and airport transfer on request. From 12 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
     },
     'cityline': {

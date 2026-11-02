@@ -139,7 +139,7 @@ p{margin:0 0 1em}
 .logo{font-family:var(--serif);font-size:20px;letter-spacing:.14em;color:inherit;white-space:nowrap}
 .logo span{color:var(--gold)}
 
-.nav{display:flex;gap:30px;margin-left:auto}
+.nav{display:flex;gap:24px;margin-left:auto}
 .nav a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;position:relative;padding:6px 0;opacity:.85}
 .nav a:hover,.nav a[aria-current="page"]{opacity:1}
 .nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
@@ -160,7 +160,7 @@ p{margin:0 0 1em}
 .burger.is-open span:nth-child(2){opacity:0}
 .burger.is-open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
-@media (max-width:1024px){
+@media (max-width:1100px){
   .burger{display:block;margin-left:auto}
   .nav{
     position:fixed;inset:84px 0 0;overflow:auto;background:var(--indigo);color:var(--white);
