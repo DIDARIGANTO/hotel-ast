@@ -530,3 +530,6 @@ textarea:focus-visible,
 .incl__item h3{margin:0 0 8px;font-size:18px}
 .incl__item p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 .section--sand .room{border-color:transparent}
+/* Ссылки в фактах (телефон, Instagram) должны читаться как ссылки */
+.facts__value a{color:var(--gold-ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold)}
+.facts__value a:hover{color:var(--indigo)}
