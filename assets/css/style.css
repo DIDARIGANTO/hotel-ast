@@ -535,3 +535,16 @@ textarea:focus-visible,
 /* Ссылки в фактах (телефон, Instagram) должны читаться как ссылки */
 .facts__value a{color:var(--gold-ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold)}
 .facts__value a:hover{color:var(--indigo)}
+/* ── Бронь: выбор отеля тремя плитками ───────────────────────────── */
+.hotel-pick{border:0;padding:0;margin:0 0 22px;min-width:0}
+.hotel-pick legend{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0;margin-bottom:8px}
+.hotel-pick__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hotel-pick__item{position:relative;display:flex;flex-direction:column;gap:4px;padding:16px 16px 14px;border:1px solid var(--line);background:var(--white);cursor:pointer;transition:border-color .25s var(--ease)}
+.hotel-pick__item:hover{border-color:var(--gold-dim)}
+.hotel-pick__item input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.hotel-pick__item:has(input:checked){border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.hotel-pick__item:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
+.hotel-pick__name{font-family:var(--serif);font-size:18px;line-height:1.2;color:var(--indigo)}
+.hotel-pick__type{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.hotel-pick__addr{font-size:13px;color:var(--muted)}
+@media (max-width:640px){.hotel-pick__grid{grid-template-columns:1fr}}

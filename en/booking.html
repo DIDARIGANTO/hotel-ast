@@ -72,10 +72,29 @@
         <h2 data-i18n="booking.stay.title">Quick request</h2>
         <p class="lead" data-i18n="booking.stay.lead">Six fields — and the request goes to the selected hotel on WhatsApp. The front desk confirms dates and price in reply.</p>
 
-        <label class="field">
-          <span data-i18n="booking.field.hotel">Hotel</span>
-          <select name="hotel" required></select>
-        </label>
+        <fieldset class="hotel-pick">
+          <legend data-i18n="booking.field.hotel">Hotel</legend>
+          <div class="hotel-pick__grid">
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="amina" checked>
+              <span class="hotel-pick__name">AMINA Hotel</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.hotel">Smart hotel</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.amina.address">15 Shamshi Kaldayakov St.</span>
+            </label>
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="cityline">
+              <span class="hotel-pick__name">City Line Hotel</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.boutique">Boutique hotel</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.cityline.address">15 Shamshi Kaldayakov St.</span>
+            </label>
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="botanic">
+              <span class="hotel-pick__name">Botanic Garden Apartments</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.apartments">Apartments with a kitchen</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.botanic.address">14a Turkestan St.</span>
+            </label>
+          </div>
+        </fieldset>
 
         <label class="field">
           <span data-i18n="booking.field.name">Name</span>

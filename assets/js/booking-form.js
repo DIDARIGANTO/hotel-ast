@@ -1,4 +1,4 @@
-import { HOTELS, getHotel, getRoom } from './hotels.js';
+import { getHotel, getRoom } from './hotels.js';
 import { buildQuickMessage, buildWhatsAppUrl } from './booking.js';
 
 // Быстрая заявка: отель, имя, дата заезда, число ночей, гостей, телефон,
@@ -8,7 +8,8 @@ if (form) {
   const el = (name) => form.elements[name];
   const params = new URLSearchParams(location.search);
 
-  el('hotel').innerHTML = HOTELS.map((h) => `<option value="${h.id}">${h.name}</option>`).join('');
+  // Отель выбирается плитками-радиокнопками в разметке; form.elements.hotel —
+  // RadioNodeList, его .value читает и ставит выбранный id.
 
   function readForm() {
     return {

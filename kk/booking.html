@@ -72,10 +72,29 @@
         <h2 data-i18n="booking.stay.title">Жылдам өтінім</h2>
         <p class="lead" data-i18n="booking.stay.lead">Алты өріс — және өтінім таңдалған қонақ үйдің WhatsApp-ына кетеді. Әкімші жауабында күндер мен құнды растайды.</p>
 
-        <label class="field">
-          <span data-i18n="booking.field.hotel">Қонақ үй</span>
-          <select name="hotel" required></select>
-        </label>
+        <fieldset class="hotel-pick">
+          <legend data-i18n="booking.field.hotel">Қонақ үй</legend>
+          <div class="hotel-pick__grid">
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="amina" checked>
+              <span class="hotel-pick__name">AMINA Hotel</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.hotel">Смарт-қонақ үй</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.amina.address">Шәмші Қалдаяқов көшесі, 15</span>
+            </label>
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="cityline">
+              <span class="hotel-pick__name">City Line Hotel</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.boutique">Бутик-қонақ үй</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.cityline.address">Шәмші Қалдаяқов көшесі, 15</span>
+            </label>
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="botanic">
+              <span class="hotel-pick__name">Botanic Garden Apartments</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.apartments">Ас үйі бар апартаменттер</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.botanic.address">Түркістан көшесі, 14а</span>
+            </label>
+          </div>
+        </fieldset>
 
         <label class="field">
           <span data-i18n="booking.field.name">Аты-жөні</span>

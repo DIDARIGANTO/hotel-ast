@@ -72,10 +72,29 @@
         <h2 data-i18n="booking.stay.title">Быстрая заявка</h2>
         <p class="lead" data-i18n="booking.stay.lead">Шесть полей — и заявка уходит в WhatsApp выбранного отеля. Администратор подтвердит даты и стоимость в ответ.</p>
 
-        <label class="field">
-          <span data-i18n="booking.field.hotel">Отель</span>
-          <select name="hotel" required></select>
-        </label>
+        <fieldset class="hotel-pick">
+          <legend data-i18n="booking.field.hotel">Отель</legend>
+          <div class="hotel-pick__grid">
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="amina" checked>
+              <span class="hotel-pick__name">AMINA Hotel</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.hotel">Смарт-отель</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.amina.address">ул. Шамши Калдаякова, 15</span>
+            </label>
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="cityline">
+              <span class="hotel-pick__name">City Line Hotel</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.boutique">Бутик-отель</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.cityline.address">ул. Шамши Калдаякова, 15</span>
+            </label>
+            <label class="hotel-pick__item">
+              <input type="radio" name="hotel" value="botanic">
+              <span class="hotel-pick__name">Botanic Garden Apartments</span>
+              <span class="hotel-pick__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
+              <span class="hotel-pick__addr" data-i18n="hotel.botanic.address">ул. Туркестан, 14а</span>
+            </label>
+          </div>
+        </fieldset>
 
         <label class="field">
           <span data-i18n="booking.field.name">Имя</span>
