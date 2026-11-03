@@ -83,18 +83,30 @@ export function hotelCard(hotel, lang = currentLang()) {
 
 export function roomCard(hotel, room, lang = currentLang()) {
   const name = roomNameSafe(roomName(hotel, room, lang));
+  const guests = room.guests === 1
+    ? t('pages.guest1', lang, '1 гость')
+    : fmt(t('pages.guestsUpTo', lang, 'до {guests} гостей'), { guests: room.guests });
+  let windowLabel = '';
+  if (room.window === true) windowLabel = t('pages.window', lang, 'Номер с окном');
+  if (room.window === false) windowLabel = t('pages.noWindow', lang, 'Без окна');
+  const meta = [
+    room.area ? fmt(t('pages.area', lang, '{area} м²'), { area: room.area }) : '',
+    guests,
+    roomBeds(hotel, room, lang),
+    windowLabel,
+  ].filter(Boolean).join(' · ');
+  const desc = t(`room.desc.${hotel.id}.${room.id}`, lang, room.desc ?? '');
   return `
-    <article class="card reveal">
-      <div class="card__media"><img src="${asset(room.img)}" alt="${name}" loading="lazy"></div>
-      <div class="card__body">
+    <article class="room reveal">
+      <div class="room__media"><img src="${asset(room.img)}" alt="${name}" loading="lazy"></div>
+      <div class="room__body">
         <h3>${name}</h3>
-        <p class="card__meta">${fmt(t('pages.roomMeta', lang, '{area} м² · до {guests} гостей · {beds}'), {
-          area: room.area,
-          guests: room.guests,
-          beds: roomBeds(hotel, room, lang),
-        })}</p>
-        <p class="card__price">${priceNight(room.price, lang)}</p>
-        <p><a class="btn btn--gold" href="booking.html?hotel=${hotel.id}&room=${room.id}">${t('pages.book', lang, 'Забронировать')}</a></p>
+        <p class="room__meta">${meta}</p>
+        ${desc ? `<p class="room__desc">${roomNameSafe(desc)}</p>` : ''}
+        <div class="room__foot">
+          <span class="room__price">${priceNight(room.price, lang)}</span>
+          <a class="btn btn--gold" href="booking.html?hotel=${hotel.id}&room=${room.id}">${t('pages.book', lang, 'Забронировать')}</a>
+        </div>
       </div>
     </article>`;
 }

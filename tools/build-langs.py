@@ -37,9 +37,9 @@ META = {
     },
     'amina': {
         'kk': ('AMINA Hotel — Астанадағы смарт-қонақ үй | AST Hotels',
-               'Астана, Шәмші Қалдаяқов көшесі, 15: 21 нөмір, тәулік бойы тіркеу, коворкинг, таңғы ас пен трансфер сұраныс бойынша. 12 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
+               'Астана, Шәмші Қалдаяқов көшесі, 15: 21 нөмір, тәулік бойы тіркеу, коворкинг, таңғы ас пен трансфер сұраныс бойынша. 15 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
         'en': ('AMINA Hotel — smart hotel in Astana, Kazakhstan | AST Hotels',
-               'AMINA Hotel at 15 Shamshi Kaldayakov St., Astana: 21 rooms, 24-hour check-in, coworking, breakfast and airport transfer on request. From 12 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
+               'AMINA Hotel at 15 Shamshi Kaldayakov St., Astana: 21 rooms, 24-hour check-in, coworking, breakfast and airport transfer on request. From 15 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
     },
     'cityline': {
         'kk': ('City Line Hotel — Астанадағы бутик-қонақ үй | AST Hotels',
@@ -127,7 +127,7 @@ ALT = {
 HOTEL_EXTRA = {
     'amina': {
         'numberOfRooms': 21,
-        'amenities': ['Wi-Fi', 'Parking', 'Breakfast', '24-hour front desk', 'Coworking', 'Airport transfer'],
+        'amenities': ['Wi-Fi', 'Parking', '24-hour front desk', 'Shared kitchen', 'Coworking', 'Airport transfer'],
         'map': 'https://2gis.kz/astana/firm/70000001060984202',
     },
     'cityline': {
@@ -142,10 +142,10 @@ HOTEL_EXTRA = {
 AMENITY_NAMES = {
     'kk': {'Wi-Fi': 'Wi-Fi', 'Parking': 'Тұрақ', 'Breakfast': 'Таңғы ас', '24-hour front desk': 'Тәулік бойы тіркеу',
            'Coworking': 'Коворкинг', 'Airport transfer': 'Әуежайдан трансфер', 'Lobby bar': 'Лобби-бар',
-           'Kitchen': 'Ас үй', 'Washing machine': 'Кір жуғыш машина', 'Workspace': 'Жұмыс орны'},
+           'Kitchen': 'Ас үй', 'Shared kitchen': 'Ортақ ас үй', 'Washing machine': 'Кір жуғыш машина', 'Workspace': 'Жұмыс орны'},
     'ru': {'Wi-Fi': 'Wi-Fi', 'Parking': 'Парковка', 'Breakfast': 'Завтрак', '24-hour front desk': 'Круглосуточная стойка',
            'Coworking': 'Коворкинг', 'Airport transfer': 'Трансфер из аэропорта', 'Lobby bar': 'Лобби-бар',
-           'Kitchen': 'Кухня', 'Washing machine': 'Стиральная машина', 'Workspace': 'Рабочее место'},
+           'Kitchen': 'Кухня', 'Shared kitchen': 'Общая кухня', 'Washing machine': 'Стиральная машина', 'Workspace': 'Рабочее место'},
 }
 ADDRESS = {
     'kk': {'ул. Шамши Калдаякова, 15': 'Шәмші Қалдаяқов көшесі, 15', 'ул. Туркестан, 14а': 'Түркістан көшесі, 14а', 'Астана': 'Астана'},

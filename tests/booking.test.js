@@ -14,37 +14,37 @@ test('countNights возвращает 0 на некорректном инте�
 
 test('calcTotal умножает цену на ночи и количество номеров', () => {
   const res = calcTotal({
-    hotelId: 'amina', roomId: 'standard',
+    hotelId: 'amina', roomId: 'double-nw',
     checkIn: '2026-09-01', checkOut: '2026-09-03',
     rooms: 2, guests: 2, extras: [],
   });
   assert.equal(res.nights, 2);
-  assert.equal(res.base, 48000); // 12000 * 2 * 2, две ночи — без акции
+  assert.equal(res.base, 72000); // 18000 * 2 * 2, две ночи — без акции
   assert.equal(res.discount, 0);
-  assert.equal(res.total, 48000);
+  assert.equal(res.total, 72000);
 });
 
 test('calcTotal считает услуги по своим правилам', () => {
   const res = calcTotal({
-    hotelId: 'amina', roomId: 'standard',
+    hotelId: 'amina', roomId: 'double-nw',
     checkIn: '2026-09-01', checkOut: '2026-09-03',
     rooms: 1, guests: 2, extras: ['breakfast', 'transfer', 'parking'],
   });
   // завтрак 3500*2 гостя*2 ночи = 14000, трансфер 8000, парковка 2000*2 = 4000
   assert.equal(res.extrasTotal, 26000);
-  assert.equal(res.total, 24000 + 26000);
+  assert.equal(res.total, 36000 + 26000);
 });
 
 test('акция снимает 10% с проживания от 3 ночей', () => {
   const res = calcTotal({
-    hotelId: 'amina', roomId: 'standard',
+    hotelId: 'amina', roomId: 'double-nw',
     checkIn: '2026-11-01', checkOut: '2026-11-04',
     rooms: 1, guests: 2, extras: [],
   });
   assert.equal(res.nights, 3);
-  assert.equal(res.base, 36000);   // 12000 × 3
-  assert.equal(res.discount, 3600);
-  assert.equal(res.total, 32400);
+  assert.equal(res.base, 54000);   // 18000 × 3
+  assert.equal(res.discount, 5400);
+  assert.equal(res.total, 48600);
 });
 
 test('акция не применяется при 2 ночах и к услугам', () => {

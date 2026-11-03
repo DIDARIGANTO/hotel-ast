@@ -510,3 +510,23 @@ textarea:focus-visible,
 .theme-amina .hero--compact,.theme-cityline .hero--compact,.theme-botanic .hero--compact{margin-top:0;min-height:clamp(420px,60vh,620px)}
 .theme-amina .hero--compact .hero__inner,.theme-cityline .hero--compact .hero__inner,.theme-botanic .hero--compact .hero__inner{padding-top:72px}
 .theme-amina .hero__media img,.theme-cityline .hero__media img{object-position:50% 0}
+/* ── Страница отеля: описание с фото, мини-блоки номеров, удобства ── */
+.split__media{margin:0;aspect-ratio:4/3;overflow:hidden;align-self:start}
+.split__media img{width:100%;height:100%;object-fit:cover}
+.geo .facts{margin-top:8px}
+.room{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column}
+.room__media{aspect-ratio:4/3;overflow:hidden}
+.room__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.room:hover .room__media img{transform:scale(1.04)}
+.room__body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.room h3{margin:0;font-size:clamp(18px,1.6vw,21px)}
+.room__meta{font-size:13px;color:var(--muted);letter-spacing:.03em;margin:0}
+.room__desc{margin:0;font-size:15px;line-height:1.55;color:var(--muted)}
+.room__foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.room__price{font-family:var(--serif);font-size:19px;color:var(--indigo)}
+.room .btn{padding:10px 16px;font-size:11px}
+.incl{list-style:none;margin:0;padding:0}
+.incl__item{border-top:1px solid var(--line);padding-top:18px}
+.incl__item h3{margin:0 0 8px;font-size:18px}
+.incl__item p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+.section--sand .room{border-color:transparent}
