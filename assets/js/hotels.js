@@ -113,6 +113,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать',
         price: 25000,
         img: 'assets/img/cityline/city-line-hotel-astana-nomer-ekonom.jpg',
+        desc: 'Компактный номер с большой кроватью — лучший вариант для короткой деловой поездки.',
       },
       {
         id: 'standard',
@@ -122,6 +123,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать',
         price: 28000,
         img: 'assets/img/cityline/city-line-hotel-astana-nomer-standart.jpg',
+        desc: 'Просторнее эконома, с рабочим столом и всем необходимым для работы и отдыха.',
       },
       {
         id: 'twin',
@@ -131,6 +133,7 @@ export const HOTELS = [
         beds: '2 односпальные кровати',
         price: 30000,
         img: 'assets/img/cityline/city-line-hotel-astana-nomer-tvin.jpg',
+        desc: 'Две отдельные кровати — удобно коллегам и друзьям, путешествующим вместе.',
       },
       {
         id: 'delux',
@@ -140,6 +143,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать и зона отдыха',
         price: 35000,
         img: 'assets/img/cityline/city-line-hotel-astana-nomer-delux.jpg',
+        desc: 'Самый просторный номер отеля с зоной отдыха — для долгих поездок и особых случаев.',
       },
     ],
   },
@@ -173,6 +177,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать, кухня',
         price: 18000,
         img: 'assets/img/botanic/botanic-garden-astana-studiya-gostinaya.jpg',
+        desc: 'Компактная студия с кухонной зоной и большой кроватью — для одного гостя или пары.',
       },
       {
         id: 'apt1',
@@ -182,6 +187,7 @@ export const HOTELS = [
         beds: 'спальня + гостиная с кухней',
         price: 24000,
         img: 'assets/img/botanic/botanic-garden-astana-apartament-1-spalnya.jpg',
+        desc: 'Отдельная спальня и гостиная с кухней — удобно для семьи или долгой командировки.',
       },
       {
         id: 'apt2',
@@ -191,6 +197,7 @@ export const HOTELS = [
         beds: '2 спальни + гостиная с кухней',
         price: 35000,
         img: 'assets/img/botanic/botanic-garden-astana-apartament-2-spalnya.jpg',
+        desc: 'Две спальни и просторная гостиная — для семьи с детьми или компании до пяти человек.',
       },
     ],
   },
