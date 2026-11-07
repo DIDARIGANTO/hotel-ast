@@ -98,7 +98,7 @@ export function roomCard(hotel, room, lang = currentLang()) {
   const desc = t(`room.desc.${hotel.id}.${room.id}`, lang, room.desc ?? '');
   return `
     <article class="room reveal">
-      <div class="room__media"><img src="${asset(room.img)}" alt="${name}" loading="lazy"></div>
+      <div class="room__media"><img src="${asset(room.img)}" alt="${name}" loading="lazy" role="button" tabindex="0"></div>
       <div class="room__body">
         <h3>${name}</h3>
         <p class="room__meta">${meta}</p>

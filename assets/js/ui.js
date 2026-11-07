@@ -170,9 +170,11 @@ function initAccordion() {
   });
 }
 
+// Лайтбокс работает через делегирование: карточки номеров рисует pages.js
+// уже после старта, поэтому список картинок собирается в момент клика —
+// из того контейнера [data-lightbox], где кликнули.
 function initLightbox() {
-  const images = [...document.querySelectorAll('[data-lightbox] img')];
-  if (!images.length) return;
+  if (!document.querySelector('[data-lightbox]')) return;
 
   const box = document.createElement('div');
   box.className = 'lightbox';
@@ -184,6 +186,7 @@ function initLightbox() {
   document.body.append(box);
 
   const picture = box.querySelector('img');
+  let images = [];
   let index = 0;
 
   const show = (i) => {
@@ -191,22 +194,29 @@ function initLightbox() {
     picture.src = images[index].dataset.full || images[index].src;
     picture.alt = images[index].alt;
   };
-  const open = (i) => { show(i); box.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
+  const open = (img) => {
+    images = qsa('img', img.closest('[data-lightbox]'));
+    show(images.indexOf(img));
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
   const close = () => { box.classList.remove('is-open'); document.body.style.overflow = ''; };
 
-  // Открывать галерею должно быть можно и с клавиатуры, поэтому картинка
-  // становится настоящей кнопкой: роль, фокус и реакция на Enter и пробел.
-  images.forEach((img, i) => {
-    img.style.cursor = 'zoom-in';
+  qsa('[data-lightbox] img').forEach((img) => {
     img.setAttribute('role', 'button');
     img.setAttribute('tabindex', '0');
     if (!img.getAttribute('alt')) img.setAttribute('alt', 'Фотография отеля');
-    img.addEventListener('click', () => open(i));
-    img.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      open(i);
-    });
+  });
+  document.addEventListener('click', (event) => {
+    const img = event.target.closest('[data-lightbox] img');
+    if (img) open(img);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const img = event.target.closest?.('[data-lightbox] img');
+    if (!img) return;
+    event.preventDefault();
+    open(img);
   });
   box.querySelector('.lightbox__close').addEventListener('click', close);
   box.querySelector('.lightbox__nav--prev').addEventListener('click', () => show(index - 1));
@@ -220,6 +230,30 @@ function initLightbox() {
   });
 }
 
+// Карусель фото: стрелки листают на ширину кадра, на телефоне — свайп.
+function initCarousel() {
+  qsa('[data-carousel]').forEach((root) => {
+    const track = qs('.carousel__track', root);
+    const step = () => (qs('img', track)?.getBoundingClientRect().width ?? 320) + 12;
+    qs('.carousel__btn--prev', root)?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    qs('.carousel__btn--next', root)?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  });
+}
+
+// Слайды в hero главной: три интерьера сменяют друг друга каждые 5 секунд.
+function initSlides() {
+  const root = qs('[data-slides]');
+  if (!root) return;
+  const slides = qsa('img', root);
+  if (slides.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('is-active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+  }, 5000);
+}
+
 export function initUI() {
   initHeader();
   initReveal();
@@ -227,6 +261,8 @@ export function initUI() {
   initFilters();
   initAccordion();
   initLightbox();
+  initCarousel();
+  initSlides();
 }
 
 document.addEventListener('DOMContentLoaded', initUI);

@@ -9,6 +9,7 @@ aria-label, переписывает относительные пути, canoni
 после любой правки русских страниц или словаря.
 """
 import json
+from urllib.parse import quote
 import os
 import re
 import sys
@@ -24,59 +25,72 @@ PAGES = ['index', 'hotels', 'amina', 'cityline', 'botanic', 'offers',
 # ── Заголовки и описания страниц ─────────────────────────────────────
 META = {
     'index': {
-        'kk': ('AST Hotels — Астанадағы үш қонақ үй',
-               'Астанадағы AST Hotels желісі: AMINA смарт-қонақ үйі, City Line бутик-қонақ үйі және Botanic Garden апартаменттері. Делдалсыз тікелей брондау, WhatsApp арқылы өтінім.'),
-        'en': ('AST Hotels — three hotels in Astana, Kazakhstan',
-               'AST Hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden serviced apartments. Book directly with no intermediaries — requests go straight to the hotel on WhatsApp.'),
+        'kk': ('Астанадағы үш қонақ үй: AMINA, City Line, Botanic Garden',
+               'Астанадағы үш қонақ үй: AMINA смарт-қонақ үйі, City Line бутик-қонақ үйі және Botanic Garden апартаменттері. Делдалсыз тікелей брондау, WhatsApp арқылы өтінім.'),
+        'en': ('Three hotels in Astana, Kazakhstan: AMINA, City Line, Botanic Garden',
+               'Three hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden serviced apartments. Book directly with no intermediaries — requests go straight to the hotel on WhatsApp.'),
     },
     'hotels': {
-        'kk': ('Астанадағы AST Hotels желісінің қонақ үйлері — үш мекенжай',
+        'kk': ('Астанадағы қонақ үйлер — үш мекенжай',
                'Смарт-қонақ үй, бутик-қонақ үй және ас үйі бар апартаменттер: AMINA, City Line және Botanic Garden. Формат, аудан және баға бойынша салыстыру.'),
-        'en': ('Hotels in Astana — AST Hotels: smart hotel, boutique hotel, apartments',
-               'Compare the three AST Hotels properties in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden apartments with a kitchen. Format, district, prices and 2GIS ratings.'),
+        'en': ('Hotels in Astana: smart hotel, boutique hotel, apartments',
+               'Compare the three hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden apartments with a kitchen. Format, district, prices and 2GIS ratings.'),
     },
     'amina': {
-        'kk': ('AMINA Hotel — Астанадағы смарт-қонақ үй | AST Hotels',
+        'kk': ('AMINA Hotel — Астанадағы смарт-қонақ үй',
                'Астана, Шәмші Қалдаяқов көшесі, 15: 21 нөмір, тәулік бойы тіркеу, коворкинг, таңғы ас пен трансфер сұраныс бойынша. 15 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('AMINA Hotel — smart hotel in Astana, Kazakhstan | AST Hotels',
+        'en': ('AMINA Hotel — smart hotel in Astana, Kazakhstan',
                'AMINA Hotel at 15 Shamshi Kaldayakov St., Astana: 21 rooms, 24-hour check-in, coworking, breakfast and airport transfer on request. From 15 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
     },
     'cityline': {
-        'kk': ('City Line Hotel — Астанадағы бутик-қонақ үй | AST Hotels',
+        'kk': ('City Line Hotel — Астанадағы бутик-қонақ үй',
                'Астана, Шәмші Қалдаяқов көшесі, 15: бутик-формат, нөмірлердің төрт санаты, лобби-бар, 2ГИС-те 3D-тур. 25 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('City Line Hotel — boutique hotel in Astana, Kazakhstan | AST Hotels',
+        'en': ('City Line Hotel — boutique hotel in Astana, Kazakhstan',
                'City Line Hotel at 15 Shamshi Kaldayakov St., Astana: boutique format, four room categories, lobby bar, 3D tour on 2GIS. From 25 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
     },
     'botanic': {
-        'kk': ('Botanic Garden Apartments — Астанадағы апартаменттер | AST Hotels',
+        'kk': ('Botanic Garden Apartments — Астанадағы апартаменттер',
                'Астана, Түркістан көшесі, 14а: отбасылар мен ұзақ сапарларға арналған ас үйі бар студиялар мен апартаменттер, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('Botanic Garden Apartments — serviced apartments in Astana | AST Hotels',
+        'en': ('Botanic Garden Apartments — serviced apartments in Astana',
                'Botanic Garden Apartments at 14a Turkestan St., Astana: studios and apartments with a kitchen for families and long stays, 10% off from 3 nights. Book directly on WhatsApp.'),
     },
     'offers': {
-        'kk': ('Арнайы ұсыныстар — AST Hotels, Астана',
-               'AST Hotels желісінің ұсыныстары: үш қонақ үйдің кез келгенінде 3 түннен бастап тұрғанда 10% жеңілдік және агрегаторлар комиссиясынсыз тікелей брондау.'),
-        'en': ('Special offers — AST Hotels, Astana',
-               'AST Hotels offers in Astana: 10% off stays of 3 nights or more at any of the three hotels and direct booking with no aggregator commission.'),
+        'kk': ('Арнайы ұсыныстар — Астана',
+               'Үш қонақ үйдің ұсыныстары: үш қонақ үйдің кез келгенінде 3 түннен бастап тұрғанда 10% жеңілдік және агрегаторлар комиссиясынсыз тікелей брондау.'),
+        'en': ('Special offers — Astana',
+               'Offers from three hotels in Astana: 10% off stays of 3 nights or more at any of the three hotels and direct booking with no aggregator commission.'),
     },
     'booking': {
-        'kk': ('Нөмір брондау — AST Hotels, Астана',
-               'Астанадағы AST Hotels желісінің үш қонақ үйінің бірінде нөмір брондаңыз: құны лезде есептеледі, өтінім қонақ үйдің WhatsApp-ына кетеді. Делдалсыз, алдын ала төлемсіз.'),
-        'en': ('Book a room — AST Hotels, Astana',
-               'Book a room at one of the three AST Hotels properties in Astana: the price is calculated instantly and the request goes to the hotel on WhatsApp. No intermediaries, no prepayment on the website.'),
+        'kk': ('Нөмір брондау — Астана',
+               'Астанадағы үш қонақ үйдің бірінде нөмір брондаңыз: құны лезде есептеледі, өтінім қонақ үйдің WhatsApp-ына кетеді. Делдалсыз, алдын ала төлемсіз.'),
+        'en': ('Book a room — Astana',
+               'Book a room at one of the three hotels in Astana: the price is calculated instantly and the request goes to the hotel on WhatsApp. No intermediaries, no prepayment on the website.'),
     },
     'contacts': {
-        'kk': ('AST Hotels байланысы — Астанадағы үш қонақ үйдің мекенжайлары мен телефондары',
+        'kk': ('Байланыс — Астанадағы үш қонақ үйдің мекенжайлары мен телефондары',
                'AMINA Hotel, City Line Hotel және Botanic Garden Apartments: мекенжайлар, телефондар, WhatsApp, 2ГИС карточкалары. Тұру ережелері және байланыс нысаны.'),
-        'en': ('Contact AST Hotels — addresses and phone numbers of three hotels in Astana',
+        'en': ('Contacts — addresses and phone numbers of three hotels in Astana',
                'AMINA Hotel, City Line Hotel and Botanic Garden Apartments: addresses, phone numbers, WhatsApp, 2GIS listings. House rules and a contact form.'),
     },
     'privacy': {
-        'kk': ('Дербес деректерді өңдеу саясаты — AST Hotels',
-               'AST Hotels сайты қонақтардың қандай деректерін жинайды, не үшін, қайда береді және келісімді қалай қайтарып алуға болады.'),
-        'en': ('Privacy policy — AST Hotels',
-               'What guest data the AST Hotels website collects, why, where it is sent and how to withdraw consent.'),
+        'kk': ('Дербес деректерді өңдеу саясаты',
+               'Қонақ үйлер сайты қонақтардың қандай деректерін жинайды, не үшін, қайда береді және келісімді қалай қайтарып алуға болады.'),
+        'en': ('Privacy policy',
+               'What guest data the hotels website collects, why, where it is sent and how to withdraw consent.'),
     },
+}
+
+# ── Приветствие в ссылках WhatsApp (?text=…) ─────────────────────────
+WA_TEXT = {
+    'amina': {'ru': 'Здравствуйте! Я на сайте отеля AMINA Hotel, хочу уточнить наличие номеров.',
+              'kk': 'Сәлеметсіз бе! Мен AMINA Hotel қонақ үйінің сайтындамын, бос нөмірлер бар-жоғын білгім келеді.',
+              'en': 'Hello! I am on the AMINA Hotel website and would like to check room availability.'},
+    'cityline': {'ru': 'Здравствуйте! Я на сайте отеля City Line Hotel, хочу уточнить наличие номеров.',
+                 'kk': 'Сәлеметсіз бе! Мен City Line Hotel қонақ үйінің сайтындамын, бос нөмірлер бар-жоғын білгім келеді.',
+                 'en': 'Hello! I am on the City Line Hotel website and would like to check room availability.'},
+    'botanic': {'ru': 'Здравствуйте! Я на сайте Botanic Garden Apartments, хочу уточнить наличие апартаментов.',
+                'kk': 'Сәлеметсіз бе! Мен Botanic Garden Apartments сайтындамын, бос апартаменттер бар-жоғын білгім келеді.',
+                'en': 'Hello! I am on the Botanic Garden Apartments website and would like to check apartment availability.'},
 }
 
 # ── Служебные подписи вне словаря ────────────────────────────────────
@@ -84,12 +98,16 @@ CHROME = {
     'aria-label="Меню"': {'kk': 'aria-label="Мәзір"', 'en': 'aria-label="Menu"'},
     'aria-label="Выбор отеля"': {'kk': 'aria-label="Қонақ үй таңдау"', 'en': 'aria-label="Choose a hotel"'},
     'aria-label="Закрыть"': {'kk': 'aria-label="Жабу"', 'en': 'aria-label="Close"'},
+    'aria-label="Предыдущее фото"': {'kk': 'aria-label="Алдыңғы фото"', 'en': 'aria-label="Previous photo"'},
+    'aria-label="Следующее фото"': {'kk': 'aria-label="Келесі фото"', 'en': 'aria-label="Next photo"'},
 }
 
 # ── Alt-тексты фотографий ────────────────────────────────────────────
 ALT = {
     'kk': {
-        'Фасад': 'Қасбеті', 'Вывеска AMINA Hotel на фасаде здания': 'Ғимарат қасбетіндегі AMINA Hotel маңдайшасы', 'Стойка регистрации': 'Тіркеу орны', 'Лаунж-зона': 'Лаунж аймағы',
+        'Фасад': 'Қасбеті', 'Вывеска AMINA Hotel на фасаде здания': 'Ғимарат қасбетіндегі AMINA Hotel маңдайшасы',
+        'Номер с окном в AMINA Hotel': 'AMINA Hotel-дегі терезесі бар нөмір', 'Общая кухня': 'Ортақ ас үй', 'Зона завтраков': 'Таңғы ас аймағы', 'Коридор': 'Дәліз',
+        'Рабочее место в апартаменте': 'Апартаменттегі жұмыс орны', 'Стиральная машина в ванной апартамента': 'Апартамент жуынатын бөлмесіндегі кір жуғыш машина', 'с зелёной стеной': 'жасыл қабырғасы бар', 'Делюкс': 'Делюкс', 'Стойка регистрации': 'Тіркеу орны', 'Лаунж-зона': 'Лаунж аймағы',
         'Ванная комната': 'Жуынатын бөлме', 'Коворкинг и зона завтраков': 'Коворкинг және таңғы ас аймағы',
         'Холл': 'Холл', 'Номер категории': 'Санаттағы нөмір', 'Гостиная зона': 'Қонақ аймағы',
         'Кафе': 'Кафе', 'Студия': 'Студия', 'Гостиная апартамента': 'Апартамент қонақ бөлмесі',
@@ -105,7 +123,9 @@ ALT = {
         'Стандарт': 'Стандарт', 'DeLux': 'DeLux', 'Логотип City Line Hotel на стойке регистрации': 'Тіркеу орнындағы City Line Hotel логотипі',
     },
     'en': {
-        'Фасад': 'Facade of', 'Вывеска AMINA Hotel на фасаде здания': 'AMINA Hotel sign on the building facade', 'Стойка регистрации': 'Front desk of', 'Лаунж-зона': 'Lounge at',
+        'Фасад': 'Facade of', 'Вывеска AMINA Hotel на фасаде здания': 'AMINA Hotel sign on the building facade',
+        'Номер с окном в AMINA Hotel': 'Room with a window at AMINA Hotel', 'Общая кухня': 'Shared kitchen at', 'Зона завтраков': 'Breakfast area at', 'Коридор': 'Corridor of',
+        'Рабочее место в апартаменте': 'Workspace in the apartment', 'Стиральная машина в ванной апартамента': 'Washing machine in the apartment bathroom', 'с зелёной стеной': 'with a green wall', 'Делюкс': 'Deluxe', 'Стойка регистрации': 'Front desk of', 'Лаунж-зона': 'Lounge at',
         'Ванная комната': 'Bathroom at', 'Коворкинг и зона завтраков': 'Coworking and breakfast area at',
         'Холл': 'Lobby of', 'Номер категории': 'Room, category', 'Гостиная зона': 'Living area',
         'Кафе': 'Café at', 'Студия': 'Studio at', 'Гостиная апартамента': 'Apartment living room',
@@ -250,6 +270,8 @@ def build_page(page, lang, dicts):
     # 5. служебные подписи и alt
     for ru, tr in CHROME.items():
         html = html.replace(ru, tr[lang])
+    for texts in WA_TEXT.values():
+        html = html.replace(quote(texts['ru']), quote(texts[lang]))
     html = re.sub(r'alt="([^"]*)"', lambda m: f'alt="{esc(translate_alt(m.group(1), lang))}"', html)
 
     # 6. относительные пути: ресурсы — на уровень выше, страницы — внутри папки

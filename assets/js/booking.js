@@ -68,7 +68,7 @@ export function buildMessage(form) {
         .join(', ')
     : '—';
   return [
-    'Заявка на бронирование — AST Hotels',
+    'Заявка на бронирование с сайта',
     `Отель: ${hotel?.name ?? '—'}`,
     `Категория: ${room?.name ?? '—'}`,
     `Заезд: ${formatDate(form.checkIn)}`,
@@ -88,7 +88,7 @@ export function buildQuickMessage(form) {
   const hotel = getHotel(form.hotelId);
   const out = addDays(form.checkIn, form.nights);
   return [
-    'Заявка на бронирование — AST Hotels',
+    'Заявка на бронирование с сайта',
     `Отель: ${hotel?.name ?? '—'}`,
     ...(form.roomName ? [`Категория: ${form.roomName}`] : []),
     `Заезд: ${formatDate(form.checkIn)}`,

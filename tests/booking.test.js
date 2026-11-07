@@ -49,13 +49,13 @@ test('акция снимает 10% с проживания от 3 ночей', 
 
 test('акция не применяется при 2 ночах и к услугам', () => {
   const res = calcTotal({
-    hotelId: 'botanic', roomId: 'studio',
+    hotelId: 'botanic', roomId: 'standard',
     checkIn: '2026-11-01', checkOut: '2026-11-03',
     rooms: 1, guests: 2, extras: ['transfer'],
   });
   assert.equal(res.nights, 2);
   assert.equal(res.discount, 0);
-  assert.equal(res.total, 36000 + 8000);
+  assert.equal(res.total, 64000 + 8000);
 });
 
 test('calcTotal возвращает нули при пустых датах', () => {
@@ -75,7 +75,7 @@ test('buildMessage содержит отель, категорию, даты и 
     name: 'Дидар', phone: '+7 777 000 00 00',
   });
   assert.match(msg, /City Line Hotel/);
-  assert.match(msg, /Стандарт эконом/);
+  assert.match(msg, /Стандарт двухместный/);
   assert.match(msg, /01\.09\.2026/);
   assert.match(msg, /03\.09\.2026/);
   assert.match(msg, /Дидар/);

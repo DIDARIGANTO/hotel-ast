@@ -6,12 +6,12 @@ test('поддерживаются три языка', () => {
 });
 
 test('translate возвращает строку нужного языка', () => {
-  assert.equal(translate('nav.hotels', 'ru'), DICT.ru['nav.hotels']);
-  assert.equal(translate('nav.hotels', 'en'), DICT.en['nav.hotels']);
+  assert.equal(translate('nav.contacts', 'ru'), DICT.ru['nav.contacts']);
+  assert.equal(translate('nav.contacts', 'en'), DICT.en['nav.contacts']);
 });
 
 test('translate падает обратно на русский при отсутствии ключа', () => {
-  assert.equal(translate('nav.hotels', 'xx'), DICT.ru['nav.hotels']);
+  assert.equal(translate('nav.contacts', 'xx'), DICT.ru['nav.contacts']);
 });
 
 test('неизвестный ключ возвращает сам ключ', () => {
