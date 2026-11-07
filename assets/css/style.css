@@ -22,6 +22,7 @@
   --cream:#F6F0E4;        /* текст на зелёном */
   --line:rgba(47,90,62,.14);
   --line-dark:rgba(246,240,228,.18);
+  --tint-rgb:46,84,48;    /* вуаль поверх фото в hero */
 
   --serif:"Playfair Display",Georgia,serif;
   --sans:"Inter","Helvetica Neue",Arial,sans-serif;
@@ -213,7 +214,7 @@ p{margin:0 0 1em}
 .hero__media img{width:100%;height:100%;object-fit:cover}
 /* Тёплый зелёный поверх фото: без холодного голубого оттенка */
 .hero__media img{filter:sepia(.28) saturate(.9) brightness(.98)}
-.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(46,84,48,.84) 0%,rgba(46,84,48,.62) 45%,rgba(46,84,48,.26) 100%),linear-gradient(180deg,rgba(62,74,40,.12) 0%,rgba(46,84,48,.42) 100%)}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--tint-rgb),.84) 0%,rgba(var(--tint-rgb),.62) 45%,rgba(var(--tint-rgb),.26) 100%),linear-gradient(180deg,rgba(var(--tint-rgb),.12) 0%,rgba(var(--tint-rgb),.42) 100%)}
 /* Только вертикальные отступы: на страницах отелей класс висит на том же
    элементе, что и .container, и сокращённая запись padding затирала бы
    боковые поля — заголовок упирался бы в край экрана. */
@@ -587,3 +588,11 @@ textarea:focus-visible,
 .carousel__btn--prev{left:-10px}
 .carousel__btn--next{right:-10px}
 @media (max-width:640px){.carousel__btn{display:none}}
+
+/* ── Фирменный оттенок каждого отеля (по логотипам и вывескам) ─────────
+   Основа сайта остаётся бежево-зелёной; на странице отеля шапка, подвал,
+   кнопки, цены и вуаль hero берут его цвет. */
+.theme-amina{--indigo:#4A3F8F;--indigo-soft:#5B4FA3;--gold:#A697D6;--gold-dim:#7E6FBF;--gold-ink:#5B4A9E;--graphite:#2B2740;--muted:#5A5670;--line:rgba(74,63,143,.16);--tint-rgb:58,48,120}
+.theme-cityline{--indigo:#1E7A4A;--indigo-soft:#2A8F5A;--gold:#7FBF9A;--gold-dim:#4FA373;--gold-ink:#1E7A4A;--graphite:#1F3A2B;--muted:#4A6654;--line:rgba(30,122,74,.16);--tint-rgb:24,96,58}
+.theme-botanic{--indigo:#1F5E36;--indigo-soft:#2A7344;--gold:#9CC48F;--gold-dim:#6FA264;--gold-ink:#2F6B3D;--graphite:#233B2A;--muted:#4E6656;--line:rgba(31,94,54,.16);--tint-rgb:28,78,46}
+.theme-amina .hero__media img{filter:saturate(.95) brightness(.98)}
