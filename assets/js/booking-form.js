@@ -1,5 +1,6 @@
 import { getHotel, getRoom } from './hotels.js';
 import { buildQuickMessage, buildWhatsAppUrl } from './booking.js';
+import { translate, currentLang } from './i18n.js';
 
 // Быстрая заявка: отель, имя, дата заезда, число ночей, гостей, телефон,
 // согласие. Стоимость гостю не считаем — её подтверждает отель в ответе.
@@ -66,4 +67,12 @@ if (form) {
   if (params.get('in')) el('in').value = params.get('in');
   if (params.get('nights')) el('nights').value = params.get('nights');
   if (params.get('guests')) el('guests').value = params.get('guests');
+
+  // Гость пришёл с карточки номера — показываем, какая категория уйдёт в заявке.
+  const roomName = getRoom(params.get('hotel'), params.get('room'))?.name;
+  const note = document.querySelector('[data-room-note]');
+  if (roomName && note) {
+    note.hidden = false;
+    note.textContent = translate('booking.roomNote', currentLang()).replace('{room}', roomName);
+  }
 }

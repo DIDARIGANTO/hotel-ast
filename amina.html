@@ -123,7 +123,7 @@
         <button type="button" data-lang="kk">KZ</button>
         <button type="button" data-lang="en">EN</button>
       </div>
-      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Бронировать</a>
+      <a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="cta.book">Бронировать</a>
     </div>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -138,9 +138,22 @@
   <div class="container hero__inner">
     <p class="eyebrow" data-i18n="hotel.amina.type">Смарт-отель</p>
     <h1>AMINA Hotel</h1>
-    <p class="rating"><span class="rating__star">★</span>4.7 <span class="rating__count" data-i18n="hotel.amina.reviews">436 оценок в 2ГИС</span></p>
+    <p class="rating"><span class="rating__star">★</span>4.7 <span class="rating__count" data-i18n="hotel.amina.reviews">436 оценок в 2ГИС</span> <span class="hero__price" data-price-from="amina"></span></p>
     <p class="lead" data-i18n="hotel.amina.lead">Практичный смарт-отель на улице Шамши Калдаякова, 15. Удобное расположение на правом берегу с быстрыми маршрутами до делового центра левого берега и набережной Есиля.</p>
-    <p><a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="hotel.hero.book">Забронировать</a></p>
+    <div class="hotel-actions">
+      <a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="hotel.hero.book">Забронировать</a>
+      <a class="btn btn--ghost" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- Номера и цены: мини-блоки -->
+<section class="section section--sand">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 data-i18n="hotel.rooms.title">Категории и цены</h2>
+    </div>
+    <div class="grid grid--3 rooms" data-rooms="amina" data-lightbox></div>
   </div>
 </section>
 
@@ -161,31 +174,31 @@
         </ul>
         <p class="eyebrow eyebrow--sm" data-i18n="hotel.incl.title">Что входит в проживание</p>
         <ul class="incl incl--compact">
-      <li class="incl__item">
+      <li class="incl__item" data-icon="wifi">
         <h3 data-i18n="hotel.amina.incl.1">Бесплатный Wi-Fi</h3>
         <p data-i18n="hotel.amina.incl.1.text">Высокоскоростной интернет доступен на всей территории отеля для работы и связи.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="parking">
         <h3 data-i18n="hotel.amina.incl.2">Парковка для гостей</h3>
         <p data-i18n="hotel.amina.incl.2.text">Удобная парковочная зона прямо у здания отеля для тех, кто путешествует на автомобиле.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="clock">
         <h3 data-i18n="hotel.amina.incl.3">Круглосуточная стойка регистрации</h3>
         <p data-i18n="hotel.amina.incl.3.text">Наши администраторы на месте 24/7 и готовы заселить вас в любое время суток.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="kitchen">
         <h3 data-i18n="hotel.amina.incl.4">Общая кухня</h3>
         <p data-i18n="hotel.amina.incl.4.text">Полностью оборудованная зона с плитой, холодильником, микроволновой печью, чайником и полным комплектом посуды, где можно хранить продукты и в любое время приготовить или разогреть еду.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="laptop">
         <h3 data-i18n="hotel.amina.incl.5">Коворкинг-зона</h3>
         <p data-i18n="hotel.amina.incl.5.text">Оборудованное тихое пространство в холле, где можно комфортно поработать с ноутбуком.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="coffee">
         <h3 data-i18n="hotel.amina.incl.6">Кафе и рестораны рядом</h3>
         <p data-i18n="hotel.amina.incl.6.text">Отель находится в развитом районе, в шаговой доступности множество мест, где можно вкусно пообедать или поужинать.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="car">
         <h3 data-i18n="hotel.amina.incl.7">Помощь в организации трансфера</h3>
         <p data-i18n="hotel.amina.incl.7.text">По вашему запросу администратор оперативно вызовет надёжное городское такси к вашему прилёту или отправлению.</p>
       </li>
@@ -200,16 +213,6 @@
         <img src="assets/img/amina/amina-hotel-astana-holl.jpg" alt="Холл AMINA Hotel с зоной отдыха" loading="lazy">
       </figure>
     </div>
-  </div>
-</section>
-
-<!-- Номера и цены: мини-блоки -->
-<section class="section section--sand">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 data-i18n="hotel.rooms.title">Категории и цены</h2>
-    </div>
-    <div class="grid grid--3 rooms" data-rooms="amina" data-lightbox></div>
   </div>
 </section>
 
@@ -241,7 +244,7 @@
 </section>
 
 <!-- Фото -->
-<section class="section section--sand">
+<section class="section">
   <div class="container">
     <p class="eyebrow" data-i18n="hotel.gallery">Фото</p>
     <div class="carousel reveal" data-carousel>
@@ -261,6 +264,11 @@
   </div>
 </section>
 
+<div class="sticky-cta">
+  <a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="hotel.hero.book">Забронировать</a>
+  <a class="btn btn--dark" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a>
+</div>
+
 </main>
 
 <footer class="footer">
@@ -273,12 +281,12 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.right-bank">Правый берег</span> · <span data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</span></h4>
         <div class="footer__hotel">
-          <b>AMINA Hotel</b> <span class="footer__type" data-i18n="pages.type.hotel">Смарт-отель</span>
+          <b><a href="amina.html">AMINA Hotel</a></b> <span class="footer__type" data-i18n="pages.type.hotel">Смарт-отель</span>
           <a class="footer__tel" href="tel:+77013353530">+7 701 335 35 30</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77013353530" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>
         <div class="footer__hotel">
-          <b>City Line Hotel</b> <span class="footer__type" data-i18n="pages.type.boutique">Бутик-отель</span>
+          <b><a href="cityline.html">City Line Hotel</a></b> <span class="footer__type" data-i18n="pages.type.boutique">Бутик-отель</span>
           <a class="footer__tel" href="tel:+77759590088">+7 775 959 00 88</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77759590088" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77759590088?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20City%20Line%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>
@@ -286,7 +294,7 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.left-bank">Левый берег</span> · <span data-i18n="footer.botanic.addr">ул. Туркестан, 14а</span></h4>
         <div class="footer__hotel">
-          <b>Botanic Garden Apartments</b> <span class="footer__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
+          <b><a href="botanic.html">Botanic Garden Apartments</a></b> <span class="footer__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
           <a class="footer__tel" href="tel:+77027771503">+7 702 777 15 03</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77027771503" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77027771503?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Botanic%20Garden%20Apartments%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>

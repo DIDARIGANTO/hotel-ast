@@ -108,15 +108,17 @@
 <section class="section section--sand">
   <div class="container">
     <p class="eyebrow reveal" data-i18n="contacts.map.eyebrow">На карте</p>
-    <h2 class="reveal" data-i18n="contacts.map.title">Три метки в одном городе</h2>
-    <!-- Владельцу сайта: виджет с тремя метками собирается в конструкторе 2ГИС,
-         готовый iframe вставляется внутрь .map вместо блока-заглушки ниже.
-         Порядок действий описан в README.md. -->
-    <div class="map reveal">
-      <div>
-        <p data-i18n="contacts.map.stub">Здесь появится карта с тремя метками сети</p>
-        <p class="lead" data-i18n="contacts.map.note">Пока карта не подключена: адрес каждого отеля и ссылка «Открыть в 2ГИС» есть в карточках выше — маршрут удобно строить прямо оттуда.</p>
-      </div>
+    <h2 class="reveal" data-i18n="contacts.map.title">Как нас найти на карте</h2>
+    <div class="maps reveal">
+      <figure>
+        <iframe title="Карта: ул. Шамши Калдаякова, 15" src="https://maps.google.com/maps?q=51.116615,71.475712&z=16&hl=ru&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <figcaption data-i18n="contacts.map.amina">AMINA Hotel и City Line Hotel · ул. Шамши Калдаякова, 15</figcaption>
+      </figure>
+      <figure>
+        <iframe title="Карта: ул. Туркестан, 14а" src="https://maps.google.com/maps?q=51.109047,71.426516&z=16&hl=ru&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <figcaption data-i18n="contacts.map.botanic">Botanic Garden Apartments · ул. Туркестан, 14а</figcaption>
+      </figure>
+    </div>
     </div>
   </div>
 </section>
@@ -219,12 +221,12 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.right-bank">Правый берег</span> · <span data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</span></h4>
         <div class="footer__hotel">
-          <b>AMINA Hotel</b> <span class="footer__type" data-i18n="pages.type.hotel">Смарт-отель</span>
+          <b><a href="amina.html">AMINA Hotel</a></b> <span class="footer__type" data-i18n="pages.type.hotel">Смарт-отель</span>
           <a class="footer__tel" href="tel:+77013353530">+7 701 335 35 30</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77013353530" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>
         <div class="footer__hotel">
-          <b>City Line Hotel</b> <span class="footer__type" data-i18n="pages.type.boutique">Бутик-отель</span>
+          <b><a href="cityline.html">City Line Hotel</a></b> <span class="footer__type" data-i18n="pages.type.boutique">Бутик-отель</span>
           <a class="footer__tel" href="tel:+77759590088">+7 775 959 00 88</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77759590088" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77759590088?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20City%20Line%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>
@@ -232,7 +234,7 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.left-bank">Левый берег</span> · <span data-i18n="footer.botanic.addr">ул. Туркестан, 14а</span></h4>
         <div class="footer__hotel">
-          <b>Botanic Garden Apartments</b> <span class="footer__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
+          <b><a href="botanic.html">Botanic Garden Apartments</a></b> <span class="footer__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
           <a class="footer__tel" href="tel:+77027771503">+7 702 777 15 03</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77027771503" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77027771503?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Botanic%20Garden%20Apartments%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>

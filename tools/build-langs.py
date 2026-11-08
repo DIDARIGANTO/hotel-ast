@@ -19,7 +19,7 @@ BASE = 'https://didariganto.github.io/hotel-ast/'
 LANGS = ('kk', 'en')
 HTML_LANG = {'ru': 'ru', 'kk': 'kk', 'en': 'en'}
 OG_LOCALE = {'ru': 'ru_RU', 'kk': 'kk_KZ', 'en': 'en_US'}
-PAGES = ['index', 'hotels', 'amina', 'cityline', 'botanic', 'offers',
+PAGES = ['index', 'hotels', 'amina', 'cityline', 'botanic',
          'booking', 'contacts', 'privacy']
 
 # ── Заголовки и описания страниц ─────────────────────────────────────
@@ -100,6 +100,9 @@ CHROME = {
     'aria-label="Закрыть"': {'kk': 'aria-label="Жабу"', 'en': 'aria-label="Close"'},
     'aria-label="Предыдущее фото"': {'kk': 'aria-label="Алдыңғы фото"', 'en': 'aria-label="Previous photo"'},
     'aria-label="Следующее фото"': {'kk': 'aria-label="Келесі фото"', 'en': 'aria-label="Next photo"'},
+    'title="Карта: ул. Шамши Калдаякова, 15"': {'kk': 'title="Карта: Шәмші Қалдаяқов көшесі, 15"', 'en': 'title="Map: 15 Shamshi Kaldayakov St."'},
+    'title="Карта: ул. Туркестан, 14а"': {'kk': 'title="Карта: Түркістан көшесі, 14а"', 'en': 'title="Map: 14a Turkestan St."'},
+    '&hl=ru&output=embed': {'kk': '&hl=kk&output=embed', 'en': '&hl=en&output=embed'},
 }
 
 # ── Alt-тексты фотографий ────────────────────────────────────────────

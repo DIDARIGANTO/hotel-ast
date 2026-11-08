@@ -123,7 +123,7 @@
         <button type="button" data-lang="kk">KZ</button>
         <button type="button" data-lang="en" class="is-active">EN</button>
       </div>
-      <a class="btn btn--gold" href="booking.html" data-i18n="cta.book">Book now</a>
+      <a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="cta.book">Book now</a>
     </div>
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -138,9 +138,22 @@
   <div class="container hero__inner">
     <p class="eyebrow" data-i18n="hotel.amina.type">Smart hotel</p>
     <h1>AMINA Hotel</h1>
-    <p class="rating"><span class="rating__star">★</span>4.7 <span class="rating__count" data-i18n="hotel.amina.reviews">436 ratings on 2GIS</span></p>
+    <p class="rating"><span class="rating__star">★</span>4.7 <span class="rating__count" data-i18n="hotel.amina.reviews">436 ratings on 2GIS</span> <span class="hero__price" data-price-from="amina"></span></p>
     <p class="lead" data-i18n="hotel.amina.lead">A practical smart hotel at 15 Shamshi Kaldayakov Street. Conveniently located on the right bank, with quick routes to the business centre on the left bank and the Yesil embankment.</p>
-    <p><a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="hotel.hero.book">Book now</a></p>
+    <div class="hotel-actions">
+      <a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="hotel.hero.book">Book now</a>
+      <a class="btn btn--ghost" href="https://wa.me/77013353530?text=Hello%21%20I%20am%20on%20the%20AMINA%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- Номера и цены: мини-блоки -->
+<section class="section section--sand">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 data-i18n="hotel.rooms.title">Categories and rates</h2>
+    </div>
+    <div class="grid grid--3 rooms" data-rooms="amina" data-lightbox></div>
   </div>
 </section>
 
@@ -161,31 +174,31 @@
         </ul>
         <p class="eyebrow eyebrow--sm" data-i18n="hotel.incl.title">What is included</p>
         <ul class="incl incl--compact">
-      <li class="incl__item">
+      <li class="incl__item" data-icon="wifi">
         <h3 data-i18n="hotel.amina.incl.1">Free Wi-Fi</h3>
         <p data-i18n="hotel.amina.incl.1.text">High-speed internet throughout the hotel for work and staying in touch.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="parking">
         <h3 data-i18n="hotel.amina.incl.2">Guest parking</h3>
         <p data-i18n="hotel.amina.incl.2.text">A convenient parking area right by the hotel for those travelling by car.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="clock">
         <h3 data-i18n="hotel.amina.incl.3">24-hour front desk</h3>
         <p data-i18n="hotel.amina.incl.3.text">Our staff are on site around the clock and ready to check you in at any hour.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="kitchen">
         <h3 data-i18n="hotel.amina.incl.4">Shared kitchen</h3>
         <p data-i18n="hotel.amina.incl.4.text">A fully equipped area with a hob, fridge, microwave, kettle and a full set of crockery, where you can store food and cook or reheat a meal at any time.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="laptop">
         <h3 data-i18n="hotel.amina.incl.5">Coworking area</h3>
         <p data-i18n="hotel.amina.incl.5.text">A quiet, equipped space in the lobby where you can work comfortably on a laptop.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="coffee">
         <h3 data-i18n="hotel.amina.incl.6">Cafés and restaurants nearby</h3>
         <p data-i18n="hotel.amina.incl.6.text">The hotel is in a well-developed area with plenty of places for a good lunch or dinner within walking distance.</p>
       </li>
-      <li class="incl__item">
+      <li class="incl__item" data-icon="car">
         <h3 data-i18n="hotel.amina.incl.7">Help with transfers</h3>
         <p data-i18n="hotel.amina.incl.7.text">On request, our staff will promptly book a reliable city taxi for your arrival or departure.</p>
       </li>
@@ -200,16 +213,6 @@
         <img src="../assets/img/amina/amina-hotel-astana-holl.jpg" alt="Lobby of AMINA Hotel with a seating area" loading="lazy">
       </figure>
     </div>
-  </div>
-</section>
-
-<!-- Номера и цены: мини-блоки -->
-<section class="section section--sand">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 data-i18n="hotel.rooms.title">Categories and rates</h2>
-    </div>
-    <div class="grid grid--3 rooms" data-rooms="amina" data-lightbox></div>
   </div>
 </section>
 
@@ -241,7 +244,7 @@
 </section>
 
 <!-- Фото -->
-<section class="section section--sand">
+<section class="section">
   <div class="container">
     <p class="eyebrow" data-i18n="hotel.gallery">Photos</p>
     <div class="carousel reveal" data-carousel>
@@ -261,6 +264,11 @@
   </div>
 </section>
 
+<div class="sticky-cta">
+  <a class="btn btn--gold" href="booking.html?hotel=amina" data-i18n="hotel.hero.book">Book now</a>
+  <a class="btn btn--dark" href="https://wa.me/77013353530?text=Hello%21%20I%20am%20on%20the%20AMINA%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a>
+</div>
+
 </main>
 
 <footer class="footer">
@@ -273,12 +281,12 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.right-bank">Right bank</span> · <span data-i18n="footer.amina.addr">15 Shamshi Kaldayakov St.</span></h4>
         <div class="footer__hotel">
-          <b>AMINA Hotel</b> <span class="footer__type" data-i18n="pages.type.hotel">Smart hotel</span>
+          <b><a href="amina.html">AMINA Hotel</a></b> <span class="footer__type" data-i18n="pages.type.hotel">Smart hotel</span>
           <a class="footer__tel" href="tel:+77013353530">+7 701 335 35 30</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77013353530" data-i18n="footer.call">Call</a><a class="footer__act footer__wa" href="https://wa.me/77013353530?text=Hello%21%20I%20am%20on%20the%20AMINA%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a></span>
         </div>
         <div class="footer__hotel">
-          <b>City Line Hotel</b> <span class="footer__type" data-i18n="pages.type.boutique">Boutique hotel</span>
+          <b><a href="cityline.html">City Line Hotel</a></b> <span class="footer__type" data-i18n="pages.type.boutique">Boutique hotel</span>
           <a class="footer__tel" href="tel:+77759590088">+7 775 959 00 88</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77759590088" data-i18n="footer.call">Call</a><a class="footer__act footer__wa" href="https://wa.me/77759590088?text=Hello%21%20I%20am%20on%20the%20City%20Line%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a></span>
         </div>
@@ -286,7 +294,7 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.left-bank">Left bank</span> · <span data-i18n="footer.botanic.addr">14a Turkestan St.</span></h4>
         <div class="footer__hotel">
-          <b>Botanic Garden Apartments</b> <span class="footer__type" data-i18n="pages.type.apartments">Apartments with a kitchen</span>
+          <b><a href="botanic.html">Botanic Garden Apartments</a></b> <span class="footer__type" data-i18n="pages.type.apartments">Apartments with a kitchen</span>
           <a class="footer__tel" href="tel:+77027771503">+7 702 777 15 03</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77027771503" data-i18n="footer.call">Call</a><a class="footer__act footer__wa" href="https://wa.me/77027771503?text=Hello%21%20I%20am%20on%20the%20Botanic%20Garden%20Apartments%20website%20and%20would%20like%20to%20check%20apartment%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a></span>
         </div>

@@ -1,6 +1,8 @@
 // Общее поведение всех страниц: меню, липкая шапка, появление блоков,
 // аккордеоны, лайтбокс, фильтры. Подключается как <script type="module">.
 
+import { mountIcons } from './icons.js';
+
 const qs = (sel, root = document) => root.querySelector(sel);
 const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
 
@@ -263,6 +265,7 @@ export function initUI() {
   initLightbox();
   initCarousel();
   initSlides();
+  mountIcons();
 }
 
 document.addEventListener('DOMContentLoaded', initUI);

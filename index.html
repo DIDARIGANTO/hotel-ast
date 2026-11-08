@@ -75,25 +75,22 @@
     <div class="container">
       <p class="eyebrow" data-i18n="home.hero.eyebrow">Сеть отелей Астаны</p>
       <h1 data-i18n="home.hero.title">Три формата гостеприимства в Астане</h1>
-      <p class="lead" data-i18n="home.hero.lead">Выбирайте то, что подходит именно вам:</p>
-      <ul class="hero-list">
-        <li><b data-i18n="home.hero.f1">Смарт-отель</b> — <span data-i18n="home.hero.f1.text">доступный и уютный формат для практичных поездок.</span></li>
-        <li><b data-i18n="home.hero.f2">Бутик-отель</b> — <span data-i18n="home.hero.f2.text">стильные номера для ценителей комфорта.</span></li>
-        <li><b data-i18n="home.hero.f3">Апартаменты</b> — <span data-i18n="home.hero.f3.text">независимость и уют с полноценной кухней.</span></li>
-      </ul>
-      <p class="hero__note" data-i18n="home.hero.direct">Бронируйте напрямую на нашем сайте. Мы гарантируем единые стандарты чистоты и заботы, а главное честную цену без посредников, комиссий и переплат.</p>
+      <p class="lead" data-i18n="home.hero.lead">Выбирайте то, что подходит именно вам</p>
       <nav class="hero-choice" aria-label="Выбор отеля">
         <a href="amina.html">
           <b>AMINA Hotel</b>
           <span data-i18n="pages.type.hotel">Смарт-отель</span>
+          <i class="hero-choice__price" data-price-from="amina"></i>
         </a>
         <a href="cityline.html">
           <b>City Line Hotel</b>
           <span data-i18n="pages.type.boutique">Бутик-отель</span>
+          <i class="hero-choice__price" data-price-from="cityline"></i>
         </a>
         <a href="botanic.html">
           <b>Botanic Garden Apartments</b>
           <span data-i18n="pages.type.apartments">Апартаменты с кухней</span>
+          <i class="hero-choice__price" data-price-from="botanic"></i>
         </a>
       </nav>
     </div>
@@ -114,10 +111,12 @@
         <div class="hotel-tile__body">
           <p class="eyebrow" data-i18n="pages.type.hotel">Смарт-отель</p>
           <h2><a href="amina.html">AMINA Hotel</a></h2>
+          <p class="hotel-tile__meta"><span class="rating" data-rating="amina"></span><span class="hotel-tile__price" data-price-from="amina"></span></p>
+          <p class="hotel-tile__who" data-i18n="home.tile.amina.who">Доступный и уютный формат для практичных поездок.</p>
           <p class="card__meta"><span data-i18n="hotel.amina.address">ул. Шамши Калдаякова, 15</span> · <span data-i18n="hotel.amina.district">Сарайшык</span></p>
           <div class="hotel-actions">
-            <a class="btn btn--gold" href="tel:+77013353530" data-i18n="hotel.act.call">Позвонить</a>
-            <a class="btn btn--gold" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
+            <a class="btn btn--gold" href="amina.html" data-i18n="home.tile.more">Номера и цены</a>
+            <a class="btn btn--dark" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
           </div>
         </div>
       </article>
@@ -126,10 +125,12 @@
         <div class="hotel-tile__body">
           <p class="eyebrow" data-i18n="pages.type.boutique">Бутик-отель</p>
           <h2><a href="cityline.html">City Line Hotel</a></h2>
+          <p class="hotel-tile__meta"><span class="rating" data-rating="cityline"></span><span class="hotel-tile__price" data-price-from="cityline"></span></p>
+          <p class="hotel-tile__who" data-i18n="home.tile.cityline.who">Стильные номера для ценителей комфорта.</p>
           <p class="card__meta"><span data-i18n="hotel.cityline.address">ул. Шамши Калдаякова, 15</span> · <span data-i18n="hotel.cityline.district">Сарайшык</span></p>
           <div class="hotel-actions">
-            <a class="btn btn--gold" href="tel:+77759590088" data-i18n="hotel.act.call">Позвонить</a>
-            <a class="btn btn--gold" href="https://wa.me/77759590088?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20City%20Line%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
+            <a class="btn btn--gold" href="cityline.html" data-i18n="home.tile.more">Номера и цены</a>
+            <a class="btn btn--dark" href="https://wa.me/77759590088?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20City%20Line%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
           </div>
         </div>
       </article>
@@ -138,42 +139,22 @@
         <div class="hotel-tile__body">
           <p class="eyebrow" data-i18n="pages.type.apartments">Апартаменты с кухней</p>
           <h2><a href="botanic.html">Botanic Garden Apartments</a></h2>
+          <p class="hotel-tile__meta"><span class="rating" data-rating="botanic"></span><span class="hotel-tile__price" data-price-from="botanic"></span></p>
+          <p class="hotel-tile__who" data-i18n="home.tile.botanic.who">Независимость и уют с полноценной кухней.</p>
           <p class="card__meta"><span data-i18n="hotel.botanic.address">ул. Туркестан, 14а</span> · <span data-i18n="hotel.botanic.district">Есиль</span></p>
           <div class="hotel-actions">
-            <a class="btn btn--gold" href="tel:+77027771503" data-i18n="hotel.act.call">Позвонить</a>
-            <a class="btn btn--gold" href="https://wa.me/77027771503?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Botanic%20Garden%20Apartments%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
+            <a class="btn btn--gold" href="botanic.html" data-i18n="home.tile.more">Номера и цены</a>
+            <a class="btn btn--dark" href="https://wa.me/77027771503?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Botanic%20Garden%20Apartments%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
           </div>
         </div>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- Преимущества прямой брони -->
-<section class="section section--sand">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 data-i18n="home.why.title">Преимущества прямой брони</h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <h3 data-i18n="home.why.1">Честная цена без комиссий (0%)</h3>
-        <p data-i18n="home.why.1.text">Вы бронируете номер по официальному тарифу без скрытых сборов и агентских накруток. Напрямую у нас всегда выгоднее, чем на любых сторонних сайтах.</p>
-      </div>
-      <div class="step reveal">
-        <h3 data-i18n="home.why.2">Три локации в центре столицы</h3>
-        <p data-i18n="home.why.2.text">Отели AMINA и City Line находятся в одном здании на Шамши Калдаякова, а апартаменты Botanic Garden прямо у Ботанического сада на улице Туркестан. Выбирайте удобный для вас район.</p>
-      </div>
-      <div class="step reveal">
-        <h3 data-i18n="home.why.3">Прямая связь и быстрое подтверждение</h3>
-        <p data-i18n="home.why.3.text">Ваша бронь мгновенно попадает к администратору. Если у вас поменяются планы, перенесут рейс или изменятся даты, мы решим этот вопрос напрямую, за пару минут, вам не придется дозваниваться до сторонних сайтов и посредников.</p>
-      </div>
-    </div>
+    <p class="compare-link"><a class="link-arrow" href="hotels.html" data-i18n="home.compare">Сравнить все три отеля</a></p>
   </div>
 </section>
 
 <!-- За что нас любят гости -->
-<section class="section">
+<section class="section section--sand">
   <div class="container">
     <div class="section-head reveal">
       <h2 data-i18n="home.reviews.title">За что нас любят гости</h2>
@@ -205,6 +186,30 @@
   </div>
 </section>
 
+<!-- Преимущества прямой брони -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 data-i18n="home.why.title">Преимущества прямой брони</h2>
+      <p class="lead" data-i18n="home.hero.direct">Бронируйте напрямую на нашем сайте. Мы гарантируем единые стандарты чистоты и заботы, а главное честную цену без посредников, комиссий и переплат.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-icon="percent">
+        <h3 data-i18n="home.why.1">Честная цена без комиссий (0%)</h3>
+        <p data-i18n="home.why.1.text">Вы бронируете номер по официальному тарифу без скрытых сборов и агентских накруток. Напрямую у нас всегда выгоднее, чем на любых сторонних сайтах.</p>
+      </div>
+      <div class="step reveal" data-icon="pin">
+        <h3 data-i18n="home.why.2">Три локации в центре столицы</h3>
+        <p data-i18n="home.why.2.text">Отели AMINA и City Line находятся в одном здании на Шамши Калдаякова, а апартаменты Botanic Garden прямо у Ботанического сада на улице Туркестан. Выбирайте удобный для вас район.</p>
+      </div>
+      <div class="step reveal" data-icon="chat">
+        <h3 data-i18n="home.why.3">Прямая связь и быстрое подтверждение</h3>
+        <p data-i18n="home.why.3.text">Ваша бронь мгновенно попадает к администратору. Если у вас поменяются планы, перенесут рейс или изменятся даты, мы решим этот вопрос напрямую, за пару минут, вам не придется дозваниваться до сторонних сайтов и посредников.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -217,12 +222,12 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.right-bank">Правый берег</span> · <span data-i18n="footer.amina.addr">ул. Шамши Калдаякова, 15</span></h4>
         <div class="footer__hotel">
-          <b>AMINA Hotel</b> <span class="footer__type" data-i18n="pages.type.hotel">Смарт-отель</span>
+          <b><a href="amina.html">AMINA Hotel</a></b> <span class="footer__type" data-i18n="pages.type.hotel">Смарт-отель</span>
           <a class="footer__tel" href="tel:+77013353530">+7 701 335 35 30</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77013353530" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77013353530?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20AMINA%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>
         <div class="footer__hotel">
-          <b>City Line Hotel</b> <span class="footer__type" data-i18n="pages.type.boutique">Бутик-отель</span>
+          <b><a href="cityline.html">City Line Hotel</a></b> <span class="footer__type" data-i18n="pages.type.boutique">Бутик-отель</span>
           <a class="footer__tel" href="tel:+77759590088">+7 775 959 00 88</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77759590088" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77759590088?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BE%D1%82%D0%B5%D0%BB%D1%8F%20City%20Line%20Hotel%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>
@@ -230,7 +235,7 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.left-bank">Левый берег</span> · <span data-i18n="footer.botanic.addr">ул. Туркестан, 14а</span></h4>
         <div class="footer__hotel">
-          <b>Botanic Garden Apartments</b> <span class="footer__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
+          <b><a href="botanic.html">Botanic Garden Apartments</a></b> <span class="footer__type" data-i18n="pages.type.apartments">Апартаменты с кухней</span>
           <a class="footer__tel" href="tel:+77027771503">+7 702 777 15 03</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77027771503" data-i18n="footer.call">Позвонить</a><a class="footer__act footer__wa" href="https://wa.me/77027771503?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Botanic%20Garden%20Apartments%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="footer.wa">Написать в WhatsApp</a></span>
         </div>

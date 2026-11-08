@@ -75,25 +75,22 @@
     <div class="container">
       <p class="eyebrow" data-i18n="home.hero.eyebrow">Hotel group in Astana</p>
       <h1 data-i18n="home.hero.title">Three formats of hospitality in Astana</h1>
-      <p class="lead" data-i18n="home.hero.lead">Choose what suits you best:</p>
-      <ul class="hero-list">
-        <li><b data-i18n="home.hero.f1">Smart hotel</b> — <span data-i18n="home.hero.f1.text">an affordable, cosy format for practical trips.</span></li>
-        <li><b data-i18n="home.hero.f2">Boutique hotel</b> — <span data-i18n="home.hero.f2.text">stylish rooms for those who value comfort.</span></li>
-        <li><b data-i18n="home.hero.f3">Apartments</b> — <span data-i18n="home.hero.f3.text">independence and comfort with a fully equipped kitchen.</span></li>
-      </ul>
-      <p class="hero__note" data-i18n="home.hero.direct">Book directly on our website. We guarantee the same standards of cleanliness and care at every hotel, and above all an honest price with no intermediaries, commissions or overpayments.</p>
+      <p class="lead" data-i18n="home.hero.lead">Choose what suits you best</p>
       <nav class="hero-choice" aria-label="Choose a hotel">
         <a href="amina.html">
           <b>AMINA Hotel</b>
           <span data-i18n="pages.type.hotel">Smart hotel</span>
+          <i class="hero-choice__price" data-price-from="amina"></i>
         </a>
         <a href="cityline.html">
           <b>City Line Hotel</b>
           <span data-i18n="pages.type.boutique">Boutique hotel</span>
+          <i class="hero-choice__price" data-price-from="cityline"></i>
         </a>
         <a href="botanic.html">
           <b>Botanic Garden Apartments</b>
           <span data-i18n="pages.type.apartments">Apartments with a kitchen</span>
+          <i class="hero-choice__price" data-price-from="botanic"></i>
         </a>
       </nav>
     </div>
@@ -114,10 +111,12 @@
         <div class="hotel-tile__body">
           <p class="eyebrow" data-i18n="pages.type.hotel">Smart hotel</p>
           <h2><a href="amina.html">AMINA Hotel</a></h2>
+          <p class="hotel-tile__meta"><span class="rating" data-rating="amina"></span><span class="hotel-tile__price" data-price-from="amina"></span></p>
+          <p class="hotel-tile__who" data-i18n="home.tile.amina.who">An affordable, cosy format for practical trips.</p>
           <p class="card__meta"><span data-i18n="hotel.amina.address">15 Shamshi Kaldayakov St.</span> · <span data-i18n="hotel.amina.district">Saraishyq</span></p>
           <div class="hotel-actions">
-            <a class="btn btn--gold" href="tel:+77013353530" data-i18n="hotel.act.call">Call</a>
-            <a class="btn btn--gold" href="https://wa.me/77013353530?text=Hello%21%20I%20am%20on%20the%20AMINA%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="hotel.act.write">Message us</a>
+            <a class="btn btn--gold" href="amina.html" data-i18n="home.tile.more">Rooms and rates</a>
+            <a class="btn btn--dark" href="https://wa.me/77013353530?text=Hello%21%20I%20am%20on%20the%20AMINA%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="hotel.act.write">Message us</a>
           </div>
         </div>
       </article>
@@ -126,10 +125,12 @@
         <div class="hotel-tile__body">
           <p class="eyebrow" data-i18n="pages.type.boutique">Boutique hotel</p>
           <h2><a href="cityline.html">City Line Hotel</a></h2>
+          <p class="hotel-tile__meta"><span class="rating" data-rating="cityline"></span><span class="hotel-tile__price" data-price-from="cityline"></span></p>
+          <p class="hotel-tile__who" data-i18n="home.tile.cityline.who">Stylish rooms for those who value comfort.</p>
           <p class="card__meta"><span data-i18n="hotel.cityline.address">15 Shamshi Kaldayakov St.</span> · <span data-i18n="hotel.cityline.district">Saraishyq</span></p>
           <div class="hotel-actions">
-            <a class="btn btn--gold" href="tel:+77759590088" data-i18n="hotel.act.call">Call</a>
-            <a class="btn btn--gold" href="https://wa.me/77759590088?text=Hello%21%20I%20am%20on%20the%20City%20Line%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="hotel.act.write">Message us</a>
+            <a class="btn btn--gold" href="cityline.html" data-i18n="home.tile.more">Rooms and rates</a>
+            <a class="btn btn--dark" href="https://wa.me/77759590088?text=Hello%21%20I%20am%20on%20the%20City%20Line%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="hotel.act.write">Message us</a>
           </div>
         </div>
       </article>
@@ -138,42 +139,22 @@
         <div class="hotel-tile__body">
           <p class="eyebrow" data-i18n="pages.type.apartments">Apartments with a kitchen</p>
           <h2><a href="botanic.html">Botanic Garden Apartments</a></h2>
+          <p class="hotel-tile__meta"><span class="rating" data-rating="botanic"></span><span class="hotel-tile__price" data-price-from="botanic"></span></p>
+          <p class="hotel-tile__who" data-i18n="home.tile.botanic.who">Independence and comfort with a fully equipped kitchen.</p>
           <p class="card__meta"><span data-i18n="hotel.botanic.address">14a Turkestan St.</span> · <span data-i18n="hotel.botanic.district">Yesil</span></p>
           <div class="hotel-actions">
-            <a class="btn btn--gold" href="tel:+77027771503" data-i18n="hotel.act.call">Call</a>
-            <a class="btn btn--gold" href="https://wa.me/77027771503?text=Hello%21%20I%20am%20on%20the%20Botanic%20Garden%20Apartments%20website%20and%20would%20like%20to%20check%20apartment%20availability." target="_blank" rel="noopener" data-i18n="hotel.act.write">Message us</a>
+            <a class="btn btn--gold" href="botanic.html" data-i18n="home.tile.more">Rooms and rates</a>
+            <a class="btn btn--dark" href="https://wa.me/77027771503?text=Hello%21%20I%20am%20on%20the%20Botanic%20Garden%20Apartments%20website%20and%20would%20like%20to%20check%20apartment%20availability." target="_blank" rel="noopener" data-i18n="hotel.act.write">Message us</a>
           </div>
         </div>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- Преимущества прямой брони -->
-<section class="section section--sand">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 data-i18n="home.why.title">Benefits of booking direct</h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <h3 data-i18n="home.why.1">Honest price with no commission (0%)</h3>
-        <p data-i18n="home.why.1.text">You book the room at the official rate with no hidden fees or agency mark-ups. Booking with us directly is always better value than any third-party website.</p>
-      </div>
-      <div class="step reveal">
-        <h3 data-i18n="home.why.2">Three locations in the heart of the capital</h3>
-        <p data-i18n="home.why.2.text">AMINA and City Line hotels share one building on Shamshi Kaldayakov Street, while Botanic Garden apartments stand right by the Botanical Garden on Turkestan Street. Choose the district that suits you.</p>
-      </div>
-      <div class="step reveal">
-        <h3 data-i18n="home.why.3">Direct contact and fast confirmation</h3>
-        <p data-i18n="home.why.3.text">Your booking goes straight to the front desk. If your plans change, your flight is rescheduled or your dates move, we sort it out directly within minutes, with no third-party websites or intermediaries to chase.</p>
-      </div>
-    </div>
+    <p class="compare-link"><a class="link-arrow" href="hotels.html" data-i18n="home.compare">Compare all three hotels</a></p>
   </div>
 </section>
 
 <!-- За что нас любят гости -->
-<section class="section">
+<section class="section section--sand">
   <div class="container">
     <div class="section-head reveal">
       <h2 data-i18n="home.reviews.title">Why guests love us</h2>
@@ -205,6 +186,30 @@
   </div>
 </section>
 
+<!-- Преимущества прямой брони -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 data-i18n="home.why.title">Benefits of booking direct</h2>
+      <p class="lead" data-i18n="home.hero.direct">Book directly on our website. We guarantee the same standards of cleanliness and care at every hotel, and above all an honest price with no intermediaries, commissions or overpayments.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-icon="percent">
+        <h3 data-i18n="home.why.1">Honest price with no commission (0%)</h3>
+        <p data-i18n="home.why.1.text">You book the room at the official rate with no hidden fees or agency mark-ups. Booking with us directly is always better value than any third-party website.</p>
+      </div>
+      <div class="step reveal" data-icon="pin">
+        <h3 data-i18n="home.why.2">Three locations in the heart of the capital</h3>
+        <p data-i18n="home.why.2.text">AMINA and City Line hotels share one building on Shamshi Kaldayakov Street, while Botanic Garden apartments stand right by the Botanical Garden on Turkestan Street. Choose the district that suits you.</p>
+      </div>
+      <div class="step reveal" data-icon="chat">
+        <h3 data-i18n="home.why.3">Direct contact and fast confirmation</h3>
+        <p data-i18n="home.why.3.text">Your booking goes straight to the front desk. If your plans change, your flight is rescheduled or your dates move, we sort it out directly within minutes, with no third-party websites or intermediaries to chase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -217,12 +222,12 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.right-bank">Right bank</span> · <span data-i18n="footer.amina.addr">15 Shamshi Kaldayakov St.</span></h4>
         <div class="footer__hotel">
-          <b>AMINA Hotel</b> <span class="footer__type" data-i18n="pages.type.hotel">Smart hotel</span>
+          <b><a href="amina.html">AMINA Hotel</a></b> <span class="footer__type" data-i18n="pages.type.hotel">Smart hotel</span>
           <a class="footer__tel" href="tel:+77013353530">+7 701 335 35 30</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77013353530" data-i18n="footer.call">Call</a><a class="footer__act footer__wa" href="https://wa.me/77013353530?text=Hello%21%20I%20am%20on%20the%20AMINA%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a></span>
         </div>
         <div class="footer__hotel">
-          <b>City Line Hotel</b> <span class="footer__type" data-i18n="pages.type.boutique">Boutique hotel</span>
+          <b><a href="cityline.html">City Line Hotel</a></b> <span class="footer__type" data-i18n="pages.type.boutique">Boutique hotel</span>
           <a class="footer__tel" href="tel:+77759590088">+7 775 959 00 88</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77759590088" data-i18n="footer.call">Call</a><a class="footer__act footer__wa" href="https://wa.me/77759590088?text=Hello%21%20I%20am%20on%20the%20City%20Line%20Hotel%20website%20and%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a></span>
         </div>
@@ -230,7 +235,7 @@
       <div class="footer__group">
         <h4><span data-i18n="footer.left-bank">Left bank</span> · <span data-i18n="footer.botanic.addr">14a Turkestan St.</span></h4>
         <div class="footer__hotel">
-          <b>Botanic Garden Apartments</b> <span class="footer__type" data-i18n="pages.type.apartments">Apartments with a kitchen</span>
+          <b><a href="botanic.html">Botanic Garden Apartments</a></b> <span class="footer__type" data-i18n="pages.type.apartments">Apartments with a kitchen</span>
           <a class="footer__tel" href="tel:+77027771503">+7 702 777 15 03</a>
           <span class="footer__actions"><a class="footer__act" href="tel:+77027771503" data-i18n="footer.call">Call</a><a class="footer__act footer__wa" href="https://wa.me/77027771503?text=Hello%21%20I%20am%20on%20the%20Botanic%20Garden%20Apartments%20website%20and%20would%20like%20to%20check%20apartment%20availability." target="_blank" rel="noopener" data-i18n="footer.wa">Message on WhatsApp</a></span>
         </div>

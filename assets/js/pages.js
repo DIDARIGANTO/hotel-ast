@@ -151,7 +151,21 @@ export function renderCompare(lang = currentLang()) {
   });
 }
 
+// Цена «от» и рейтинг в статической разметке (плитки главной, hero отеля):
+// цифры живут только в hotels.js, разметка держит пустые span.
+export function renderBadges(lang = currentLang()) {
+  document.querySelectorAll('[data-price-from]').forEach((el) => {
+    const hotel = getHotel(el.dataset.priceFrom);
+    if (hotel) el.textContent = priceFrom(hotel.priceFrom, lang);
+  });
+  document.querySelectorAll('[data-rating]').forEach((el) => {
+    const hotel = getHotel(el.dataset.rating);
+    if (hotel) el.innerHTML = `<span class="rating__star">★</span>${hotel.rating} <span class="rating__count">${reviewsLabel(hotel.reviews, lang)}</span>`;
+  });
+}
+
 function renderAll(lang = currentLang()) {
+  renderBadges(lang);
   renderCompare(lang);
   renderHotels('[data-hotels]', lang);
   const host = document.querySelector('[data-rooms]');
