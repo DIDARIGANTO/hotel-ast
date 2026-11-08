@@ -218,8 +218,9 @@ p{margin:0 0 1em}
 .hero__media{position:absolute;inset:0;overflow:hidden}
 .hero__media img{width:100%;height:100%;object-fit:cover}
 /* Тёплый зелёный поверх фото: без холодного голубого оттенка */
-.hero__media img{filter:sepia(.28) saturate(.9) brightness(.98)}
-.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--tint-rgb),.84) 0%,rgba(var(--tint-rgb),.62) 45%,rgba(var(--tint-rgb),.26) 100%),linear-gradient(180deg,rgba(var(--tint-rgb),.12) 0%,rgba(var(--tint-rgb),.42) 100%)}
+.hero__media img{filter:sepia(.12) saturate(.92) brightness(1.04)}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--tint-rgb),.62) 0%,rgba(var(--tint-rgb),.4) 48%,rgba(var(--tint-rgb),.06) 100%),linear-gradient(180deg,rgba(var(--tint-rgb),.04) 0%,rgba(var(--tint-rgb),.26) 100%)}
+.hero h1,.hero .lead,.hero .rating,.hero .eyebrow,.hero__price{text-shadow:0 1px 14px rgba(0,0,0,.28)}
 /* Только вертикальные отступы: на страницах отелей класс висит на том же
    элементе, что и .container, и сокращённая запись padding затирала бы
    боковые поля — заголовок упирался бы в край экрана. */
@@ -598,9 +599,9 @@ textarea:focus-visible,
 /* ── Фирменный оттенок каждого отеля (по логотипам и вывескам) ─────────
    Основа сайта остаётся бежево-зелёной; на странице отеля шапка, подвал,
    кнопки, цены и вуаль hero берут его цвет. */
-.theme-amina{--indigo:#4A3F8F;--indigo-soft:#5B4FA3;--gold:#A697D6;--gold-dim:#7E6FBF;--gold-ink:#5B4A9E;--graphite:#2B2740;--muted:#5A5670;--line:rgba(74,63,143,.16);--tint-rgb:58,48,120}
-.theme-cityline{--indigo:#1E7A4A;--indigo-soft:#2A8F5A;--gold:#7FBF9A;--gold-dim:#4FA373;--gold-ink:#1E7A4A;--graphite:#1F3A2B;--muted:#4A6654;--line:rgba(30,122,74,.16);--tint-rgb:24,96,58}
-.theme-botanic{--indigo:#1F5E36;--indigo-soft:#2A7344;--gold:#9CC48F;--gold-dim:#6FA264;--gold-ink:#2F6B3D;--graphite:#233B2A;--muted:#4E6656;--line:rgba(31,94,54,.16);--tint-rgb:28,78,46}
+.theme-amina{--indigo:#4A476E;--indigo-soft:#5A5782;--gold:#A9A1CB;--gold-dim:#8079AE;--gold-ink:#5A5489;--graphite:#2B2A3E;--muted:#5B5A6E;--line:rgba(74,71,110,.16);--tint-rgb:54,52,80}
+.theme-cityline{--indigo:#325F48;--indigo-soft:#3E7058;--gold:#8DBBA0;--gold-dim:#639E7C;--gold-ink:#325F48;--graphite:#22382C;--muted:#4C6655;--line:rgba(50,95,72,.16);--tint-rgb:44,76,58}
+.theme-botanic{--indigo:#2F5440;--indigo-soft:#3A654E;--gold:#9FC093;--gold-dim:#74A06A;--gold-ink:#33603F;--graphite:#233B2A;--muted:#4E6656;--line:rgba(47,84,64,.16);--tint-rgb:42,68,52}
 .theme-amina .hero__media img{filter:saturate(.95) brightness(.98)}
 
 /* ═══ Аудит, ноябрь 2026: скругления, иконки, порядок, липкая панель ═══ */
@@ -645,3 +646,14 @@ textarea:focus-visible,
 @media (max-width:760px){.maps{grid-template-columns:1fr}}
 .footer__hotel b a{color:inherit;border-bottom:1px solid transparent}
 .footer__hotel b a:hover{border-bottom-color:currentColor}
+
+/* Главная: нейтральная панорама Астаны без зелёной вуали и фильтра */
+.home{--tint-rgb:34,40,38}
+.hero__media--city img{filter:none}
+.hero__media--city::after{background:linear-gradient(90deg,rgba(34,40,38,.78) 0%,rgba(34,40,38,.52) 45%,rgba(34,40,38,.18) 100%),linear-gradient(180deg,rgba(34,40,38,.1) 0%,rgba(34,40,38,.45) 100%)}
+
+/* Страницы отелей: кадр смещён к кровати (нижняя часть снимка) */
+.page-hotel .hero__media img{object-position:50% 68%}
+
+/* Страницы отелей: фото светлее и естественнее */
+.page-hotel .hero__media img{filter:saturate(.9) brightness(1.08)}
