@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://didariganto.github.io/hotel-ast/sitemap.xml
+Sitemap: https://hotel-astana.kz/sitemap.xml

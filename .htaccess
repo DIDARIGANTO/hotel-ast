@@ -1,0 +1,55 @@
+# Настройки сервера для хостинга на Apache (PS.kz, hoster.kz и другие с Plesk/cPanel).
+# GitHub Pages этот файл не читает.
+#
+# В Plesk html-файлы по умолчанию отдаёт nginx и правила ниже к ним не применяет:
+# «Настройки Apache и nginx» → «Обслуживать статические файлы напрямую через nginx» →
+# удалить из списка расширений только слова html и htm.
+
+AddDefaultCharset utf-8
+AddType text/javascript .js .mjs
+AddType image/svg+xml .svg
+AddType image/x-icon .ico
+
+Options -Indexes
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # только https
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # без www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # /index.html и /kk/index.html — на адрес папки, чтобы не было дублей главной
+  RewriteCond %{THE_REQUEST} \s/+((?:kk/|en/)?)index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [L,R=301]
+
+  # страница предложений удалена — ведём на главную своего языка
+  RewriteRule ^((?:kk|en)/)?offers\.html$ /$1 [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # имена css/js не версионируются, поэтому кэш короткий; html — всегда свежий
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml text/xml text/plain image/svg+xml
+</IfModule>

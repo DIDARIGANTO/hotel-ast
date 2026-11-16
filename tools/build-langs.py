@@ -15,7 +15,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = 'https://didariganto.github.io/hotel-ast/'
+BASE = 'https://hotel-astana.kz/'
 LANGS = ('kk', 'en')
 HTML_LANG = {'ru': 'ru', 'kk': 'kk', 'en': 'en'}
 OG_LOCALE = {'ru': 'ru_RU', 'kk': 'kk_KZ', 'en': 'en_US'}
@@ -299,6 +299,24 @@ def rewrite_hreflang(html, page):
     return re.sub(r'(<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?)+', links + '\n', html, count=1)
 
 
+def lastmod(page):
+    """Дата последнего коммита страницы; при незакоммиченных правках — сегодня."""
+    import datetime
+    import subprocess
+    today = datetime.date.today().isoformat()
+    name = f'{page}.html'
+    try:
+        dirty = subprocess.run(['git', 'status', '--porcelain', '--', name, 'assets/js/i18n.js', 'assets/js/hotels.js'],
+                               cwd=ROOT, capture_output=True, text=True).stdout.strip()
+        if dirty:
+            return today
+        date = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', name],
+                              cwd=ROOT, capture_output=True, text=True).stdout.strip()
+        return date or today
+    except OSError:
+        return today
+
+
 def main():
     dicts = load_dict()
     # hreflang и дополненный JSON-LD — и в русских исходниках
@@ -316,12 +334,13 @@ def main():
             html = rewrite_hreflang(build_page(page, lang, dicts), page)
             open(os.path.join(ROOT, lang, f'{page}.html'), 'w', encoding='utf-8').write(html)
         print(f'{lang}/: {len(PAGES)} страниц')
-    # sitemap со всеми версиями
+    # sitemap со всеми версиями; lastmod — дата последнего изменения русской страницы
     urls = []
     for page in PAGES:
         suffix = '' if page == 'index' else f'{page}.html'
+        modified = lastmod(page)
         for prefix in ('', 'kk/', 'en/'):
-            urls.append(f'  <url><loc>{BASE}{prefix}{suffix}</loc></url>')
+            urls.append(f'  <url><loc>{BASE}{prefix}{suffix}</loc><lastmod>{modified}</lastmod></url>')
     open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n')
