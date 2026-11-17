@@ -655,5 +655,18 @@ textarea:focus-visible,
 /* Страницы отелей: кадр смещён к кровати (нижняя часть снимка) */
 .page-hotel .hero__media img{object-position:50% 68%}
 
-/* Страницы отелей: фото светлее и естественнее */
-.page-hotel .hero__media img{filter:saturate(.9) brightness(1.08)}
+/* Страницы отелей: светлый первый экран (заказчик 18.11: «осветлить на 30 %»).
+   Снимки *-hero.jpg уже осветлены кривой так, что средняя яркость экрана у
+   трёх отелей одинаковая (~145 из 255 вместо 102–118). Вуаль — лёгкий оттенок
+   цвета отеля: плотнее слева под текстом, справа фото без вуали. */
+.page-hotel .hero__media img{filter:saturate(.95)}
+.page-hotel .hero__media::after{background:linear-gradient(90deg,rgba(var(--tint-rgb),.55) 0%,rgba(var(--tint-rgb),.32) 48%,rgba(var(--tint-rgb),0) 100%),linear-gradient(180deg,rgba(var(--tint-rgb),0) 0%,rgba(var(--tint-rgb),.08) 100%)}
+.page-hotel .hero h1,.page-hotel .hero .lead,.page-hotel .hero .rating,.page-hotel .hero .eyebrow,.page-hotel .hero__price{text-shadow:0 1px 18px rgba(0,0,0,.4),0 0 2px rgba(0,0,0,.18)}
+.page-hotel .hero .lead{color:rgba(255,255,255,.9)}
+@media (max-width:760px){
+  /* На телефоне текст идёт во всю ширину — вуаль ровная */
+  .page-hotel .hero__media::after{background:linear-gradient(180deg,rgba(var(--tint-rgb),.3) 0%,rgba(var(--tint-rgb),.44) 100%)}
+}
+/* Надзаголовок и число оценок в hero — светлые, иначе тонут на фото */
+.hero .eyebrow{color:rgba(246,240,228,.88)}
+.hero .rating__count{color:rgba(246,240,228,.8)}
