@@ -47,7 +47,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать',
         window: false,
         price: 18000,
-        img: 'assets/img/amina/amina-hotel-astana-nomer-standart-bez-okna.jpg',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-standart-dvuhmestny.jpg',
         desc: 'Доступный номер для пары или одного гостя, ценящего полную тишину во время отдыха.',
       },
       {
@@ -113,7 +113,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать',
         window: false,
         price: 25000,
-        img: 'assets/img/cityline/city-line-hotel-astana-nomer-ekonom.jpg',
+        img: 'assets/img/cityline/city-line-hotel-astana-nomer-standart-bez-okna.jpg',
         desc: 'Компактный номер с большой кроватью — лучший вариант для короткой деловой поездки.',
       },
       {
@@ -129,7 +129,7 @@ export const HOTELS = [
       },
       {
         id: 'twin',
-        name: 'Стандарт Твин',
+        name: 'Standard Twin',
         area: 22,
         guests: 2,
         beds: '2 односпальные кровати',
@@ -139,7 +139,7 @@ export const HOTELS = [
       },
       {
         id: 'delux',
-        name: 'Делюкс',
+        name: 'Deluxe',
         area: 28,
         guests: 3,
         beds: '1 двуспальная кровать и зона отдыха',
