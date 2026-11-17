@@ -123,6 +123,9 @@ ALT = {
         'Кухня апартамента': 'Апартамент ас үйі', 'Кухня студии': 'Студия ас үйі',
         'Ванная комната апартамента': 'Апартамент жуынатын бөлмесі', 'Спальня в апартаменте': 'Апартаменттегі жатын бөлме', 'Зона отдыха в номере категории': 'Санаттағы нөмірдің демалыс аймағы',
         'в Астане': 'Астанада', 'на улице Шамши Калдаякова, 15': 'Шәмші Қалдаяқов көшесі, 15', 'на Туркестан, 14а': 'Түркістан көшесі, 14а',
+        'Спальня апартамента Deluxe в Botanic Garden Apartments': 'Botanic Garden Apartments: Deluxe апартаментінің жатын бөлмесі',
+        'Номер категории Стандарт в City Line Hotel': 'City Line Hotel-дегі Стандарт санатындағы нөмір',
+        'Гостиная зона в номере City Line Hotel': 'City Line Hotel нөміріндегі қонақ аймағы',
         'Стандарт': 'Стандарт', 'DeLux': 'DeLux', 'Логотип City Line Hotel на стойке регистрации': 'Тіркеу орнындағы City Line Hotel логотипі',
     },
     'en': {
@@ -143,6 +146,9 @@ ALT = {
         'в Астане': 'in Astana', 'на улице Шамши Калдаякова, 15': 'at 15 Shamshi Kaldayakov St.', 'на Туркестан, 14а': 'at 14a Turkestan St.',
         'номера': 'room', 'апартамента': 'apartment', 'Стандарт': 'Standard', 'DeLux': 'DeLux',
         'Логотип City Line Hotel на стойке регистрации': 'City Line Hotel logo at the front desk',
+        'Спальня апартамента Deluxe в Botanic Garden Apartments': 'Deluxe apartment bedroom at Botanic Garden Apartments',
+        'Номер категории Стандарт в City Line Hotel': 'Standard room at City Line Hotel',
+        'Гостиная зона в номере City Line Hotel': 'Living area in a City Line Hotel room',
     },
 }
 
