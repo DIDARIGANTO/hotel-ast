@@ -230,7 +230,8 @@ def check_phones():
 def check_scripts():
     missing = 0
     for page in pages():
-        sources = set(RE_SRC.findall(read(os.path.join(ROOT, page))))
+        # метка версии ?v=… (её ставит build-langs.py) на проверку не влияет
+        sources = {re.sub(r'\?v=[0-9a-f]+$', '', s) for s in RE_SRC.findall(read(os.path.join(ROOT, page)))}
         for script in REQUIRED_SCRIPTS:
             if script not in sources:
                 missing += 1

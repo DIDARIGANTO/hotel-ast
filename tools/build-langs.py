@@ -8,6 +8,7 @@ aria-label, переписывает относительные пути, canoni
 дополняет JSON-LD. Запуск: python3 tools/build-langs.py — из корня проекта,
 после любой правки русских страниц или словаря.
 """
+import hashlib
 import json
 from urllib.parse import quote
 import os
@@ -323,7 +324,46 @@ def lastmod(page):
         return today
 
 
+# ── Версия стилей и скриптов в адресах ───────────────────────────────
+RE_VER = re.compile(r'\?v=[0-9a-f]+')
+
+
+def asset_version():
+    """Хеш CSS и JS без самих меток ?v=: меняется при любой правке стилей или скриптов."""
+    h = hashlib.sha1()
+    for folder in ('assets/css', 'assets/js'):
+        for name in sorted(os.listdir(os.path.join(ROOT, folder))):
+            if name.endswith(('.css', '.js')):
+                text = open(os.path.join(ROOT, folder, name), encoding='utf-8').read()
+                h.update(name.encode() + RE_VER.sub('', text).encode())
+    return h.hexdigest()[:8]
+
+
+def stamp_assets():
+    """Дописывает ?v=<версия> к style.css и модулям: в HTML и в import внутри JS.
+
+    До 17.11.2026 хостинг отдавал CSS и JS с кэшем на 10 лет, и браузеры гостей
+    держат старые копии. С новой меткой адрес другой — браузер скачивает файл
+    заново. Во всех import одна и та же метка, иначе модуль загрузится дважды
+    как два разных.
+    """
+    version = asset_version()
+    re_html = re.compile(r'((?:href|src)="assets/(?:css|js)/[\w-]+\.(?:css|js))(?:\?v=[0-9a-f]+)?"')
+    re_import = re.compile(r"(from '\./[\w-]+\.js)(?:\?v=[0-9a-f]+)?'")
+    targets = [(name, re_html) for name in os.listdir(ROOT) if name.endswith('.html')]
+    targets += [(os.path.join('assets/js', name), re_import)
+                for name in os.listdir(os.path.join(ROOT, 'assets/js')) if name.endswith('.js')]
+    for rel, pattern in sorted(targets):
+        path = os.path.join(ROOT, rel)
+        text = open(path, encoding='utf-8').read()
+        stamped = pattern.sub(rf'\1?v={version}' + ('"' if pattern is re_html else "'"), text)
+        if stamped != text:
+            open(path, 'w', encoding='utf-8').write(stamped)
+    print(f'версия стилей и скриптов: {version}')
+
+
 def main():
+    stamp_assets()
     dicts = load_dict()
     # hreflang и дополненный JSON-LD — и в русских исходниках
     for page in PAGES:
