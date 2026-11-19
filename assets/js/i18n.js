@@ -47,7 +47,7 @@ export const DICT = {
     'footer.lead': 'Три формата гостеприимства в столице: смарт-отель, бутик и апартаменты с кухней.',
     'footer.title': 'Отели и апартаменты в Астане',
     // ── Главная: обложка и поиск ───────────────────────────────
-    'home.hero.eyebrow': 'Сеть отелей Астаны',
+    'home.hero.eyebrow': 'Сеть отелей',
     'home.hero.title': 'Три формата гостеприимства в Астане',
     'home.compare': 'Сравнить все три отеля',
     'home.tile.botanic.who': 'Независимость и уют с полноценной кухней.',
@@ -381,7 +381,7 @@ export const DICT = {
     'footer.lead': 'Елордадағы қонақжайлылықтың үш форматы: смарт-қонақ үй, бутик және ас үйі бар апартаменттер.',
     'footer.title': 'Астанадағы қонақ үйлер мен апартаменттер',
     // ── Главная: обложка и поиск ───────────────────────────────
-    'home.hero.eyebrow': 'Астанадағы қонақ үйлер желісі',
+    'home.hero.eyebrow': 'Қонақ үйлер желісі',
     'home.hero.title': 'Астанадағы қонақжайлылықтың үш форматы',
     'home.compare': 'Үш қонақ үйді салыстыру',
     'home.tile.botanic.who': 'Толыққанды ас үйі бар тәуелсіздік пен жайлылық.',
@@ -715,7 +715,7 @@ export const DICT = {
     'footer.lead': 'Three formats of hospitality in the capital: a smart hotel, a boutique hotel and apartments with a kitchen.',
     'footer.title': 'Hotels and apartments in Astana',
     // ── Главная: обложка и поиск ───────────────────────────────
-    'home.hero.eyebrow': 'Hotel group in Astana',
+    'home.hero.eyebrow': 'Hotel group',
     'home.hero.title': 'Three formats of hospitality in Astana',
     'home.compare': 'Compare all three hotels',
     'home.tile.botanic.who': 'Independence and comfort with a fully equipped kitchen.',
