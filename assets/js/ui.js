@@ -1,7 +1,7 @@
 // Общее поведение всех страниц: меню, липкая шапка, появление блоков,
 // аккордеоны, лайтбокс, фильтры. Подключается как <script type="module">.
 
-import { mountIcons } from './icons.js?v=f7727a14';
+import { mountIcons } from './icons.js?v=3e537740';
 
 const qs = (sel, root = document) => root.querySelector(sel);
 const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -45,9 +45,11 @@ function initHeader() {
   });
 
   // Подсветка текущего пункта меню
+  // «Главная» ведёт на ./ (без index.html — сервер перенаправляет его на /)
   const page = location.pathname.split('/').pop() || 'index.html';
   qsa('a', nav).forEach((link) => {
-    if (link.getAttribute('href') === page) link.setAttribute('aria-current', 'page');
+    const href = link.getAttribute('href') === './' ? 'index.html' : link.getAttribute('href');
+    if (href === page) link.setAttribute('aria-current', 'page');
   });
 }
 

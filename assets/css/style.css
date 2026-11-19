@@ -50,6 +50,14 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0 0 .55em;letter-spacing:-.012em}
 h1{font-size:clamp(40px,5.4vw,68px)}
+/* Длинное слово не должно раздвигать страницу на телефоне: переносим его,
+   только если оно не помещается в строку целиком */
+h1,h2,h3,h4{overflow-wrap:break-word}
+/* Казахские слова длиннее русских («қонақжайлылықтың» при 40 px шире
+   экрана 375 px) — на узких экранах заголовок мельче */
+@media (max-width:360px){h1{font-size:clamp(28px,9.4vw,40px)}}
+@media (max-width:480px){html[lang="kk"] h1{font-size:clamp(27px,8.6vw,40px)}}
+html[lang="kk"] .hero h1{max-width:18ch}
 h2{font-size:clamp(28px,3.4vw,44px);max-width:30ch}
 h3{font-size:clamp(20px,2vw,26px)}
 p{margin:0 0 1em}

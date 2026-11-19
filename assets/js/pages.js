@@ -3,10 +3,10 @@
 // applyLang их не увидит — перевод подставляется здесь и обновляется
 // по событию langchange.
 
-import { HOTELS, getHotel } from './hotels.js?v=f7727a14';
-import { formatPrice } from './booking.js?v=f7727a14';
-import { translate, currentLang } from './i18n.js?v=f7727a14';
-import { observeReveal } from './ui.js?v=f7727a14';
+import { HOTELS, getHotel } from './hotels.js?v=3e537740';
+import { formatPrice } from './booking.js?v=3e537740';
+import { translate, currentLang } from './i18n.js?v=3e537740';
+import { observeReveal } from './ui.js?v=3e537740';
 
 // Языковые версии лежат в /kk/ и /en/: относительный путь к фото из
 // данных (assets/…) оттуда не ведёт никуда, поэтому поднимаемся на уровень.
