@@ -129,7 +129,7 @@ export const HOTELS = [
       },
       {
         id: 'twin',
-        name: 'Standard Twin',
+        name: 'Стандарт с двумя раздельными кроватями',
         area: 22,
         guests: 2,
         beds: '2 односпальные кровати',
