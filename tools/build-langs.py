@@ -45,9 +45,9 @@ META = {
     },
     'cityline': {
         'kk': ('City Line Hotel — Астанадағы бутик-қонақ үй',
-               'Астана, Шәмші Қалдаяқов көшесі, 15: бутик-формат, нөмірлердің төрт санаты, лобби-бар, 2ГИС-те 3D-тур. 25 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
+               'Астана, Шәмші Қалдаяқов көшесі, 15: Ұлттық музей мен «Хазірет Сұлтан» мешіті жанындағы бутик-қонақ үй, нөмірлердің төрт санаты, ортақ ас үй, тәулік бойы тіркеу. 25 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
         'en': ('City Line Hotel — boutique hotel in Astana, Kazakhstan',
-               'City Line Hotel at 15 Shamshi Kaldayakov St., Astana: boutique format, four room categories, lobby bar, 3D tour on 2GIS. From 25 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
+               'City Line Hotel at 15 Shamshi Kaldayakov St., Astana: a boutique hotel near the National Museum and Hazrat Sultan Mosque, four room categories, shared kitchen, 24-hour front desk. From 25 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
     },
     'botanic': {
         'kk': ('Botanic Garden Apartments — Астанадағы апартаменттер',
@@ -161,7 +161,7 @@ HOTEL_EXTRA = {
         'map': 'https://2gis.kz/astana/firm/70000001060984202',
     },
     'cityline': {
-        'amenities': ['Wi-Fi', 'Parking', 'Breakfast', '24-hour front desk', 'Lobby bar', 'Airport transfer'],
+        'amenities': ['Wi-Fi', 'Parking', '24-hour front desk', 'Shared kitchen', 'Workspace', 'Taxi on request'],
         'map': 'https://2gis.kz/astana/firm/70000001105837375',
     },
     'botanic': {
