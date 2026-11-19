@@ -1,7 +1,7 @@
 // Общее поведение всех страниц: меню, липкая шапка, появление блоков,
 // аккордеоны, лайтбокс, фильтры. Подключается как <script type="module">.
 
-import { mountIcons } from './icons.js?v=5add6273';
+import { mountIcons } from './icons.js?v=2e436e5b';
 
 const qs = (sel, root = document) => root.querySelector(sel);
 const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
