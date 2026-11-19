@@ -157,7 +157,7 @@ ALT = {
 HOTEL_EXTRA = {
     'amina': {
         'numberOfRooms': 21,
-        'amenities': ['Wi-Fi', 'Parking', '24-hour front desk', 'Shared kitchen', 'Coworking', 'Airport transfer'],
+        'amenities': ['Wi-Fi', 'Parking', '24-hour front desk', 'Shared kitchen', 'Workspace', 'Taxi on request'],
         'map': 'https://2gis.kz/astana/firm/70000001060984202',
     },
     'cityline': {
@@ -172,10 +172,10 @@ HOTEL_EXTRA = {
 AMENITY_NAMES = {
     'kk': {'Wi-Fi': 'Wi-Fi', 'Parking': 'Тұрақ', 'Breakfast': 'Таңғы ас', '24-hour front desk': 'Тәулік бойы тіркеу',
            'Coworking': 'Коворкинг', 'Airport transfer': 'Әуежайдан трансфер', 'Lobby bar': 'Лобби-бар',
-           'Kitchen': 'Ас үй', 'Shared kitchen': 'Ортақ ас үй', 'Washing machine': 'Кір жуғыш машина', 'Workspace': 'Жұмыс орны'},
+           'Kitchen': 'Ас үй', 'Shared kitchen': 'Ортақ ас үй', 'Washing machine': 'Кір жуғыш машина', 'Workspace': 'Жұмыс орны', 'Taxi on request': 'Такси шақыру'},
     'ru': {'Wi-Fi': 'Wi-Fi', 'Parking': 'Парковка', 'Breakfast': 'Завтрак', '24-hour front desk': 'Круглосуточная стойка',
            'Coworking': 'Коворкинг', 'Airport transfer': 'Трансфер из аэропорта', 'Lobby bar': 'Лобби-бар',
-           'Kitchen': 'Кухня', 'Shared kitchen': 'Общая кухня', 'Washing machine': 'Стиральная машина', 'Workspace': 'Рабочее место'},
+           'Kitchen': 'Кухня', 'Shared kitchen': 'Общая кухня', 'Washing machine': 'Стиральная машина', 'Workspace': 'Рабочее место', 'Taxi on request': 'Вызов такси'},
 }
 ADDRESS = {
     'kk': {'ул. Шамши Калдаякова, 15': 'Шәмші Қалдаяқов көшесі, 15', 'ул. Туркестан, 14а': 'Түркістан көшесі, 14а', 'Астана': 'Астана'},

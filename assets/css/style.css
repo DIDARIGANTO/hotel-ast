@@ -623,6 +623,10 @@ textarea:focus-visible,
 .incl--compact .incl__item{display:grid;grid-template-columns:26px 1fr;column-gap:12px;align-items:start}
 .incl--compact .incl__item .ico{grid-row:1/3;margin-top:1px}
 .incl--compact .incl__item h3,.incl--compact .incl__item p{grid-column:2}
+.incl--titles{gap:14px 24px}
+.incl--titles .incl__item{align-items:center}
+.incl--titles .incl__item .ico{grid-row:auto;margin-top:0}
+.incl--titles .incl__item h3{margin:0;font-weight:500}
 /* Преимущества на главной — иконка вместо номера */
 .step:has(.ico)::before{content:none}
 .step .ico{width:32px;height:32px;margin-bottom:4px}
