@@ -47,7 +47,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать',
         window: false,
         price: 18000,
-        img: 'assets/img/amina/amina-hotel-astana-nomer-standart-dvuhmestny.jpg',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-standart-bez-okna.jpg',
         desc: 'Доступный номер для пары или одного гостя, ценящего полную тишину во время отдыха.',
       },
       {
@@ -57,7 +57,7 @@ export const HOTELS = [
         beds: '1 двуспальная кровать',
         window: true,
         price: 21000,
-        img: 'assets/img/amina/amina-hotel-astana-nomer-standart-okno.jpg',
+        img: 'assets/img/amina/amina-hotel-astana-nomer-standart-dvuhmestny.jpg',
         desc: 'Классический уютный номер со всем необходимым для комфортного проживания.',
       },
       {
