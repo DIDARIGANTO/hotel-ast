@@ -201,7 +201,7 @@ p{margin:0 0 1em}
 /* ── Футер ──────────────────────────────────────────────── */
 .footer{background:var(--indigo);color:rgba(246,240,228,.74);padding:calc(var(--step) * .7) 0 36px}
 .footer a:hover{color:var(--gold)}
-.footer__actions{display:flex;gap:8px;margin-top:4px}
+.footer__actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .footer__act{
   display:inline-flex;align-items:center;padding:6px 0;border:0;border-bottom:1px solid var(--line-dark);
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-right:18px;
@@ -564,6 +564,7 @@ textarea:focus-visible,
 .footer__hotel .footer__type{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
 .footer__hotel .footer__tel{flex-basis:100%;font-size:15px;color:var(--cream)}
 .footer__hotel .footer__actions{margin:0}
+@media (max-width:480px){.footer__hotel .footer__actions{gap:4px 16px}.footer__hotel .footer__act{margin-right:0}}
 @media (max-width:760px){.footer__groups{grid-template-columns:1fr}}
 
 /* Главная: слайды в hero, компактнее секции, блок отзывов */

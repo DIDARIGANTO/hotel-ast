@@ -1,4 +1,4 @@
-import { getHotel, getRoom, EXTRAS } from './hotels.js?v=f81e0eed';
+import { getHotel, getRoom, EXTRAS } from './hotels.js?v=5add6273';
 
 const DAY = 24 * 60 * 60 * 1000;
 
