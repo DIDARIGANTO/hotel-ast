@@ -3,10 +3,10 @@
 // applyLang их не увидит — перевод подставляется здесь и обновляется
 // по событию langchange.
 
-import { HOTELS, getHotel } from './hotels.js?v=2e436e5b';
-import { formatPrice } from './booking.js?v=2e436e5b';
-import { translate, currentLang } from './i18n.js?v=2e436e5b';
-import { observeReveal } from './ui.js?v=2e436e5b';
+import { HOTELS, getHotel } from './hotels.js?v=31c360a8';
+import { formatPrice } from './booking.js?v=31c360a8';
+import { translate, currentLang } from './i18n.js?v=31c360a8';
+import { observeReveal } from './ui.js?v=31c360a8';
 
 // Языковые версии лежат в /kk/ и /en/: относительный путь к фото из
 // данных (assets/…) оттуда не ведёт никуда, поэтому поднимаемся на уровень.
@@ -85,7 +85,7 @@ export function roomCard(hotel, room, lang = currentLang()) {
   const name = roomNameSafe(roomName(hotel, room, lang));
   const guests = room.guests === 1
     ? t('pages.guest1', lang, '1 гость')
-    : fmt(t('pages.guestsUpTo', lang, 'до {guests} гостей'), { guests: room.guests });
+    : fmt(t('pages.guestsUpTo', lang, 'До {guests} гостей'), { guests: room.guests });
   let windowLabel = '';
   if (room.window === true) windowLabel = t('pages.window', lang, 'Номер с окном');
   if (room.window === false) windowLabel = t('pages.noWindow', lang, 'Без окна');
