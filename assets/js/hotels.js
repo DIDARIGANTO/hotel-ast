@@ -171,7 +171,7 @@ export const HOTELS = [
     gis: 'https://2gis.kz/astana/firm/70000001044528049',
     instagram: 'https://www.instagram.com/bg.apartments/',
     hero: 'assets/img/botanic/botanic-garden-astana-gostinaya-divan.jpg',
-    amenities: ['wifi', 'kitchen', 'parking', 'reception24', 'laundry', 'workspace'],
+    amenities: ['wifi', 'kitchen', 'reception24', 'laundry', 'workspace'],
     rooms: [
       {
         id: 'standard',
@@ -184,7 +184,7 @@ export const HOTELS = [
       },
       {
         id: 'delux',
-        name: 'Deluxe',
+        name: 'Делюкс',
         guests: 2,
         beds: '1 двуспальная кровать, диван, кухня',
         price: 34000,
@@ -193,7 +193,7 @@ export const HOTELS = [
       },
       {
         id: 'lux',
-        name: 'Lux',
+        name: 'Люкс',
         guests: 3,
         beds: 'спальня и гостиная с кухней',
         price: 36000,

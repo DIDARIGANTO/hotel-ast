@@ -1,6 +1,6 @@
-import { getHotel, getRoom } from './hotels.js?v=22fd3b54';
-import { buildQuickMessage, buildWhatsAppUrl } from './booking.js?v=22fd3b54';
-import { translate, currentLang } from './i18n.js?v=22fd3b54';
+import { getHotel, getRoom } from './hotels.js?v=d79649db';
+import { buildQuickMessage, buildWhatsAppUrl } from './booking.js?v=d79649db';
+import { translate, currentLang } from './i18n.js?v=d79649db';
 
 // Быстрая заявка: отель, имя, дата заезда, число ночей, гостей, телефон,
 // согласие. Стоимость гостю не считаем — её подтверждает отель в ответе.

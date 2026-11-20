@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=22fd3b54">
+<link rel="stylesheet" href="assets/css/style.css?v=d79649db">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -87,11 +87,6 @@
   {
    "@type": "LocationFeatureSpecification",
    "name": "Стиральная машина",
-   "value": true
-  },
-  {
-   "@type": "LocationFeatureSpecification",
-   "name": "Парковка",
    "value": true
   },
   {
@@ -178,36 +173,16 @@
           <li><span class="facts__label" data-i18n="hotel.facts.social">Instagram</span><span class="facts__value"><a href="https://www.instagram.com/bg.apartments/" target="_blank" rel="noopener">@bg.apartments</a></span></li>
         </ul>
         <p class="eyebrow eyebrow--sm" data-i18n="hotel.incl.title">Удобства и услуги</p>
-        <ul class="incl incl--compact">
-      <li class="incl__item" data-icon="kitchen">
-        <h3 data-i18n="hotel.botanic.incl.1">Полноценная кухня</h3>
-        <p data-i18n="hotel.botanic.incl.1.text">Плита, холодильник, микроволновая печь, чайник и посуда в каждом апартаменте — готовьте, когда удобно.</p>
-      </li>
-      <li class="incl__item" data-icon="washer">
-        <h3 data-i18n="hotel.botanic.incl.2">Стиральная машина</h3>
-        <p data-i18n="hotel.botanic.incl.2.text">Стирка прямо в апартаменте — особенно удобно в долгих поездках.</p>
-      </li>
-      <li class="incl__item" data-icon="wifi">
-        <h3 data-i18n="hotel.botanic.incl.3">Бесплатный Wi-Fi</h3>
-        <p data-i18n="hotel.botanic.incl.3.text">Быстрый интернет для работы и связи во всех апартаментах.</p>
-      </li>
-      <li class="incl__item" data-icon="laptop">
-        <h3 data-i18n="hotel.botanic.incl.4">Рабочее место</h3>
-        <p data-i18n="hotel.botanic.incl.4.text">Стол и удобное кресло для удалённой работы и учёбы.</p>
-      </li>
-      <li class="incl__item" data-icon="clock">
-        <h3 data-i18n="hotel.botanic.incl.5">Круглосуточная поддержка</h3>
-        <p data-i18n="hotel.botanic.incl.5.text">Администратор на связи 24/7, заселение в любое время по договорённости.</p>
-      </li>
-      <li class="incl__item" data-icon="parking">
-        <h3 data-i18n="hotel.botanic.incl.6">Парковка</h3>
-        <p data-i18n="hotel.botanic.incl.6.text">Место для автомобиля рядом с домом.</p>
-      </li>
+        <ul class="incl incl--compact incl--titles">
+          <li class="incl__item" data-icon="kitchen"><h3 data-i18n="hotel.botanic.incl.1">Полноценная кухня</h3></li>
+          <li class="incl__item" data-icon="washer"><h3 data-i18n="hotel.botanic.incl.2">Стиральная машина</h3></li>
+          <li class="incl__item" data-icon="wifi"><h3 data-i18n="hotel.botanic.incl.3">Бесплатный Wi-Fi</h3></li>
+          <li class="incl__item" data-icon="laptop"><h3 data-i18n="hotel.botanic.incl.4">Рабочее место</h3></li>
+          <li class="incl__item" data-icon="clock"><h3 data-i18n="hotel.botanic.incl.5">Круглосуточная поддержка</h3></li>
         </ul>
         <div class="hotel-actions">
           <a class="btn btn--dark" href="tel:+77027771503" data-i18n="hotel.act.call">Позвонить</a>
           <a class="btn btn--dark" href="https://wa.me/77027771503?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Botanic%20Garden%20Apartments%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2." target="_blank" rel="noopener" data-i18n="hotel.act.write">Написать</a>
-          <a class="btn btn--dark" href="https://2gis.kz/astana/directions/points/%7C71.426516%2C51.109047%3B70000001044528049" target="_blank" rel="noopener" data-i18n="hotel.act.route">Построить маршрут</a>
         </div>
       </div>
       <figure class="split__media">
@@ -227,7 +202,6 @@
         <p class="lead" data-i18n="hotel.botanic.location.text">Апартаменты находятся на левом берегу, в районе Есиль, рядом с Ботаническим садом. В нескольких минутах на машине — деловой центр, торговый центр Mega Silk Way и комплекс EXPO. По запросу поможем организовать трансфер от аэропорта или вокзала.</p>
         <div class="hotel-actions">
           <a class="btn btn--dark" href="https://2gis.kz/astana/firm/70000001044528049" target="_blank" rel="noopener" data-i18n="hotel.location.gis">Открыть в 2ГИС</a>
-          <a class="btn btn--dark" href="https://2gis.kz/astana/directions/points/%7C71.426516%2C51.109047%3B70000001044528049" target="_blank" rel="noopener" data-i18n="hotel.act.route">Построить маршрут</a>
         </div>
       </div>
       <div>
@@ -306,8 +280,8 @@
     </div>
   </div>
 </footer>
-<script type="module" src="assets/js/ui.js?v=22fd3b54"></script>
-<script type="module" src="assets/js/i18n.js?v=22fd3b54"></script>
-<script type="module" src="assets/js/pages.js?v=22fd3b54"></script>
+<script type="module" src="assets/js/ui.js?v=d79649db"></script>
+<script type="module" src="assets/js/i18n.js?v=d79649db"></script>
+<script type="module" src="assets/js/pages.js?v=d79649db"></script>
 </body>
 </html>
