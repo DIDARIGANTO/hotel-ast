@@ -110,6 +110,12 @@ CHROME = {
 # ── Alt-тексты фотографий ────────────────────────────────────────────
 ALT = {
     'kk': {
+        'Апартамент-студия с кухней и диваном в Botanic Garden Apartments': 'Botanic Garden Apartments: ас үйі мен диваны бар студия-апартамент',
+        'Просторный апартамент с диваном в Botanic Garden Apartments, Астана': 'Botanic Garden Apartments: диваны бар кең апартамент, Астана',
+        'Спальня апартамента с телевизором в Botanic Garden Apartments': 'Botanic Garden Apartments: теледидары бар апартамент жатын бөлмесі',
+        'Гостиная апартамента с зелёным диваном в Botanic Garden Apartments': 'Botanic Garden Apartments: жасыл диваны бар апартамент қонақ бөлмесі',
+        'Кухня апартамента с барной стойкой в Botanic Garden Apartments': 'Botanic Garden Apartments: бар үстелі бар апартамент ас үйі',
+        'Чайник, вода и чай в апартаменте Botanic Garden Apartments': 'Botanic Garden Apartments: апартаменттегі шәйнек, су және шай',
         'Фасад': 'Қасбеті', 'Вывеска AMINA Hotel на фасаде здания': 'Ғимарат қасбетіндегі AMINA Hotel маңдайшасы',
         'Номер с окном в AMINA Hotel': 'AMINA Hotel-дегі терезесі бар нөмір', 'Общая кухня': 'Ортақ ас үй', 'Зона завтраков': 'Таңғы ас аймағы', 'Коридор': 'Дәліз',
         'Рабочее место в апартаменте': 'Апартаменттегі жұмыс орны', 'Стиральная машина в ванной апартамента': 'Апартамент жуынатын бөлмесіндегі кір жуғыш машина', 'с зелёной стеной': 'жасыл қабырғасы бар', 'Делюкс': 'Делюкс', 'Стойка регистрации': 'Тіркеу орны', 'Лаунж-зона': 'Лаунж аймағы',
@@ -131,6 +137,12 @@ ALT = {
         'Стандарт': 'Стандарт', 'DeLux': 'DeLux', 'Логотип City Line Hotel на стойке регистрации': 'Тіркеу орнындағы City Line Hotel логотипі',
     },
     'en': {
+        'Апартамент-студия с кухней и диваном в Botanic Garden Apartments': 'Studio apartment with a kitchen and a sofa at Botanic Garden Apartments',
+        'Просторный апартамент с диваном в Botanic Garden Apartments, Астана': 'Spacious apartment with a sofa at Botanic Garden Apartments, Astana',
+        'Спальня апартамента с телевизором в Botanic Garden Apartments': 'Apartment bedroom with a TV at Botanic Garden Apartments',
+        'Гостиная апартамента с зелёным диваном в Botanic Garden Apartments': 'Apartment living room with a green sofa at Botanic Garden Apartments',
+        'Кухня апартамента с барной стойкой в Botanic Garden Apartments': 'Apartment kitchen with a bar counter at Botanic Garden Apartments',
+        'Чайник, вода и чай в апартаменте Botanic Garden Apartments': 'Kettle, water and tea in an apartment at Botanic Garden Apartments',
         'Фасад': 'Facade of', 'Вывеска AMINA Hotel на фасаде здания': 'AMINA Hotel sign on the building facade',
         'Номер с окном в AMINA Hotel': 'Room with a window at AMINA Hotel', 'Общая кухня': 'Shared kitchen at', 'Зона завтраков': 'Breakfast area at', 'Коридор': 'Corridor of',
         'Рабочее место в апартаменте': 'Workspace in the apartment', 'Стиральная машина в ванной апартамента': 'Washing machine in the apartment bathroom', 'с зелёной стеной': 'with a green wall', 'Делюкс': 'Deluxe', 'Стойка регистрации': 'Front desk of', 'Лаунж-зона': 'Lounge at',
