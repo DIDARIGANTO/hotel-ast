@@ -187,23 +187,23 @@ def check_links():
 
 # ── 3. Цены в разметке ──────────────────────────────────────
 def check_prices():
-    found = 0
+    """Суммы в разметке (SEO-текст, description, JSON-LD) допустимы, только если
+    совпадают с ценой из hotels.js — иначе после смены прайса текст устареет."""
+    allowed = {int(x) for x in re.findall(r'\bprice(?:From)?:\s*(\d+)', read(HOTELS))}
+    checked = 0
     for page in pages():
         if page in PRICE_SKIP:
             continue
         for number, line in enumerate(read(os.path.join(ROOT, page)).splitlines(), 1):
-            for match in RE_PRICE_SIGN.finditer(line):
-                found += 1
-                fail(f'{page}:{number}: цена «{match.group(0).strip()}» в разметке — '
-                     'она должна приходить из hotels.js')
-            for match in RE_PRICE_FROM.finditer(line):
-                if len(digits(match.group(1))) >= 4:
-                    found += 1
-                    fail(f'{page}:{number}: цена «{match.group(0).strip()}» в разметке — '
-                         'она должна приходить из hotels.js')
+            amounts = [m.group(0) for m in RE_PRICE_SIGN.finditer(line)]
+            amounts += [m.group(1) for m in RE_PRICE_FROM.finditer(line) if len(digits(m.group(1))) >= 4]
+            for raw in amounts:
+                value = int(digits(raw))
+                checked += 1
+                if value not in allowed:
+                    fail(f'{page}:{number}: цена «{raw.strip()}» не совпадает ни с одной ценой в hotels.js')
     skipped = ', '.join(sorted(PRICE_SKIP))
-    if not found:
-        ok(f'цены: в разметке нет зашитых сумм (пропущен {skipped})')
+    ok(f'цены: {checked} сумм в разметке совпадают с hotels.js (пропущен {skipped})')
 
 
 # ── 4. Телефоны ─────────────────────────────────────────────

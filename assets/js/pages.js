@@ -3,10 +3,10 @@
 // applyLang их не увидит — перевод подставляется здесь и обновляется
 // по событию langchange.
 
-import { HOTELS, getHotel } from './hotels.js?v=d79649db';
-import { formatPrice } from './booking.js?v=d79649db';
-import { translate, currentLang } from './i18n.js?v=d79649db';
-import { observeReveal } from './ui.js?v=d79649db';
+import { HOTELS, getHotel } from './hotels.js?v=a6e82030';
+import { formatPrice } from './booking.js?v=a6e82030';
+import { translate, currentLang } from './i18n.js?v=a6e82030';
+import { observeReveal } from './ui.js?v=a6e82030';
 
 // Языковые версии лежат в /kk/ и /en/: относительный путь к фото из
 // данных (assets/…) оттуда не ведёт никуда, поэтому поднимаемся на уровень.
@@ -98,7 +98,7 @@ export function roomCard(hotel, room, lang = currentLang()) {
   const desc = t(`room.desc.${hotel.id}.${room.id}`, lang, room.desc ?? '');
   return `
     <article class="room reveal">
-      <div class="room__media"><img src="${asset(room.img)}" alt="${name}" loading="lazy" role="button" tabindex="0"></div>
+      <div class="room__media"><img src="${asset(room.img)}" alt="${name} — ${roomNameSafe(hotel.name)}, ${t('hotel.city', lang, 'Астана')}" loading="lazy" role="button" tabindex="0"></div>
       <div class="room__body">
         <h3>${name}</h3>
         <p class="room__meta">${meta}</p>

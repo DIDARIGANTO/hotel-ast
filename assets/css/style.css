@@ -683,3 +683,9 @@ textarea:focus-visible,
 /* Надзаголовок и число оценок в hero — светлые, иначе тонут на фото */
 .hero .eyebrow{color:rgba(246,240,228,.88)}
 .hero .rating__count{color:rgba(246,240,228,.8)}
+
+/* Блок «Коротко об отеле»: SEO/GEO-текст внизу страницы отеля */
+.seo-note{padding:clamp(36px,5vw,64px) 0}
+.seo-note__inner{max-width:78ch}
+.seo-note h2{font-size:clamp(22px,2.4vw,30px);margin:0 0 14px}
+.seo-note p:not(.eyebrow){color:var(--muted);font-size:15px;line-height:1.65;margin:0 0 10px}

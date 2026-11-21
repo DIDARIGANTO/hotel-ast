@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Собирает статические языковые версии сайта: kk/ и en/.
 
 Русские страницы в корне — источник. Для каждого языка генератор
@@ -26,34 +27,34 @@ PAGES = ['index', 'hotels', 'amina', 'cityline', 'botanic',
 # ── Заголовки и описания страниц ─────────────────────────────────────
 META = {
     'index': {
-        'kk': ('Астанадағы үш қонақ үй: AMINA, City Line, Botanic Garden',
-               'Астанадағы үш қонақ үй: AMINA смарт-қонақ үйі, City Line бутик-қонақ үйі және Botanic Garden апартаменттері. Делдалсыз тікелей брондау, WhatsApp арқылы өтінім.'),
-        'en': ('Three hotels in Astana, Kazakhstan: AMINA, City Line, Botanic Garden',
-               'Three hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden serviced apartments. Book directly with no intermediaries — requests go straight to the hotel on WhatsApp.'),
+        'kk': ('Астана қонақ үйлері — AMINA, City Line, Botanic Garden',
+               'Астанадағы қонақ үйлер: оң жағалаудағы арзан смарт-қонақ үй AMINA мен бутик-қонақ үй City Line, сол жағалаудағы тәуліктік Botanic Garden апартаменттері. 15 000 ₸ бастап, WhatsApp арқылы брондау.'),
+        'en': ('Hotels in Astana, Kazakhstan — AMINA, City Line, Botanic Garden',
+               'Hotels in Astana: AMINA budget smart hotel and City Line boutique hotel on the right bank, Botanic Garden serviced apartments on the left bank. From 15 000 KZT per night, book on WhatsApp.'),
     },
     'hotels': {
-        'kk': ('Астанадағы қонақ үйлер — үш мекенжай',
-               'Смарт-қонақ үй, бутик-қонақ үй және ас үйі бар апартаменттер: AMINA, City Line және Botanic Garden. Формат, аудан және баға бойынша салыстыру.'),
-        'en': ('Hotels in Astana: smart hotel, boutique hotel, apartments',
-               'Compare the three hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden apartments with a kitchen. Format, district, prices and 2GIS ratings.'),
+        'kk': ('Астана қонақ үйлері: үш қонақ үйдің бағасы мен ауданын салыстыру',
+               'Астана қонақ үйлерін салыстырыңыз: смарт-қонақ үй AMINA, бутик-қонақ үй City Line және Botanic Garden апартаменттері. Оң және сол жағалау, тәуліктік бағалар, 2ГИС рейтингтері.'),
+        'en': ('Hotels in Astana: compare prices and districts of three hotels',
+               'Compare hotels in Astana: AMINA smart hotel, City Line boutique hotel and Botanic Garden apartments. Right and left bank, prices per night, 2GIS ratings, direct booking.'),
     },
     'amina': {
-        'kk': ('AMINA Hotel — Астанадағы смарт-қонақ үй',
-               'Астана, Шәмші Қалдаяқов көшесі, 15: 21 нөмір, тәулік бойы тіркеу, коворкинг, таңғы ас пен трансфер сұраныс бойынша. 15 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('AMINA Hotel — smart hotel in Astana, Kazakhstan',
-               'AMINA Hotel at 15 Shamshi Kaldayakov St., Astana: 21 rooms, 24-hour check-in, coworking, breakfast and airport transfer on request. From 15 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
+        'kk': ('AMINA Hotel — Астанадағы арзан смарт-қонақ үй',
+               'Астананың оң жағалауындағы арзан смарт-қонақ үй AMINA, Шәмші Қалдаяқов көшесі, 15, LRT жанында. Бір және екі орындық нөмірлер тәулігіне 15 000 ₸ бастап, есеп құжаттары беріледі.'),
+        'en': ('AMINA Hotel Astana — budget smart hotel on the right bank',
+               'AMINA Smart Hotel Astana: a budget hotel at 15 Shamshi Kaldayakov St. on the right bank, near the LRT and the Palace of Independence. Single and double rooms from 15 000 KZT per night.'),
     },
     'cityline': {
         'kk': ('City Line Hotel — Астанадағы бутик-қонақ үй',
-               'Астана, Шәмші Қалдаяқов көшесі, 15: Ұлттық музей мен «Хазірет Сұлтан» мешіті жанындағы бутик-қонақ үй, нөмірлердің төрт санаты, ортақ ас үй, тәулік бойы тіркеу. 25 000 ₸ бастап, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('City Line Hotel — boutique hotel in Astana, Kazakhstan',
-               'City Line Hotel at 15 Shamshi Kaldayakov St., Astana: a boutique hotel near the National Museum and Hazrat Sultan Mosque, four room categories, shared kitchen, 24-hour front desk. From 25 000 KZT per night, 10% off from 3 nights. Book directly on WhatsApp.'),
+               'Астананың оң жағалауындағы жаңа бутик-қонақ үй City Line, Шәмші Қалдаяқов көшесі, 15, LRT пен Тәуелсіздік сарайы жанында. Екі орындық нөмірлер тәулігіне 25 000 ₸ бастап.'),
+        'en': ('City Line Hotel Astana — boutique hotel on the right bank',
+               'City Line Hotel Astana: a new boutique hotel at 15 Shamshi Kaldayakov St. on the right bank, near the LRT and the Palace of Independence. Double and twin rooms from 25 000 KZT per night.'),
     },
     'botanic': {
-        'kk': ('Botanic Garden Apartments — Астанадағы апартаменттер',
-               'Астана, Түркістан көшесі, 14а: отбасылар мен ұзақ сапарларға арналған ас үйі бар студиялар мен апартаменттер, 3 түннен бастап 10% жеңілдік. WhatsApp арқылы брондау.'),
-        'en': ('Botanic Garden Apartments — serviced apartments in Astana',
-               'Botanic Garden Apartments at 14a Turkestan St., Astana: studios and apartments with a kitchen for families and long stays, 10% off from 3 nights. Book directly on WhatsApp.'),
+        'kk': ('Botanic Garden Apartments — Астанадағы тәуліктік апартаменттер',
+               'Астананың сол жағалауындағы тәуліктік және жарты тәуліктік апартаменттер, Түркістан көшесі, 14а, Ботаникалық бақ пен ЭКСПО жанында. Ас үйі бар апартаменттер 32 000 ₸ бастап.'),
+        'en': ('Botanic Garden Apartments Astana — serviced apartments, left bank',
+               'Botanic Garden Apartments Astana: serviced apartments with a kitchen for daily and half-day stays at 14a Turkestan St. on the left bank, near the Botanical Garden and EXPO. From 32 000 KZT.'),
     },
     'offers': {
         'kk': ('Арнайы ұсыныстар — Астана',
@@ -62,16 +63,16 @@ META = {
                'Offers from three hotels in Astana: 10% off stays of 3 nights or more at any of the three hotels and direct booking with no aggregator commission.'),
     },
     'booking': {
-        'kk': ('Нөмір брондау — Астана',
-               'Астанадағы үш қонақ үйдің бірінде нөмір брондаңыз: құны лезде есептеледі, өтінім қонақ үйдің WhatsApp-ына кетеді. Делдалсыз, алдын ала төлемсіз.'),
-        'en': ('Book a room — Astana',
-               'Book a room at one of the three hotels in Astana: the price is calculated instantly and the request goes to the hotel on WhatsApp. No intermediaries, no prepayment on the website.'),
+        'kk': ('Астанада қонақ үйді тікелей брондау — WhatsApp өтінімі',
+               'Астанада қонақ үйді делдалсыз брондаңыз: AMINA, City Line немесе Botanic Garden. Аты-жөні, келу күні, түн мен қонақ саны — өтінім бірден қонақ үйдің WhatsApp-ына кетеді.'),
+        'en': ('Book a hotel in Astana directly — request via WhatsApp',
+               'Book a hotel in Astana with no intermediaries: AMINA, City Line or Botanic Garden. Name, arrival date, nights and guests — the request goes straight to the hotel on WhatsApp.'),
     },
     'contacts': {
-        'kk': ('Байланыс — Астанадағы үш қонақ үйдің мекенжайлары мен телефондары',
-               'AMINA Hotel, City Line Hotel және Botanic Garden Apartments: мекенжайлар, телефондар, WhatsApp, 2ГИС карточкалары. Тұру ережелері және байланыс нысаны.'),
-        'en': ('Contacts — addresses and phone numbers of three hotels in Astana',
-               'AMINA Hotel, City Line Hotel and Botanic Garden Apartments: addresses, phone numbers, WhatsApp, 2GIS listings. House rules and a contact form.'),
+        'kk': ('Астана қонақ үйлерінің байланыстары: AMINA, City Line, Botanic Garden',
+               'AMINA Hotel, City Line Hotel және Botanic Garden Apartments мекенжайлары, телефондары мен WhatsApp: оң жағалау, Шәмші Қалдаяқов көшесі, 15 және сол жағалау, Түркістан көшесі, 14а.'),
+        'en': ('Contacts of hotels in Astana: AMINA, City Line, Botanic Garden',
+               'Addresses, phone numbers and WhatsApp of AMINA Hotel, City Line Hotel and Botanic Garden Apartments in Astana: right bank, 15 Shamshi Kaldayakov St., and left bank, 14a Turkestan St.'),
     },
     'privacy': {
         'kk': ('Дербес деректерді өңдеу саясаты',
@@ -169,6 +170,65 @@ HOTEL_EXTRA = {
         'map': 'https://2gis.kz/astana/firm/70000001044528049',
     },
 }
+HOTEL_SEO = {
+ "amina": {
+  "keywords": {
+   "ru": "отель Астана, гостиница Астана, недорогой отель Астана, недорогая гостиница Астана, гостиница эконом Астана, смарт-отель Астана, smart-отель Астана, Smart Hotel Astana, Amina Hotel Astana, отель Амина Астана, гостиница на ночь Астана, отель на сутки Астана, отель в Астане цены, забронировать отель Астана, отель с закрывающими документами Астана, отель для командировок Астана, гостиница для туристов Астана, гостиница на правом берегу Астаны, гостиница возле ЛРТ Астана, отель возле Дворца Независимости Астана, отель возле Дворца Мира и Согласия Астана, одноместный номер Астана, двухместный номер Астана, гостиница с Wi-Fi Астана, гостиница на Шамши Калдаякова",
+   "kk": "Астана қонақ үй, арзан қонақ үй Астана, смарт-қонақ үй Астана, AMINA Hotel Астана, LRT жанындағы қонақ үй, Тәуелсіздік сарайы жанындағы қонақ үй, Бейбітшілік және келісім сарайы жанындағы қонақ үй, іссапарға қонақ үй Астана, бір орындық нөмір Астана, екі орындық нөмір Астана, оң жағалаудағы қонақ үй",
+   "en": "hotel Astana, budget hotel Astana, cheap hotel Astana, Smart Hotel Astana, Amina Hotel Astana, hotel near LRT Astana, hotel near Palace of Independence Astana, hotel near Palace of Peace and Reconciliation, business trip hotel Astana, single room Astana, double room Astana, right bank hotel Astana"
+  },
+  "alternateName": [
+   "Амина",
+   "Отель Амина",
+   "Гостиница Амина",
+   "AMINA Smart Hotel",
+   "Amina Hotel Astana"
+  ],
+  "priceRange": {
+   "ru": "15 000–23 000 ₸ за сутки",
+   "kk": "тәулігіне 15 000–23 000 ₸",
+   "en": "15,000–23,000 KZT per night"
+  }
+ },
+ "cityline": {
+  "keywords": {
+   "ru": "бутик-отель Астана, boutique hotel Astana, boutique отель Астана, новый отель Астана, новая гостиница Астана, отель Астана, гостиница Астана, современный отель Астана, уютный отель Астана, комфортный отель Астана, City Line Hotel Astana, отель Сити Лайн Астана, гостиница Сити Лайн, отель для командировок Астана, гостиница для туристов Астана, гостиница на сутки Астана, забронировать отель Астана, двухместный номер Астана, гостиница на правом берегу Астаны, гостиница возле ЛРТ Астана, отель возле Дворца Независимости, отель возле Дворца Мира и Согласия, отель на Шамши Калдаякова",
+   "kk": "бутик-қонақ үй Астана, жаңа қонақ үй Астана, City Line Hotel Астана, Астана қонақ үй, заманауи қонақ үй Астана, іссапарға қонақ үй Астана, LRT жанындағы қонақ үй, Тәуелсіздік сарайы жанындағы қонақ үй, екі орындық нөмір Астана, оң жағалаудағы қонақ үй",
+   "en": "boutique hotel Astana, new hotel Astana, City Line Hotel Astana, modern hotel Astana, comfortable hotel Astana, business trip hotel Astana, hotel near LRT Astana, hotel near Palace of Independence Astana, double room Astana, right bank hotel Astana"
+  },
+  "alternateName": [
+   "Сити Лайн",
+   "Отель Сити Лайн",
+   "Гостиница Сити Лайн",
+   "City Line Boutique Hotel",
+   "City Line Hotel Astana"
+  ],
+  "priceRange": {
+   "ru": "25 000–35 000 ₸ за сутки",
+   "kk": "тәулігіне 25 000–35 000 ₸",
+   "en": "25,000–35,000 KZT per night"
+  }
+ },
+ "botanic": {
+  "keywords": {
+   "ru": "апартаменты Астана, апартаменты посуточно Астана, апартаменты в Астане посуточно, апартаменты на полсуток Астана, гостиница на полсуток Астана, отель на полсуток Астана, апартаменты левый берег Астана, апартаменты в центре Астаны, снять апартаменты Астана, аренда квартиры посуточно Астана, квартира посуточно Астана, апартаменты Астана цена, гостиничные апартаменты Астана, апарт-отель Астана, апартаменты с кухней Астана, семейные апартаменты Астана, семейный отель Астана, отель для семьи Астана, семейный номер Астана, апартаменты на длительный срок Астана, отель с закрывающими документами Астана, жильё для командировки Астана, отель для командировок Астана, отель на левом берегу Астана, гостиница на левом берегу Астана, апартаменты возле Ботанического сада Астана, отель возле Экспо Астана, апартаменты возле Экспо Астана, студия посуточно Астана, апартаменты Делюкс Астана, апартаменты Люкс Астана, Botanic Garden Apartments Astana, Ботаник Гарден Астана",
+   "kk": "апартаменттер Астана, тәуліктік апартаменттер Астана, жарты тәулікке апартамент Астана, тәулігіне пәтер Астана, ас үйі бар апартаменттер Астана, отбасылық апартаменттер Астана, сол жағалаудағы апартаменттер, Ботаникалық бақ жанындағы апартаменттер, ЭКСПО жанындағы апартаменттер, Botanic Garden Apartments Астана",
+   "en": "apartments Astana, serviced apartments Astana, daily rent apartments Astana, half-day apartments Astana, apartments with kitchen Astana, family apartments Astana, apartments left bank Astana, apartments near Botanical Garden Astana, apartments near EXPO Astana, long stay apartments Astana, Botanic Garden Apartments Astana"
+  },
+  "alternateName": [
+   "Ботаник Гарден",
+   "Botanic Garden",
+   "Апартаменты Ботаник Гарден",
+   "Botanic Garden Apartments Astana"
+  ],
+  "priceRange": {
+   "ru": "от 32 000 ₸ за сутки",
+   "kk": "тәулігіне 32 000 ₸ бастап",
+   "en": "from 32,000 KZT per night"
+  }
+ }
+}
+
 AMENITY_NAMES = {
     'kk': {'Wi-Fi': 'Wi-Fi', 'Parking': 'Тұрақ', 'Breakfast': 'Таңғы ас', '24-hour front desk': 'Тәулік бойы тіркеу',
            'Coworking': 'Коворкинг', 'Airport transfer': 'Әуежайдан трансфер', 'Lobby bar': 'Лобби-бар',
@@ -181,6 +241,9 @@ ADDRESS = {
     'kk': {'ул. Шамши Калдаякова, 15': 'Шәмші Қалдаяқов көшесі, 15', 'ул. Туркестан, 14а': 'Түркістан көшесі, 14а', 'Астана': 'Астана'},
     'en': {'ул. Шамши Калдаякова, 15': '15 Shamshi Kaldayakov St.', 'ул. Туркестан, 14а': '14a Turkestan St.', 'Астана': 'Astana'},
 }
+
+
+DICTS = {}  # заполняется в main(): словари ru/kk/en
 
 
 def load_dict():
@@ -215,6 +278,14 @@ def enrich_jsonld(page, ld, lang):
         ld['paymentAccepted'] = 'Cash, Credit Card'
         if 'numberOfRooms' in extra:
             ld['numberOfRooms'] = extra['numberOfRooms']
+        seo = HOTEL_SEO[page]
+        ld['alternateName'] = seo['alternateName']
+        ld['priceRange'] = seo['priceRange'][lang]
+        ld['keywords'] = seo['keywords'][lang]
+        # описание для нейросетей и карточек — первый абзац блока «Коротко» на странице
+        fact = DICTS.get(lang, {}).get(f'seo.{page}.p1')
+        if fact:
+            ld['description'] = fact
         names = AMENITY_NAMES.get(lang)
         ld['amenityFeature'] = [
             {'@type': 'LocationFeatureSpecification', 'name': names[a] if names else a, 'value': True}
@@ -226,7 +297,7 @@ def enrich_jsonld(page, ld, lang):
             addr['addressLocality'] = ADDRESS[lang]['Астана']
     if lang != 'ru':
         ld['url'] = ld['url'].replace(BASE, url_prefix)
-        if 'description' in ld and page in META:
+        if 'description' in ld and page in META and ld.get('@type') != 'Hotel':
             ld['description'] = META[page][lang][1]
     return ld
 
@@ -365,6 +436,7 @@ def stamp_assets():
 def main():
     stamp_assets()
     dicts = load_dict()
+    DICTS.update(dicts)
     # hreflang и дополненный JSON-LD — и в русских исходниках
     for page in PAGES:
         path = os.path.join(ROOT, f'{page}.html')
