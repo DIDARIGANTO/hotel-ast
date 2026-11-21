@@ -110,6 +110,10 @@ CHROME = {
 # ── Alt-тексты фотографий ────────────────────────────────────────────
 ALT = {
     'kk': {
+        'Общая зона City Line Hotel со столами и диванами': 'City Line Hotel: үстелдері мен дивандары бар ортақ аймақ',
+        'Лобби City Line Hotel с дизайнерскими стеллажами': 'City Line Hotel лоббиі: дизайнерлік сөрелер',
+        'Холл City Line Hotel с креслами у номеров': 'City Line Hotel холлы: нөмірлер жанындағы креслолар',
+        'Холл City Line Hotel с диваном': 'City Line Hotel холлы: диван',
         'Апартамент-студия с кухней и диваном в Botanic Garden Apartments': 'Botanic Garden Apartments: ас үйі мен диваны бар студия-апартамент',
         'Просторный апартамент с диваном в Botanic Garden Apartments, Астана': 'Botanic Garden Apartments: диваны бар кең апартамент, Астана',
         'Спальня апартамента с телевизором в Botanic Garden Apartments': 'Botanic Garden Apartments: теледидары бар апартамент жатын бөлмесі',
@@ -137,6 +141,10 @@ ALT = {
         'Стандарт': 'Стандарт', 'DeLux': 'DeLux', 'Логотип City Line Hotel на стойке регистрации': 'Тіркеу орнындағы City Line Hotel логотипі',
     },
     'en': {
+        'Общая зона City Line Hotel со столами и диванами': 'Common area with tables and sofas at City Line Hotel',
+        'Лобби City Line Hotel с дизайнерскими стеллажами': 'City Line Hotel lobby with designer shelving',
+        'Холл City Line Hotel с креслами у номеров': 'City Line Hotel hallway with armchairs by the rooms',
+        'Холл City Line Hotel с диваном': 'City Line Hotel hallway with a sofa',
         'Апартамент-студия с кухней и диваном в Botanic Garden Apartments': 'Studio apartment with a kitchen and a sofa at Botanic Garden Apartments',
         'Просторный апартамент с диваном в Botanic Garden Apartments, Астана': 'Spacious apartment with a sofa at Botanic Garden Apartments, Astana',
         'Спальня апартамента с телевизором в Botanic Garden Apartments': 'Apartment bedroom with a TV at Botanic Garden Apartments',
